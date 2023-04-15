@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 310d5dc13be9cb04b5b1b60be12c6eb0, type: 3}
+  m_Name: "Bind"
+  m_EditorClassIdentifier: 
+  m_PoseEntries:
+  - path: "Bones\x2fHip"
+    localPosition: {x: 0, y: -0.7780506, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071069}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: "Bones\x2fHip\x2fTorso"
+    localPosition: {x: 0.4600117, y: 2.980232E-08, z: 0}
+    localRotation: {x: 0, y: 0, z: -2.73491E-06, w: 1}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: "Bones\x2fHip\x2fTorso\x2fHead"
+    localPosition: {x: 0.7900327, y: 9.095593E-13, z: 0}
+    localRotation: {x: 0, y: 0, z: 4.626421E-08, w: 1}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: "Bones\x2fHip\x2fTorso\x2fLeftHand"
+    localPosition: {x: 0.7199401, y: 0.1899367, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.9924617, w: 0.1225554}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: "Bones\x2fHip\x2fTorso\x2fLeftHand\x2fLH2"
+    localPosition: {x: 0.3671504, y: -5.960464E-08, z: 0}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: "Bones\x2fHip\x2fTorso\x2fRightHand"
+    localPosition: {x: 0.7129698, y: -0.1620331, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.9875099, w: 0.1575569}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: "Bones\x2fHip\x2fTorso\x2fRightHand\x2fRH2"
+    localPosition: {x: 0.3644011, y: 1.490116E-07, z: 0}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: "Bones\x2fHip\x2fLeftLeg"
+    localPosition: {x: 0.0100575, y: 0.1249633, z: 0}
+    localRotation: {x: 0, y: 0, z: 0.9908749, w: 0.1347846}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: "Bones\x2fHip\x2fLeftLeg\x2fLL2"
+    localPosition: {x: 0.5343038, y: -1.490116E-08, z: 0}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: "Bones\x2fHip\x2fRightLeg"
+    localPosition: {x: -0.003070936, y: -0.1572663, z: 0}
+    localRotation: {x: 0, y: 0, z: -0.9947859, w: 0.1019853}
+    localScale: {x: 1, y: 1, z: 1}
+  - path: "Bones\x2fHip\x2fRightLeg\x2fRL2"
+    localPosition: {x: 0.533206, y: -2.980232E-08, z: 0}
+    localRotation: {x: 0, y: 0, z: 0, w: 1}
+    localScale: {x: 1, y: 1, z: 1}

@@ -1,0 +1,150 @@
+fileFormatVersion: 2
+guid: 771b939f7cca4a4eb2d8cb5967c1dff5
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: RuinShip
+  externalObjects: {}
+  serializedVersion: 9
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 0
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 13
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 9
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 39.62848
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: 0
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 13
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites: []
+    outline:
+    - - {x: -34.09142, y: -32.53806}
+      - {x: -34.09142, y: 29.46194}
+      - {x: -23.09142, y: -63.53807}
+    - - {x: -16.09142, y: 63.46194}
+      - {x: -23.09142, y: -63.53807}
+      - {x: -34.09142, y: 29.46194}
+    - - {x: 26.90858, y: -63.53807}
+      - {x: -23.09142, y: -63.53807}
+      - {x: -16.09142, y: 63.46194}
+    - - {x: 13.90858, y: 63.46194}
+      - {x: 26.90858, y: -63.53807}
+      - {x: -16.09142, y: 63.46194}
+    - - {x: 33.90858, y: 32.46194}
+      - {x: 26.90858, y: -63.53807}
+      - {x: 13.90858, y: 63.46194}
+    - - {x: 33.90858, y: -35.53806}
+      - {x: 26.90858, y: -63.53807}
+      - {x: 33.90858, y: 32.46194}
+    physicsShape:
+    - - {x: 32.90858, y: 11.46194}
+      - {x: 24.90858, y: 34.46194}
+      - {x: 11.90858, y: 48.46194}
+      - {x: 2.908581, y: 63.46194}
+      - {x: -4.091419, y: 63.46194}
+      - {x: -9.091419, y: 61.46194}
+      - {x: -14.09142, y: 50.46194}
+      - {x: -28.09142, y: 35.46194}
+      - {x: -32.09142, y: 17.46194}
+      - {x: -33.09142, y: 9.461941}
+      - {x: -33.09142, y: -11.53806}
+      - {x: -32.09142, y: -30.53806}
+      - {x: -23.09142, y: -57.53806}
+      - {x: -21.09142, y: -62.53806}
+      - {x: 19.90858, y: -62.53806}
+      - {x: 22.90858, y: -61.53806}
+      - {x: 28.90858, y: -39.53806}
+      - {x: 32.90858, y: -6.53806}
+      - {x: -6.091419, y: -38.53806}
+      - {x: -6.091419, y: -35.53806}
+      - {x: -8.091419, y: -32.53806}
+      - {x: -9.091419, y: -34.53806}
+      - {x: -6.091419, y: -37.53806}
+      - {x: -4.091419, y: -37.53806}
+      - {x: -4.091419, y: -38.53806}
+      - {x: -2.091419, y: -40.53806}
+      - {x: -2.091419, y: -39.53806}
+      - {x: -4.091419, y: -40.53806}
+      - {x: -4.091419, y: -39.53806}
+      - {x: 2.908581, y: 29.46194}
+      - {x: 5.908581, y: 26.46194}
+      - {x: 6.908581, y: 26.46194}
+    bones: []
+    spriteID: 187cf59ee9c624bf19b9b33aeea7dd22
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

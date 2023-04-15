@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 9ca852d32aab4d5a833e44c3f48e8246
+timeCreated: 1579047121
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: "akbar_1"
+  fontNames:
+  - Akbar
+  fallbackFontReferences: []
+  customCharacters:
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData:
+  assetBundleName: 
+  assetBundleVariant: 
