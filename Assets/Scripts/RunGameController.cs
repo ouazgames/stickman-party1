@@ -234,6 +234,7 @@ public class RunGameController : MonoBehaviour
 		}
 		GameOverPanel.SetActive(value: true);
 		BGMusic.SetActive(value: false);
+		ApplovineAdsManager.Instance.showinter();
 		Invoke("GetButtons", 2f);
 		if (ListNumber == 1)
 		{
@@ -262,7 +263,7 @@ public class RunGameController : MonoBehaviour
 		{
 			GameOverTie.SetActive(value: true);
 		}
-		SA.ShowInter();
+		//SA.ShowInter();
 	}
 
 	private void TournamentCount()

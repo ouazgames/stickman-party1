@@ -215,6 +215,7 @@ public class GhostGameController : MonoBehaviour
 		if (IsStart && ListNumber <= 1 && !IsGameOver)
 		{
 			IGameOver();
+			ApplovineAdsManager.Instance.showinter();
 			IsStart = false;
 			IsGameOver = true;
 		}
@@ -288,7 +289,8 @@ public class GhostGameController : MonoBehaviour
 			PlayerPrefs.SetInt("GreenNewCount", 0);
 			PlayerPrefs.SetInt("YellowNewCount", 0);
 		}
-		SA.ShowInter();
+		//SA.ShowInter();
+		
 		if (PlayerNumers == 1 || PlayerNumers == 4 || (PlayerNumers == 2 && NeedBot == 1) || (PlayerNumers == 3 && NeedBot == 1))
 		{
 			if (Names[0] == "PlayerRed")

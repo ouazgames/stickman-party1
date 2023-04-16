@@ -41,9 +41,10 @@ namespace GoogleMobileAds.Android
 
         public event EventHandler<EventArgs> OnAdOpening;
 
-        public event EventHandler<EventArgs> OnAdClosed;
+        public event EventHandler<EventArgs> OnAdCd;
 
         public event EventHandler<EventArgs> OnAdLeavingApplication;
+        public event EventHandler<EventArgs> OnAdClosed;
 
         // Creates a banner view.
         public void CreateBannerView(string adUnitId, AdSize adSize, AdPosition position)

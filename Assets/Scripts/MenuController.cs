@@ -91,6 +91,7 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
+		ApplovineAdsManager.Instance.showinter();
 	}
 
 	public void TankGameButton()
@@ -107,6 +108,7 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
+		ApplovineAdsManager.Instance.showinter();
 	}
 
 	public void RaceGameButton()
@@ -123,6 +125,7 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
+		ApplovineAdsManager.Instance.showinter();
 	}
 
 	public void SoccerGameButton()
@@ -140,6 +143,7 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
+		ApplovineAdsManager.Instance.showinter();
 	}
 
 	public void SumoGameButton()
@@ -156,6 +160,7 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
+		ApplovineAdsManager.Instance.showinter();
 	}
 
 	public void SeaBattleGameButton()
@@ -172,6 +177,7 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
+		ApplovineAdsManager.Instance.showinter();
 	}
 
 	public void GhostGameButton()
@@ -188,6 +194,7 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
+		ApplovineAdsManager.Instance.showinter();
 	}
 
 	public void BumperGameButton()
@@ -204,6 +211,7 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
+		ApplovineAdsManager.Instance.showinter();
 	}
 
 	public void ColorGameButton()
@@ -220,6 +228,7 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
+		ApplovineAdsManager.Instance.showinter();
 	}
 
 	public void BoxGameButton()
@@ -236,6 +245,7 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
+		ApplovineAdsManager.Instance.showinter();
 	}
 
 	public void BackToMainMenu()
