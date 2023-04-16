@@ -240,6 +240,7 @@ public class TankDeathmatchController : MonoBehaviour
 
 	private void Update()
 	{
+		ApplovineAdsManager.Instance.hideBanner();
 		if (time <= 2f && time > 0f && !IsGameOver && CountDownSoundTimer >= 2f)
 		{
 			Source.PlayOneShot(TimerSound);
@@ -340,7 +341,7 @@ public class TankDeathmatchController : MonoBehaviour
 	{
 		IsGameOver = true;
 		IsStart = false;
-		GameOverPanel.SetActive(value: true);
+		//GameOverPanel.SetActive(value: true);
 		BGMusic.SetActive(value: false);
 		Invoke("GetButtons", 2f);
 		int num = Mathf.Max(ColorCount);
@@ -423,7 +424,7 @@ public class TankDeathmatchController : MonoBehaviour
 				activePlayers[j].GetComponent<TankScript>().IsSMove = false;
 			}
 		}
-		SA.ShowInter();
+		//SA.ShowInter();
 	}
 
 	private void GetButtons()

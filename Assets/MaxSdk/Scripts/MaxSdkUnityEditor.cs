@@ -338,7 +338,7 @@ public class MaxSdkUnityEditor : MaxSdkBase
     {
         ValidateAdUnitIdentifier(adUnitIdentifier, "create banner");
         RequestAdUnit(adUnitIdentifier);
-
+        Debug.Log("banner worked");
         // TODO: Add stub ads support
     }
 

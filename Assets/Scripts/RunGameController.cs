@@ -190,6 +190,7 @@ public class RunGameController : MonoBehaviour
 
 	private void Update()
 	{
+		ApplovineAdsManager.Instance.hideBanner();
 		if (IsStart)
 		{
 			Players.RemoveAll((GameObject item) => item == null);
@@ -232,7 +233,7 @@ public class RunGameController : MonoBehaviour
 		{
 			return;
 		}
-		GameOverPanel.SetActive(value: true);
+		//GameOverPanel.SetActive(value: true);
 		BGMusic.SetActive(value: false);
 		ApplovineAdsManager.Instance.showinter();
 		Invoke("GetButtons", 2f);

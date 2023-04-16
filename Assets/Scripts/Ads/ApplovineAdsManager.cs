@@ -9,10 +9,12 @@ using UnityEngine.Events;
 public class ApplovineAdsManager : MonoBehaviour
 {
     public string applovinesdkey = "zEt4_M4PkG_cNWU_sR4p4RXZ6mE5AO4RAx8SQs1BVTZR5iMfLP54K_p1L4C6x88exH8F__Tr3QQ0TgrAyzCiPq";
+    public bool isbanner = false;
 #if UNITY_IOS
-public string bannerAdUnitId = "YOUR_IOS_BANNER_AD_UNIT_ID"; // Retrieve the ID from your account
-public string IntersitialadUnitId;
- public string Rewardedid;
+    public string bannerAdUnitId = "05484fg4844"; // Retrieve the ID from your account
+    public string IntersitialadUnitId = "451854865296hyvf";
+    public string Rewardedid = "jf5dfgh8845h";
+    public string AppOpenAdUnitId = "894rtytr56";
 #else // UNITY_ANDROID
     public string bannerAdUnitId = "05484fg4844"; // Retrieve the ID from your account
     public string IntersitialadUnitId = "451854865296hyvf";
@@ -48,7 +50,7 @@ public string IntersitialadUnitId;
         MaxSdk.SetSdkKey(applovinesdkey);
         MaxSdk.SetUserId("USER_ID");
         MaxSdk.InitializeSdk();
-       //showbanner();
+       showbanner();
         Invoke("initAppOpen", 0.5f);
 
     }
@@ -76,8 +78,8 @@ public string IntersitialadUnitId;
            ShowAdIfReady();
         }
     }
-   
 
+    
 
 
     public void InitializeBannerAds()
@@ -97,9 +99,14 @@ public string IntersitialadUnitId;
         MaxSdkCallbacks.Banner.OnAdCollapsedEvent += OnBannerAdCollapsedEvent;
     }
 
-    private void OnBannerAdLoadedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo) { }
+    private void OnBannerAdLoadedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo) {
+        isbanner = true;
+    }
+    
+    private void OnBannerAdLoadFailedEvent(string adUnitId, MaxSdkBase.ErrorInfo errorInfo) {
+        
 
-    private void OnBannerAdLoadFailedEvent(string adUnitId, MaxSdkBase.ErrorInfo errorInfo) { }
+    }
 
     private void OnBannerAdClickedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo) { }
 
@@ -112,6 +119,11 @@ public string IntersitialadUnitId;
     public void showbanner()
     {
         MaxSdk.ShowBanner(bannerAdUnitId);
+
+    }
+    public void hideBanner()
+    {
+        MaxSdk.HideBanner(bannerAdUnitId);
     }
 
     int retryAttempt;

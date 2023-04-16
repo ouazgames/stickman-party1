@@ -84,7 +84,7 @@ public class SoccerGameController : MonoBehaviour
 
 	private void Start()
 	{
-		SA = Camera.main.GetComponent<ShowAds>();
+		//SA = Camera.main.GetComponent<ShowAds>();
 		RedGoals = 0;
 		BlueGoals = 0;
 		if (PlayerNumers == 1)
@@ -178,6 +178,7 @@ public class SoccerGameController : MonoBehaviour
 
 	private void Update()
 	{
+		ApplovineAdsManager.Instance.hideBanner();
 		if (time <= 2f && time > 0f && !IsGameOver && CountDownSoundTimer >= 2f)
 		{
 			Source.PlayOneShot(TimerSound);
@@ -187,6 +188,7 @@ public class SoccerGameController : MonoBehaviour
 		{
 			time = 0f;
 			GameOver();
+			
 			IsGameOver = true;
 		}
 	}
@@ -246,8 +248,9 @@ public class SoccerGameController : MonoBehaviour
 	public void GameOver()
 	{
 		IsGameOver = true;
-		GameOverPanel.SetActive(value: true);
+		//GameOverPanel.SetActive(value: true);
 		BGMusic.SetActive(value: false);
+		ApplovineAdsManager.Instance.showinter();
 		if (PlayerPrefs.GetInt("IsCups") == 0)
 		{
 			Invoke("GetButtons", 2f);
@@ -293,7 +296,7 @@ public class SoccerGameController : MonoBehaviour
 		{
 			activePlayers[i].GetComponent<SoccerPlayer>().IsSMove = false;
 		}
-		SA.ShowInter();
+		//SA.ShowInter();
 	}
 
 	private void GetCount()

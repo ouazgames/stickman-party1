@@ -214,6 +214,7 @@ public class BoxGameController : MonoBehaviour
 
 	private void Update()
 	{
+		ApplovineAdsManager.Instance.hideBanner();
 		PressTimer += Time.deltaTime;
 		if (time <= 2f && time > 0f && !IsGameOver && CountDownSoundTimer >= 2f)
 		{
@@ -288,7 +289,8 @@ public class BoxGameController : MonoBehaviour
 	{
 		IsGameOver = true;
 		IsStart = false;
-		GameOverPanel.SetActive(value: true);
+		ApplovineAdsManager.Instance.showinter();
+		//GameOverPanel.SetActive(value: true);
 		BGMusic.SetActive(value: false);
 		int num = Mathf.Max(ColorCount);
 		for (int i = 0; i < ColorCount.Length; i++)
@@ -557,7 +559,7 @@ public class BoxGameController : MonoBehaviour
 		{
 			activePlayers[j].GetComponent<Boxplayer>().IsMove = false;
 		}
-		SA.ShowInter();
+		//SA.ShowInter();
 	}
 
 	private void GetButtons()

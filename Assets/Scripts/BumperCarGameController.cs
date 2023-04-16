@@ -243,6 +243,7 @@ public class BumperCarGameController : MonoBehaviour
 
 	private void Update()
 	{
+		ApplovineAdsManager.Instance.hideBanner();
 		CountText[0].text = string.Concat(RedCount);
 		CountText[1].text = string.Concat(BlueCount);
 		CountText[2].text = string.Concat(GreenCount);
@@ -446,8 +447,9 @@ public class BumperCarGameController : MonoBehaviour
 
 	public void IGameOver()
 	{
-		GameOverPanel.SetActive(value: true);
+		//GameOverPanel.SetActive(value: true);
 		BGMusic.SetActive(value: false);
+		ApplovineAdsManager.Instance.showinter();
 		GameObject[] colliders = Colliders;
 		for (int i = 0; i < colliders.Length; i++)
 		{

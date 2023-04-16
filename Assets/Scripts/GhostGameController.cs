@@ -207,6 +207,7 @@ public class GhostGameController : MonoBehaviour
 
 	private void Update()
 	{
+		ApplovineAdsManager.Instance.hideBanner();
 		if (IsStart)
 		{
 			Players.RemoveAll((GameObject item) => item == null);
@@ -439,6 +440,7 @@ public class GhostGameController : MonoBehaviour
 	{
 		Source.PlayOneShot(ButtonSound);
 		SceneManager.LoadScene(1);
+		
 	}
 
 	public void RestartButton()

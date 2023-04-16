@@ -211,6 +211,7 @@ public class SeaBattleController : MonoBehaviour
 
 	private void Update()
 	{
+		ApplovineAdsManager.Instance.hideBanner();
 		RedValue = ColorCount[0];
 		BlueValue = ColorCount[1];
 		GreenValue = ColorCount[2];
@@ -232,7 +233,8 @@ public class SeaBattleController : MonoBehaviour
 	{
 		IsGameOver = true;
 		IsStart = false;
-		GameOverPanel.SetActive(value: true);
+		ApplovineAdsManager.Instance.showinter();
+		//GameOverPanel.SetActive(value: true);
 		BGMusic.SetActive(value: false);
 		int num = Mathf.Max(ColorCount);
 		for (int i = 0; i < ColorCount.Length; i++)

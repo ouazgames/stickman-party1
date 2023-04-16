@@ -229,6 +229,7 @@ public class TankGameController : MonoBehaviour
 	{
 		GameOverPanel.SetActive(value: true);
 		BGMusic.SetActive(value: false);
+		ApplovineAdsManager.Instance.showinter();
 		if (PlayerPrefs.GetInt("IsCups") == 0)
 		{
 			Invoke("GetButtons", 2f);
@@ -293,7 +294,7 @@ public class TankGameController : MonoBehaviour
 			PlayerPrefs.SetInt("GreenNewCount", 0);
 			PlayerPrefs.SetInt("YellowNewCount", 0);
 		}
-		SA.ShowInter();
+		//SA.ShowInter();
 		if (PlayerPrefs.GetInt("IsCups") != 1)
 		{
 			return;

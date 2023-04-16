@@ -148,6 +148,7 @@ public class SumoGameController : MonoBehaviour
 
 	private void Update()
 	{
+		ApplovineAdsManager.Instance.hideBanner();
 		if (IsStart)
 		{
 			Players.RemoveAll((GameObject item) => item == null);
@@ -163,8 +164,9 @@ public class SumoGameController : MonoBehaviour
 
 	public void IGameOver()
 	{
-		GameOverPanel.SetActive(value: true);
+		//GameOverPanel.SetActive(value: true);
 		BGMusic.SetActive(value: false);
+		ApplovineAdsManager.Instance.showinter();
 		if (PlayerPrefs.GetInt("IsCups") == 0)
 		{
 			Invoke("GetButtons", 2f);
