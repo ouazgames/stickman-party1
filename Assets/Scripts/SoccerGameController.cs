@@ -248,6 +248,13 @@ public class SoccerGameController : MonoBehaviour
 	public void GameOver()
 	{
 		IsGameOver = true;
+		GameAnalytic.AddProgression(new LevelProgression()
+		{
+
+			state = ProgressionStatus.Completed,
+			v_LevelName = "Level Soccer Game"
+
+		});
 		//GameOverPanel.SetActive(value: true);
 		BGMusic.SetActive(value: false);
 		ApplovineAdsManager.Instance.showinter();

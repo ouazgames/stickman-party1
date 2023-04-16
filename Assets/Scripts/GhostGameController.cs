@@ -221,11 +221,19 @@ public class GhostGameController : MonoBehaviour
 			IsGameOver = true;
 		}
 	}
-
+	
 	public void IGameOver()
 	{
+		
 		GameOverPanel.SetActive(value: true);
 		BGMusic.SetActive(value: false);
+		GameAnalytic.AddProgression(new LevelProgression()
+		{
+			
+			state = ProgressionStatus.Completed,
+			v_LevelName = "Level Ghost"
+
+		}) ;
 		if (PlayerPrefs.GetInt("IsCups") == 0)
 		{
 			Invoke("GetButtons", 2f);

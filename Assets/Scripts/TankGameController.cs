@@ -229,6 +229,13 @@ public class TankGameController : MonoBehaviour
 	{
 		GameOverPanel.SetActive(value: true);
 		BGMusic.SetActive(value: false);
+		GameAnalytic.AddProgression(new LevelProgression()
+		{
+
+			state = ProgressionStatus.Completed,
+			v_LevelName = "Level Tank Game"
+
+		});
 		ApplovineAdsManager.Instance.showinter();
 		if (PlayerPrefs.GetInt("IsCups") == 0)
 		{

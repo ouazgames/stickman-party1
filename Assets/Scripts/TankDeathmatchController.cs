@@ -341,6 +341,13 @@ public class TankDeathmatchController : MonoBehaviour
 	{
 		IsGameOver = true;
 		IsStart = false;
+		GameAnalytic.AddProgression(new LevelProgression()
+		{
+
+			state = ProgressionStatus.Completed,
+			v_LevelName = "Level Tank Death match Game"
+
+		});
 		//GameOverPanel.SetActive(value: true);
 		BGMusic.SetActive(value: false);
 		Invoke("GetButtons", 2f);

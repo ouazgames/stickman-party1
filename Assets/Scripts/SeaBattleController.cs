@@ -233,6 +233,13 @@ public class SeaBattleController : MonoBehaviour
 	{
 		IsGameOver = true;
 		IsStart = false;
+		GameAnalytic.AddProgression(new LevelProgression()
+		{
+
+			state = ProgressionStatus.Completed,
+			v_LevelName = "Level SeaBattle Game"
+
+		});
 		ApplovineAdsManager.Instance.showinter();
 		//GameOverPanel.SetActive(value: true);
 		BGMusic.SetActive(value: false);

@@ -289,6 +289,15 @@ public class BoxGameController : MonoBehaviour
 	{
 		IsGameOver = true;
 		IsStart = false;
+		GameOverPanel.SetActive(value: true);
+		BGMusic.SetActive(value: false);
+		GameAnalytic.AddProgression(new LevelProgression()
+		{
+
+			state = ProgressionStatus.Completed,
+			v_LevelName = "Level Box Game"
+
+		});
 		ApplovineAdsManager.Instance.showinter();
 		//GameOverPanel.SetActive(value: true);
 		BGMusic.SetActive(value: false);

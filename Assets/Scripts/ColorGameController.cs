@@ -293,6 +293,13 @@ public class ColorGameController : MonoBehaviour
 	{
 		IsGameOver = true;
 		IsStart = false;
+		GameAnalytic.AddProgression(new LevelProgression()
+		{
+
+			state = ProgressionStatus.Completed,
+			v_LevelName = "Color Game"
+
+		});
 		ApplovineAdsManager.Instance.showinter();
 		//GameOverPanel.SetActive(value: true);
 		BGMusic.SetActive(value: false);

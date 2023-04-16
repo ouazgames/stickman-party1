@@ -448,6 +448,15 @@ public class BumperCarGameController : MonoBehaviour
 	public void IGameOver()
 	{
 		//GameOverPanel.SetActive(value: true);
+		GameOverPanel.SetActive(value: true);
+		BGMusic.SetActive(value: false);
+		GameAnalytic.AddProgression(new LevelProgression()
+		{
+
+			state = ProgressionStatus.Completed,
+			v_LevelName = "Level Bumper Car Game"
+
+		});
 		BGMusic.SetActive(value: false);
 		ApplovineAdsManager.Instance.showinter();
 		GameObject[] colliders = Colliders;
