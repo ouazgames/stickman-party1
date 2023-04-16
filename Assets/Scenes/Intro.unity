@@ -62,7 +62,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &9999993
 LightmapSettings:
@@ -153,10 +153,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   applovinesdkey: zEt4_M4PkG_cNWU_sR4p4RXZ6mE5AO4RAx8SQs1BVTZR5iMfLP54K_p1L4C6x88exH8F__Tr3QQ0TgrAyzCiPq
-  bannerAdUnitId: 05484fg4844
-  IntersitialadUnitId: 451854865296hyvf
-  Rewardedid: jf5dfgh8845h
-  AppOpenAdUnitId: 894rtytr56
+  isbanner: 0
+  bannerAdUnitId: a3125edb5842efc3
+  IntersitialadUnitId: 42c23256fbcd97c9
+  Rewardedid: fad99109b75139de
+  AppOpenAdUnitId: 6303a8438a11dedc
   x: 0
 --- !u!4 &178115678
 Transform:
