@@ -66,6 +66,7 @@ public class AppOpenAdManager
                 Debug.LogFormat("Failed to load the ad. (reason: {0})", error.LoadAdError.GetMessage());
                 return;
             }
+            AdsManager.isAppOpenInitiaed = true;
 
             // App open ad is loaded
             ad = appOpenAd;

@@ -29,18 +29,20 @@ MonoBehaviour:
   iOSThumbnailAdUnitId: 
   oguryAndroidAssetKey: 
   androidThumbnailAdUnitId: 
-  useGdpr: 1
-  Use_IronSourceOnly: 0
+  useGdpr: 0
   Use_Appopen_AdmobOnly: 0
-  IOSAppopenAdmobAdUnitId: ca-app-pub-7024820506501610/9441118006
-  androidAppopenAdmobAdUnitId: ca-app-pub-7024820506501610/9441118006
+  IOSAppopenAdmobAdUnitId: ca-app-pub-3940256099942544/3419835294
+  androidAppopenAdmobAdUnitId: ca-app-pub-3940256099942544/3419835294
+  Use_Banner_AdmobOnly: 1
+  IOSBannerAdmobAdUnitId: ca-app-pub-3940256099942544/6300978111
+  androidBannerAdmobAdUnitId: ca-app-pub-3940256099942544/6300978111
   useMax: 1
   maxSdkKey: zEt4_M4PkG_cNWU_sR4p4RXZ6mE5AO4RAx8SQs1BVTZR5iMfLP54K_p1L4C6x88exH8F__Tr3QQ0TgrAyzCiPq
-  iOSInterstitialAdUnitId: 94427b03c0356760
-  iOSRewardedAdUnitId: 757180ea5e38f3e9
-  iOSBannerAdUnitId: 42fd5780a0b6b473
-  IOSAppopenAdUnitId: e3d2de9ab037295a
-  androidInterstitialAdUnitId: a5966ed24b307628
-  androidRewardedAdUnitId: 2e1bf88661499b36
-  androidBannerAdUnitId: 31be5dc9f2cb62f9
-  androidAppopenAdUnitId: 056b8387c1bcea34
+  iOSInterstitialAdUnitId: c55e832a09224b51
+  iOSRewardedAdUnitId: 5aa54a08f721df35
+  iOSBannerAdUnitId: f8839e6f5e368403
+  IOSAppopenAdUnitId: 0e78c9e72a534a34
+  androidInterstitialAdUnitId: 6312eef946f792f2
+  androidRewardedAdUnitId: a1ca5d7c989c0664
+  androidBannerAdUnitId: 898da242efe287dc
+  androidAppopenAdUnitId: 13acf7fa70a447e0

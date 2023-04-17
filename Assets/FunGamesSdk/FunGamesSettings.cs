@@ -96,15 +96,14 @@ namespace FunGamesSdk
         public bool useGdpr;
 
 
-        [Header("IronSource")]
-        [Tooltip("Use IronSource Only it will Disable Applovin Ads From Showing")]
-        public bool Use_IronSourceOnly;
-
         [Header("Admob")]
         [Tooltip("Use Appopen Admob Only it will Disable Applovin AppOpen From Showing")]
         public bool Use_Appopen_AdmobOnly;
         public string IOSAppopenAdmobAdUnitId = "ca-app-pub-3940256099942544/3419835294";
         public string androidAppopenAdmobAdUnitId = "ca-app-pub-3940256099942544/3419835294";
+        public bool Use_Banner_AdmobOnly;
+        public string IOSBannerAdmobAdUnitId = "ca-app-pub-3940256099942544/6300978111";
+        public string androidBannerAdmobAdUnitId = "ca-app-pub-3940256099942544/6300978111";
         [Header("Applovin Max")]
 
         [Tooltip("Use Max")]

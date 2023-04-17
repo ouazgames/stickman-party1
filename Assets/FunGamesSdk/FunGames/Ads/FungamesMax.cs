@@ -3,14 +3,16 @@ using FunGames.Sdk.Analytics;
 using FunGamesSdk;
 using FunGamesSdk.FunGames.Ads;
 using GameAnalyticsSDK;
+using GoogleMobileAds.Api;
 // using OgurySdk;
 using UnityEngine;
 
 public class FunGamesMax
 {
     public static event System.Action OnFunGamesInitialized;
-    public static bool _USE_IRONSOURCE;
+
     public static bool _USE_APPOPEN_ADMOBOnly;
+    public static bool _USE_BANNER_ADMOBOnly;
 
     private static string _maxSdkKey;
     private static string _interstitialAdUnitId;
@@ -18,6 +20,7 @@ public class FunGamesMax
     private static string _bannerAdUnitId;
     private static string _appopenAdUnitId;
     public static string _appopenAdmobAdUnitId;
+    public static string _bannerAdmobAdUnitId;
 
     private static int _interstitialRetryAttempt;
     private static int _rewardedRetryAttempt;
@@ -40,8 +43,9 @@ public class FunGamesMax
     {
         var settings = Resources.Load<FunGamesSettings>("FunGamesSettings");
         _maxSdkKey = settings.maxSdkKey;
-        _USE_IRONSOURCE = settings.Use_IronSourceOnly;
+
         _USE_APPOPEN_ADMOBOnly = settings.Use_Appopen_AdmobOnly;
+        _USE_BANNER_ADMOBOnly = settings.Use_Banner_AdmobOnly;
 
 #if UNITY_IOS
 		_interstitialAdUnitId = settings.iOSInterstitialAdUnitId;
@@ -49,6 +53,7 @@ public class FunGamesMax
 		_bannerAdUnitId = settings.iOSBannerAdUnitId;
 		_appopenAdUnitId = settings.IOSAppopenAdUnitId;
         _appopenAdmobAdUnitId = settings.IOSAppopenAdmobAdUnitId;
+        _bannerAdmobAdUnitId = settings.IOSBannerAdmobAdUnitId;
 #endif
 
 #if UNITY_ANDROID
@@ -57,6 +62,7 @@ public class FunGamesMax
         _bannerAdUnitId = settings.androidBannerAdUnitId;
         _appopenAdUnitId = settings.androidAppopenAdUnitId;
         _appopenAdmobAdUnitId = settings.androidAppopenAdmobAdUnitId;
+        _bannerAdmobAdUnitId = settings.androidBannerAdmobAdUnitId;
 #endif
     }
 
@@ -126,11 +132,11 @@ public class FunGamesMax
 
     private static void InitializeInterstitialAds()
     {
-        MaxSdkCallbacks.OnInterstitialLoadedEvent += OnInterstitialLoadedEvent;
-        MaxSdkCallbacks.OnInterstitialLoadFailedEvent += OnInterstitialFailedEvent;
-        MaxSdkCallbacks.OnInterstitialAdFailedToDisplayEvent += InterstitialFailedToDisplayEvent;
-        MaxSdkCallbacks.OnInterstitialDisplayedEvent += OnInterstitialDisplayedEvent;
-        MaxSdkCallbacks.OnInterstitialHiddenEvent += OnInterstitialDismissedEvent;
+        MaxSdkCallbacks.Interstitial.OnAdLoadedEvent += OnInterstitialLoadedEvent;
+        MaxSdkCallbacks.Interstitial.OnAdLoadFailedEvent += OnInterstitialFailedEvent;
+        MaxSdkCallbacks.Interstitial.OnAdDisplayFailedEvent += InterstitialFailedToDisplayEvent;
+        MaxSdkCallbacks.Interstitial.OnAdDisplayedEvent += OnInterstitialDisplayedEvent;
+        MaxSdkCallbacks.Interstitial.OnAdHiddenEvent += OnInterstitialDismissedEvent;
         try
         {
             LoadInterstitial();
@@ -146,12 +152,13 @@ public class FunGamesMax
         MaxSdk.LoadInterstitial(_interstitialAdUnitId);
     }
 
-    private static void OnInterstitialLoadedEvent(string adUnitId)
+    private static void OnInterstitialLoadedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
     {
         _interstitialRetryAttempt = 0;
+        printApplovinAdInfo("Intertitial OnInterstitialLoadedEvent", adInfo);
     }
 
-    private static void OnInterstitialFailedEvent(string adUnitId, int errorCode)
+    private static void OnInterstitialFailedEvent(string adUnitId, MaxSdkBase.ErrorInfo errorInfo)
     {
         _interstitialRetryAttempt++;
         var retryDelay = Math.Pow(2, _interstitialRetryAttempt);
@@ -160,38 +167,42 @@ public class FunGamesMax
         FunGamesAnalytics.NewAdEvent(GAAdAction.FailedShow, GAAdType.Interstitial);
         _interstitialCallback?.Invoke("fail", _interstitialCallbackArgString, _interstitialCallbackArgInt);
         _interstitialCallback = null;
+        printApplovinAdInfo("Intertitial OnInterstitialFailedEvent", null, errorInfo);
     }
 
-    private static void OnInterstitialDisplayedEvent(string adUnitId)
+    private static void OnInterstitialDisplayedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
     {
         FunGamesAnalytics.NewAdEvent(GAAdAction.Show, GAAdType.Interstitial);
         _interstitialCallback?.Invoke("success", _interstitialCallbackArgString, _interstitialCallbackArgInt);
         _interstitialCallback = null;
+        printApplovinAdInfo("Intertitial OnInterstitialDisplayedEvent", adInfo);
     }
 
-    private static void InterstitialFailedToDisplayEvent(string adUnitId, int errorCode)
+    private static void InterstitialFailedToDisplayEvent(string adUnitId, MaxSdkBase.ErrorInfo errorInfo, MaxSdkBase.AdInfo adInfo)
     {
         LoadInterstitial();
         FunGamesAnalytics.NewAdEvent(GAAdAction.FailedShow, GAAdType.Interstitial);
         _interstitialCallback?.Invoke("fail", _interstitialCallbackArgString, _interstitialCallbackArgInt);
         _interstitialCallback = null;
+        printApplovinAdInfo("Intertitial InterstitialFailedToDisplayEvent", adInfo, errorInfo);
     }
 
-    private static void OnInterstitialDismissedEvent(string adUnitId)
+    private static void OnInterstitialDismissedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
     {
         LoadInterstitial();
         FunGamesAnalytics.NewDesignEvent("Interstitial", "Dismissed");
+        printApplovinAdInfo("Intertitial OnInterstitialDismissedEvent", adInfo);
     }
 
     private static void InitializeRewardedAds()
     {
-        MaxSdkCallbacks.OnRewardedAdLoadedEvent += OnRewardedAdLoadedEvent;
-        MaxSdkCallbacks.OnRewardedAdLoadFailedEvent += OnRewardedAdFailedEvent;
-        MaxSdkCallbacks.OnRewardedAdFailedToDisplayEvent += OnRewardedAdFailedToDisplayEvent;
-        MaxSdkCallbacks.OnRewardedAdDisplayedEvent += OnRewardedAdDisplayedEvent;
-        MaxSdkCallbacks.OnRewardedAdClickedEvent += OnRewardedAdClickedEvent;
-        MaxSdkCallbacks.OnRewardedAdHiddenEvent += OnRewardedAdDismissedEvent;
-        MaxSdkCallbacks.OnRewardedAdReceivedRewardEvent += OnRewardedAdReceivedRewardEvent;
+        MaxSdkCallbacks.Rewarded.OnAdLoadedEvent += OnRewardedAdLoadedEvent;
+        MaxSdkCallbacks.Rewarded.OnAdLoadFailedEvent += OnRewardedAdFailedEvent;
+        MaxSdkCallbacks.Rewarded.OnAdDisplayFailedEvent += OnRewardedAdFailedToDisplayEvent;
+        MaxSdkCallbacks.Rewarded.OnAdDisplayedEvent += OnRewardedAdDisplayedEvent;
+        MaxSdkCallbacks.Rewarded.OnAdClickedEvent += OnRewardedAdClickedEvent;
+        MaxSdkCallbacks.Rewarded.OnAdHiddenEvent += OnRewardedAdDismissedEvent;
+        MaxSdkCallbacks.Rewarded.OnAdReceivedRewardEvent += OnRewardedAdReceivedRewardEvent;
 
         try
         {
@@ -208,13 +219,15 @@ public class FunGamesMax
         MaxSdk.LoadRewardedAd(_rewardedAdUnitId);
     }
 
-    private static void OnRewardedAdLoadedEvent(string adUnitId)
+    private static void OnRewardedAdLoadedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
     {
         _rewardedRetryAttempt = 0;
         FunGamesAnalytics.NewAdEvent(GAAdAction.Loaded, GAAdType.RewardedVideo);
+        printApplovinAdInfo("Reward OnRewardedAdLoadedEvent", adInfo);
+
     }
 
-    private static void OnRewardedAdFailedEvent(string adUnitId, int errorCode)
+    private static void OnRewardedAdFailedEvent(string adUnitId, MaxSdkBase.ErrorInfo errorInfo)
     {
         _rewardedRetryAttempt++;
         var retryDelay = Math.Pow(2, _rewardedRetryAttempt);
@@ -223,56 +236,125 @@ public class FunGamesMax
         FunGamesAnalytics.NewAdEvent(GAAdAction.FailedShow, GAAdType.RewardedVideo);
         _rewardedCallback?.Invoke("fail", _rewardedCallbackArgString, _rewardedCallbackArgInt);
         _rewardedCallback = null;
+        printApplovinAdInfo("Reward OnRewardedAdFailedEvent", null, errorInfo);
     }
 
-    private static void OnRewardedAdDisplayedEvent(string adUnitId)
+    private static void OnRewardedAdDisplayedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
     {
         FunGamesAnalytics.NewAdEvent(GAAdAction.Show, GAAdType.RewardedVideo);
+        printApplovinAdInfo("Reward OnRewardedAdDisplayedEvent", adInfo);
     }
 
-    private static void OnRewardedAdFailedToDisplayEvent(string adUnitId, int errorCode)
+    private static void OnRewardedAdFailedToDisplayEvent(string adUnitId, MaxSdkBase.ErrorInfo errorInfo, MaxSdkBase.AdInfo adInfo)
     {
         LoadRewardedAd();
         FunGamesAnalytics.NewAdEvent(GAAdAction.FailedShow, GAAdType.RewardedVideo);
         _rewardedCallback?.Invoke("fail", _rewardedCallbackArgString, _rewardedCallbackArgInt);
         _rewardedCallback = null;
+        printApplovinAdInfo("Reward OnRewardedAdFailedToDisplayEvent", adInfo, errorInfo);
     }
 
-    private static void OnRewardedAdClickedEvent(string adUnitId)
+    private static void OnRewardedAdClickedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
     {
         FunGamesAnalytics.NewAdEvent(GAAdAction.Clicked, GAAdType.RewardedVideo);
+        printApplovinAdInfo("Reward OnRewardedAdClickedEvent", adInfo);
     }
 
-    private static void OnRewardedAdDismissedEvent(string adUnitId)
+    private static void OnRewardedAdDismissedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
     {
         LoadRewardedAd();
         // _rewardedCallback?.Invoke("success", _rewardedCallbackArgString, _rewardedCallbackArgInt);
         // _rewardedCallback = null;
+        printApplovinAdInfo("Reward OnRewardedAdDismissedEvent", adInfo);
     }
 
-    private static void OnRewardedAdReceivedRewardEvent(string adUnitId, MaxSdk.Reward reward)
+    private static void OnRewardedAdReceivedRewardEvent(string adUnitId, MaxSdkBase.Reward reward, MaxSdkBase.AdInfo adInfo)
     {
         FunGamesAnalytics.NewAdEvent(GAAdAction.RewardReceived, GAAdType.RewardedVideo);
         _rewardedCallback?.Invoke("reward", _rewardedCallbackArgString, _rewardedCallbackArgInt);
         _rewardedCallback = null;
+        printApplovinAdInfo("Reward OnRewardedAdReceivedRewardEvent", adInfo);
     }
     public static MaxSdkBase.BannerPosition bannerPosition = MaxSdkBase.BannerPosition.BottomCenter;
 
-    private static void InitializeBannerAds()
+    public static bool isAdmobInitialized;
+    static BannerView _bannerView;
+    public static void InitializeBannerAds()
     {
-        MaxSdkCallbacks.OnBannerAdLoadedEvent += BannerIsLoaded;
+        if (_USE_BANNER_ADMOBOnly)
+        {
+            if (isAdmobInitialized)
+            {
+                if (_bannerView != null)
+                {
+                    _bannerView.Destroy();
+                }
+                _bannerView = new BannerView(_bannerAdmobAdUnitId, AdSize.Banner, bannerPosition == MaxSdkBase.BannerPosition.BottomCenter ? AdPosition.Bottom : AdPosition.Top);
+                // Raised when an ad is loaded into the banner view.
+                _bannerView.OnAdLoaded += (object sender, EventArgs eventArgs) =>
+                {
+                    // Debug.Log("Banner view loaded an ad with response : "
+                    //     + _bannerView.GetResponseInfo());
+                    printApplovinAdInfo<ResponseInfo, string>("Banner view loaded", _bannerView.GetResponseInfo(), "");
+                };
+                _bannerView.OnAdClosed += (object sender, EventArgs eventArgs) =>
+                {
+                    // Debug.Log("Banner view loaded an ad with response : "
+                    //     + _bannerView.GetResponseInfo());
+                    printApplovinAdInfo<ResponseInfo, string>("Banner view closed", _bannerView.GetResponseInfo(), "");
+                };
+                _bannerView.OnAdOpening += (object sender, EventArgs eventArgs) =>
+                {
+                    // Debug.Log("Banner view loaded an ad with response : "
+                    //     + _bannerView.GetResponseInfo());
+                    printApplovinAdInfo<ResponseInfo, string>("Banner view Opening", _bannerView.GetResponseInfo(), "");
+                };
+                // Raised when an ad fails to load into the banner view.
+                _bannerView.OnAdFailedToLoad += (object sender, AdFailedToLoadEventArgs error) =>
+                {
+                    Debug.LogError("Banner view failed to load an ad with error : "
+                        + error);
+                    printApplovinAdInfo<ResponseInfo, string>("Banner view faild", error.LoadAdError.GetResponseInfo(), error.LoadAdError.ToString());
+                };
+                // Raised when the ad is estimated to have earned money.
+                _bannerView.OnPaidEvent += (object sender, AdValueEventArgs adValue) =>
+                {
+                    printApplovinAdInfo<string, string>("Banner view paid", adValue.AdValue.ToString(), "");
+                    // Debug.Log(String.Format("Banner view paid {0} {1}.",
+                    //     adValue.Value,
+                    //     adValue.CurrencyCode));
+                };
 
-        try
-        {
-            MaxSdk.CreateBanner(_bannerAdUnitId, bannerPosition);
-            MaxSdk.SetBannerBackgroundColor(_bannerAdUnitId, Color.black);
-            Debug.Log("Banner Created");
+                Debug.Log("Banner admobOnly Created");
+                ShowBannerAd();
+            }
+
         }
-        catch
+        else
         {
-            Debug.Log("Failed Create Banner : Please Check Ad Unit");
+
+            MaxSdkCallbacks.OnBannerAdLoadedEvent += BannerIsLoaded;
+
+
+            MaxSdkCallbacks.Banner.OnAdLoadFailedEvent += OnBannerAdLoadFailedEvent;
+            MaxSdkCallbacks.Banner.OnAdClickedEvent += OnBannerAdClickedEvent;
+            MaxSdkCallbacks.Banner.OnAdRevenuePaidEvent += OnBannerAdRevenuePaidEvent;
+            MaxSdkCallbacks.Banner.OnAdExpandedEvent += OnBannerAdExpandedEvent;
+            MaxSdkCallbacks.Banner.OnAdCollapsedEvent += OnBannerAdCollapsedEvent;
+
+            try
+            {
+                MaxSdk.CreateBanner(_bannerAdUnitId, bannerPosition);
+                MaxSdk.SetBannerBackgroundColor(_bannerAdUnitId, Color.clear);
+                Debug.Log("Banner Created");
+            }
+            catch
+            {
+                Debug.Log("Failed Create Banner : Please Check Ad Unit");
+            }
         }
     }
+    public static bool IsBannerLoaded;
 
     private static void InitializeAppOpenAds()
     {
@@ -293,6 +375,7 @@ public class FunGamesMax
     public static void OnAppOpenDismissedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
     {
         MaxSdk.LoadAppOpenAd(_appopenAdUnitId);
+        printApplovinAdInfo("AppOpen OnAppOpenDismissedEvent", adInfo);
     }
     public static void _OnApplicationPause(bool pauseStatus)
     {
@@ -324,6 +407,65 @@ public class FunGamesMax
         }
     }
 
+    public static void printApplovinAdInfo(string tag, MaxSdkBase.AdInfo adInfo, MaxSdkBase.ErrorInfo errorInfo = null)
+    {
+        printApplovinAdInfo<MaxSdkBase.AdInfo, MaxSdkBase.ErrorInfo>(tag, adInfo, errorInfo);
+    }
+    public static void printApplovinAdInfo<T, T1>(string tag, T adInfo, T1 errorInfo)
+    {
+        string _tag = "[[" + tag + "]]";
+        string _adInfo = "";
+        string _ironSourceError = "";
+        if (adInfo != null)
+        {
+            _adInfo = " | " + adInfo.ToString();
+        }
+        if (errorInfo != null)
+        {
+            _ironSourceError = " | " + errorInfo.ToString();
+
+        }
+        Debug.Log(_tag + _adInfo + _ironSourceError);
+    }
+
+    private static void OnBannerAdLoadedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
+    {
+        printApplovinAdInfo("Banner Ad Loaded Event", adInfo);
+    }
+
+    private static void OnBannerAdLoadFailedEvent(string adUnitId, MaxSdkBase.ErrorInfo errorInfo)
+    {
+        printApplovinAdInfo("Banner Ad Load Failed Event", null, errorInfo);
+        IsBannerLoaded = false;
+
+    }
+
+    private static void OnBannerAdClickedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
+    {
+        printApplovinAdInfo("Banner Ad Clicked Event", adInfo);
+
+    }
+
+    private static void OnBannerAdRevenuePaidEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
+    {
+        printApplovinAdInfo("Banner Ad Revenue Paid Event", adInfo);
+
+    }
+
+    private static void OnBannerAdExpandedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
+    {
+        printApplovinAdInfo("Banner Ad Expanded Event", adInfo);
+        IsBannerLoaded = true;
+
+    }
+
+    private static void OnBannerAdCollapsedEvent(string adUnitId, MaxSdkBase.AdInfo adInfo)
+    {
+        printApplovinAdInfo("Banner Ad Collapsed Event", adInfo);
+        IsBannerLoaded = false;
+
+    }
+
     internal static void BannerIsLoaded(string adUnitId)
     {
         _isBannerLoaded = true;
@@ -336,24 +478,37 @@ public class FunGamesMax
 
     internal static void ShowBannerAd()
     {
-        if (_isBannerShowing)
+        if (_USE_BANNER_ADMOBOnly)
         {
-            return;
+            if (_bannerView == null)
+            {
+                return;
+            }
+            var requiest = new AdRequest.Builder();
+            _bannerView.LoadAd(requiest.Build());
         }
-
-        if (_showBannerAsked == false)
+        else
         {
-            _showBannerAsked = true;
-        }
+            if (_isBannerShowing)
+            {
+                return;
+            }
 
-        if (_isBannerLoaded == false)
-        {
-            return;
-        }
-        Debug.Log("Show Banner");
+            if (_showBannerAsked == false)
+            {
+                _showBannerAsked = true;
+            }
 
-        MaxSdk.ShowBanner(_bannerAdUnitId);
-        _isBannerShowing = true;
+            if (_isBannerLoaded == false)
+            {
+                return;
+            }
+
+            Debug.Log("Show Banner");
+
+            MaxSdk.ShowBanner(_bannerAdUnitId);
+            _isBannerShowing = true;
+        }
         FunGamesAnalytics.NewAdEvent(GAAdAction.Show, GAAdType.Banner);
     }
 

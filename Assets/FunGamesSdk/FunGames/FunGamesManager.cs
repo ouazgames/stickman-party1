@@ -40,7 +40,7 @@ public class FunGamesManager : MonoBehaviour
     {
         var settings = Resources.Load<FunGamesSettings>("FunGamesSettings");
         // First thing to init is Max but not ads
-        if (settings.useMax || settings.Use_IronSourceOnly)
+        if (settings.useMax)
         {
             MaxSdkCallbacks.OnSdkInitializedEvent += MaxIniCallback;
             FunGamesMax.Start();

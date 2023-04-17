@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6048907697713132302}
   m_Layer: 5
   m_Name: Panel
-  m_TagString: Untagged
+  m_TagString: banner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 55.09381}
-  m_SizeDelta: {x: 0, y: 110.1876}
+  m_AnchoredPosition: {x: 0, y: 84}
+  m_SizeDelta: {x: 0, y: 168}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3167928293195730454
 CanvasRenderer:

@@ -9,12 +9,32 @@ using System.Collections;
 using GoogleMobileAds.Api;
 using GoogleMobileAds.Common;
 // using GleyMobileAds;
+public partial class SROptions
+{
 
+    [System.ComponentModel.Category("Admob")]
+    public void ShowAdmobAdInspector()
+    {
+
+        MobileAds.OpenAdInspector((AdError) =>
+        {
+
+        });
+
+    }
+    [System.ComponentModel.Category("Applovin")]
+    public void ShowApplovinDebugger()
+    {
+
+        MaxSdk.ShowMediationDebugger();
+    }
+}
 public class AdsManager : MonoBehaviour
 {
 
     // public string YOUR_APP_KEY = "";
-    public bool USE_IRONSOURCE => FunGamesMax._USE_IRONSOURCE;
+    public static event System.Action onAdmobInitialized;
+
     public static int timingBonus = 5;
     public static int timingBonusShowTime = 5;
     public static int dailyBonus = 1;
@@ -22,6 +42,7 @@ public class AdsManager : MonoBehaviour
     public static int timingInterval = 180;
 
     public static bool actionTimersEnabled = false;
+    public static bool isAdmobInitialized = FunGamesMax.isAdmobInitialized;
 
 
     // private BannerView bannerView;
@@ -38,7 +59,7 @@ public class AdsManager : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            FunGamesMax.bannerPosition = MaxSdkBase.BannerPosition.BottomCenter;
+            FunGamesMax.bannerPosition = MaxSdkBase.BannerPosition.TopCenter;
             FunGamesMax.OnFunGamesInitialized += Init;
             DontDestroyOnLoad(gameObject);
             return;
@@ -70,12 +91,12 @@ public class AdsManager : MonoBehaviour
     void Init()
     {
         Debug.Log("AdsManager :: Init");
-        IronSourceEvents.onSdkInitializationCompletedEvent += SdkInitializationCompletedEvent;
-        // IronSource.Agent.init(IronSourceAdUnits.BANNER);
-        IronSourceInitilizer.AutoInitialize();
-#if UNITY_EDITOR
+        // IronSourceEvents.onSdkInitializationCompletedEvent += SdkInitializationCompletedEvent;
+        // // IronSource.Agent.init(IronSourceAdUnits.BANNER);
+        // IronSourceInitilizer.AutoInitialize();
         SdkInitializationCompletedEvent();
-#endif
+        // #if UNITY_EDITOR
+        // #endif
         // Advertisements.Instance.Initialize();
     }
     private const string ADS_PERSONALIZATION_CONSENT = "Ads";
@@ -93,21 +114,48 @@ public class AdsManager : MonoBehaviour
         //	( error ) => Debug.LogError( "Couldn't fetch url: " + error ) );
     }
 
+
+
+    // private NativeAd nativeAd;
+
+
+    // public void RequestNativeAd(System.Action<NativeAd> loadedCallback,System.Action onFaild) {
+    //     if(!FunGamesMax._USE_Native_ADMOBOnly){
+    //         onFaild?.Invoke();
+    //         return;
+    //     }
+    //     AdLoader adLoader = new AdLoader.Builder(FunGamesMax._nativeAdmobAdUnitId)
+    //         .ForNativeAd()
+    //         .Build();
+    //     var func = new System.EventHandler<NativeAdEventArgs>((sender,args)=>{
+    //         Debug.Log("Native ad loaded.");
+    //         this.nativeAd = args.nativeAd;
+    //         loadedCallback?.Invoke(nativeAd);
+    //         FunGamesMax.printApplovinAdInfo<string, string>("Native Ad loaded", args.nativeAd.ToString(),"");
+
+    //     });
+    //     var faild = new System.EventHandler<AdFailedToLoadEventArgs >((sender,args)=>{
+    //         FunGamesMax.printApplovinAdInfo<ResponseInfo,string>("Native Ad Load Failed Event",args.LoadAdError.GetResponseInfo(),args.LoadAdError.GetMessage());
+    //         Debug.Log("Native ad failed to load: " + args.LoadAdError.GetMessage());
+    //         onFaild?.Invoke();
+    //     });
+    //     adLoader.OnNativeAdLoaded += func;
+    //     adLoader.OnAdFailedToLoad += faild;
+    //     adLoader.LoadAd(new AdRequest.Builder().Build());
+    // }
+
+
+    // private void HandleNativeAdLoaded(object sender, NativeAdEventArgs args) {
+    // }
+
+
+
+
+
+
     private void SdkInitializationCompletedEvent()
     {
-        if (USE_IRONSOURCE)
-        {
-            Debug.Log("AdsManager :: IRONSOURCE Init");
-            _loadInterstitial();
-        }
-        if (FunGamesMax._USE_APPOPEN_ADMOBOnly)
-        {
-            Invoke("initAppOpen", 0.1f);
-        }
-        Invoke("ShowBanner", 0.2f);
-    }
-    void initAppOpen()
-    {
+
         RequestConfiguration requestConfiguration =
             new RequestConfiguration.Builder()
             .SetSameAppKeyEnabled(true).build();
@@ -116,10 +164,27 @@ public class AdsManager : MonoBehaviour
 
         MobileAds.Initialize((i) =>
         {
-            AppOpenAdManager.Instance.LoadAd();
-            AppStateEventNotifier.AppStateChanged += InonAppStateChanged;
-            isAppOpenInitiaed = true;
+            if (FunGamesMax._USE_APPOPEN_ADMOBOnly)
+            {
+                Invoke("initAppOpen", 0.1f);
+            }
+            FunGamesMax.isAdmobInitialized = true;
+            if (FunGamesMax._USE_BANNER_ADMOBOnly)
+            {
+                FunGamesMax.InitializeBannerAds();
+            }
+            else
+            {
+                Invoke("ShowBanner", 0.2f);
+            }
+            onAdmobInitialized?.Invoke();
         });
+    }
+    void initAppOpen()
+    {
+        AppOpenAdManager.Instance.LoadAd();
+        AppStateEventNotifier.AppStateChanged += InonAppStateChanged;
+
 
     }
 
@@ -127,7 +192,7 @@ public class AdsManager : MonoBehaviour
     public void OnAppStateChanged()
     {
 
-        if (!FunGamesMax._USE_IRONSOURCE)
+        if (!FunGamesMax._USE_APPOPEN_ADMOBOnly)
         {
             FunGamesMax.showAppOpen();
         }
@@ -147,131 +212,12 @@ public class AdsManager : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        IronSourceEvents.onInterstitialAdReadyEvent += InterstitialAdReadyEvent;
-        IronSourceEvents.onInterstitialAdLoadFailedEvent += InterstitialAdLoadFailedEvent;
-        IronSourceEvents.onInterstitialAdShowSucceededEvent += InterstitialAdShowSucceededEvent;
-        IronSourceEvents.onInterstitialAdShowFailedEvent += InterstitialAdShowFailedEvent;
-        IronSourceEvents.onInterstitialAdClickedEvent += InterstitialAdClickedEvent;
-        IronSourceEvents.onInterstitialAdOpenedEvent += InterstitialAdOpenedEvent;
-        IronSourceEvents.onInterstitialAdClosedEvent += InterstitialAdClosedEvent;
-
-        IronSourceEvents.onRewardedVideoAdOpenedEvent += RewardedVideoAdOpenedEvent;
-        IronSourceEvents.onRewardedVideoAdClickedEvent += RewardedVideoAdClickedEvent;
-        IronSourceEvents.onRewardedVideoAdClosedEvent += RewardedVideoAdClosedEvent;
-        IronSourceEvents.onRewardedVideoAvailabilityChangedEvent += RewardedVideoAvailabilityChangedEvent;
-        IronSourceEvents.onRewardedVideoAdStartedEvent += RewardedVideoAdStartedEvent;
-        IronSourceEvents.onRewardedVideoAdEndedEvent += RewardedVideoAdEndedEvent;
-        IronSourceEvents.onRewardedVideoAdRewardedEvent += RewardedVideoAdRewardedEvent;
-        IronSourceEvents.onRewardedVideoAdShowFailedEvent += RewardedVideoAdShowFailedEvent;
-    }
 
 
-    // Invoked when the initialization process has failed.
-    // @param description - string - contains information about the failure.
-    void InterstitialAdLoadFailedEvent(IronSourceError error)
-    {
-    }
-    // Invoked when the ad fails to show.
-    // @param description - string - contains information about the failure.
-    void InterstitialAdShowFailedEvent(IronSourceError error)
-    {
 
-        _onClosed?.Invoke();
-        _onClosed = null;
 
-    }
-    // Invoked when end user clicked on the interstitial ad
-    void InterstitialAdClickedEvent()
-    {
-    }
-    // Invoked when the interstitial ad closed and the user goes back to the application screen.
-    void InterstitialAdClosedEvent()
-    {
 
-        _onClosed?.Invoke();
-        _onClosed = null;
-        _loadInterstitial();
-    }
-    // Invoked when the Interstitial is Ready to shown after load function is called
-    void InterstitialAdReadyEvent()
-    {
-    }
-    // Invoked when the Interstitial Ad Unit has opened
-    void InterstitialAdOpenedEvent()
-    {
-    }
-    // Invoked right before the Interstitial screen is about to open.
-    // NOTE - This event is available only for some of the networks. 
-    // You should not treat this event as an interstitial impression, but rather use InterstitialAdOpenedEvent
-    void InterstitialAdShowSucceededEvent()
-    {
-    }
 
-    /////////////////////////REWARD///////////////////////////////
-
-    bool isRewarded;
-
-    //Invoked when the RewardedVideo ad view has opened.
-    //Your Activity will lose focus. Please avoid performing heavy 
-    //tasks till the video ad will be closed.
-    void RewardedVideoAdOpenedEvent()
-    {
-        isRewarded = false;
-    }
-    //Invoked when the RewardedVideo ad view is about to be closed.
-    //Your activity will now regain its focus.
-    void RewardedVideoAdClosedEvent()
-    {
-        _ClosedAd?.Invoke(isRewarded);
-        _ClosedAd = null;
-    }
-    //Invoked when there is a change in the ad availability status.
-    //@param - available - value will change to true when rewarded videos are available. 
-    //You can then show the video by calling showRewardedVideo().
-    //Value will change to false when no videos are available.
-    void RewardedVideoAvailabilityChangedEvent(bool available)
-    {
-        //Change the in-app 'Traffic Driver' state according to availability.
-        bool rewardedVideoAvailability = available;
-    }
-
-    //Invoked when the user completed the video and should be rewarded. 
-    //If using server-to-server callbacks you may ignore this events and wait for 
-    // the callback from the  ironSource server.
-    //@param - placement - placement object which contains the reward data
-    void RewardedVideoAdRewardedEvent(IronSourcePlacement placement)
-    {
-        isRewarded = true;
-    }
-    //Invoked when the Rewarded Video failed to show
-    //@param description - string - contains information about the failure.
-    void RewardedVideoAdShowFailedEvent(IronSourceError error)
-    {
-        _ClosedAd?.Invoke(false);
-        Debug.Log("IRONSAURCE :: " + error.getCode() + "//" + error.getDescription() + "//" + error.getErrorCode());
-        _ClosedAd = null;
-    }
-
-    // ----------------------------------------------------------------------------------------
-    // Note: the events below are not available for all supported rewarded video ad networks. 
-    // Check which events are available per ad network you choose to include in your build. 
-    // We recommend only using events which register to ALL ad networks you include in your build. 
-    // ----------------------------------------------------------------------------------------
-
-    //Invoked when the video ad starts playing. 
-    void RewardedVideoAdStartedEvent()
-    {
-    }
-    //Invoked when the video ad finishes playing. 
-    void RewardedVideoAdEndedEvent()
-    {
-    }
-    //Invoked when the video ad is clicked. 
-    void RewardedVideoAdClickedEvent(IronSourcePlacement placement)
-    {
-    }
 
 
 
@@ -285,16 +231,10 @@ public class AdsManager : MonoBehaviour
         // Advertisements.Instance.ShowBanner(BannerPosition.TOP);
 
         bannerShow = true;
-        if (USE_IRONSOURCE)
-        {
-            IronSource.Agent.loadBanner(IronSourceBannerSize.BANNER, IronSourceBannerPosition.TOP);
 
-        }
-        else
-        {
-            FunGamesMax.BannerIsLoaded("");
-            FunGamesMax.ShowBannerAd();
-        }
+        FunGamesMax.BannerIsLoaded("");
+        FunGamesMax.ShowBannerAd();
+
 
 
     }
@@ -305,14 +245,9 @@ public class AdsManager : MonoBehaviour
         // if (bannerView != null) bannerView.Show();
         // else RequestBanner();
         // Advertisements.Instance.HideBanner();
-        if (USE_IRONSOURCE)
-        {
-            IronSource.Agent.destroyBanner();
-        }
-        else
-        {
-            FunGamesMax.HideBannerAd();
-        }
+
+        FunGamesMax.HideBannerAd();
+
     }
 
     public bool HasBannerPlacement()
@@ -374,11 +309,13 @@ public class AdsManager : MonoBehaviour
 
         var pivotOrg = rectTransform.pivot;
         var bannerHeight = MaxSdkUtils.GetAdaptiveBannerHeight();
-        if (USE_IRONSOURCE)
-        {
-            bannerHeight = 100;
-        }
+
+        if (FunGamesMax.IsBannerLoaded)
+            bannerHeight = 200;
         else
+            bannerHeight = 0;
+
+        if (FunGamesMax._USE_BANNER_ADMOBOnly)
         {
             bannerHeight = 200;
         }
@@ -409,10 +346,7 @@ public class AdsManager : MonoBehaviour
     // {
     //     return BannerPosition.BOTTOM;
     // }
-    public IronSourceBannerPosition GetBannerPosition()
-    {
-        return FunGamesMax.bannerPosition == MaxSdkBase.BannerPosition.BottomCenter ? IronSourceBannerPosition.BOTTOM : IronSourceBannerPosition.TOP;
-    }
+
 
     public void DestroyBanner()
     {
@@ -428,31 +362,21 @@ public class AdsManager : MonoBehaviour
     public bool HasInterstitial()
     {
         var bol = true;
-        if (USE_IRONSOURCE)
-            bol = IronSource.Agent.isInterstitialReady();
+
         print("HAS INTERSTITIAL : " + bol);
         return bol;
     }
-    void _loadInterstitial()
-    {
-        IronSource.Agent.loadInterstitial();
-    }
+
     System.Action _onClosed;
     void _showInterstitial(System.Action onClosed)
     {
-        if (USE_IRONSOURCE)
-        {
-            _onClosed = onClosed;
-            IronSource.Agent.showInterstitial();
-        }
-        else
-        {
-            FunGamesMax.ShowAd(false, (s) =>
-            {
 
-                onClosed?.Invoke();
-            });
-        }
+        FunGamesMax.ShowAd(false, (s) =>
+        {
+
+            onClosed?.Invoke();
+        });
+
     }
 
     public bool ShowInterstitial()
@@ -516,26 +440,19 @@ public class AdsManager : MonoBehaviour
     public bool HasRewardedVideo()
     {
         var bol = FunGamesMax.IsRewardedAdReady();
-        if (USE_IRONSOURCE)
-            bol = IronSource.Agent.isRewardedVideoAvailable();
+
         print("HAS REWARD : " + bol);
         return bol;
     }
     System.Action<bool> _ClosedAd;
     void _showRewardedVideo(System.Action<bool> ClosedAd)
     {
-        if (USE_IRONSOURCE)
+
+        FunGamesMax.ShowAd(true, (s) =>
         {
-            _ClosedAd = ClosedAd;
-            IronSource.Agent.showRewardedVideo();
-        }
-        else
-        {
-            FunGamesMax.ShowAd(true, (s) =>
-            {
-                ClosedAd?.Invoke(s != FunGamesMax.AdState.failed);
-            });
-        }
+            ClosedAd?.Invoke(s != FunGamesMax.AdState.failed);
+        });
+
 
     }
 
@@ -601,113 +518,7 @@ public class AdsManager : MonoBehaviour
 
     void OnApplicationPause(bool isPaused)
     {
-        if (USE_IRONSOURCE)
-        {
-            IronSource.Agent.onApplicationPause(isPaused);
-        }
+
     }
 
-
-
-    // #region Banner callback handlers
-
-    // public void HandleAdLoaded(object sender, EventArgs args)
-    // {
-    //     print("HandleAdLoaded event received.");
-    // }
-
-    // public void HandleAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
-    // {
-    //     print("HandleFailedToReceiveAd event received with message: " + args.Message);
-    // }
-
-    // public void HandleAdOpened(object sender, EventArgs args)
-    // {
-    //     print("HandleAdOpened event received");
-    // }
-
-    // public void HandleAdClosed(object sender, EventArgs args)
-    // {
-    //     print("HandleAdClosed event received");
-    // }
-
-    // public void HandleAdLeftApplication(object sender, EventArgs args)
-    // {
-    //     print("HandleAdLeftApplication event received");
-    // }
-
-    // #endregion
-
-    // #region Interstitial callback handlers
-
-    // public void HandleInterstitialLoaded(object sender, EventArgs args)
-    // {
-    //     print("HandleInterstitialLoaded event received.");
-    // }
-
-    // public void HandleInterstitialFailedToLoad(object sender, AdFailedToLoadEventArgs args)
-    // {
-    //     print("HandleInterstitialFailedToLoad event received with message: " + args.Message);
-    // }
-
-    // public void HandleInterstitialOpened(object sender, EventArgs args)
-    // {
-    //     print("HandleInterstitialOpened event received");
-    // }
-
-    // public void HandleInterstitialClosed(object sender, EventArgs args)
-    // {
-    //     print("HandleInterstitialClosed event received");
-    //     RequestInterstitial();
-    //     CUtils.SetActionTime("show_ads");
-    // }
-
-    // public void HandleInterstitialLeftApplication(object sender, EventArgs args)
-    // {
-    //     print("HandleInterstitialLeftApplication event received");
-    // }
-
-    // #endregion
-
-    // #region RewardedAd callback handlers
-
-    // public void HandleRewardedAdLoaded(object sender, EventArgs args)
-    // {
-    //     print("HandleRewardedAdLoaded event received");
-    // }
-
-    // public void HandleRewardedAdFailedToLoad(object sender, AdErrorEventArgs args)
-    // {
-    //     print("HandleRewardedAdFailedToLoad event received with message: " + args.Message);
-    // }
-
-    // public void HandleRewardedAdOpening(object sender, EventArgs args)
-    // {
-    //     print("HandleRewardedAdOpening event received");
-    // }
-
-    // public void HandleRewardedAdFailedToShow(object sender, AdErrorEventArgs args)
-    // {
-    //     print("HandleRewardedAdFailedToShow event received with message: " + args.Message);
-    // }
-
-    // public void HandleRewardedAdClosed(object sender, EventArgs args)
-    // {
-    //     print("HandleRewardedAdClosed event received");
-
-    //     onRewardedAdClosed?.Invoke();
-    //     RequestAndLoadRewardedAd();
-    //     CUtils.SetActionTime("show_ads");
-    // }
-
-    // public void HandleUserEarnedReward(object sender, Reward args)
-    // {
-    //     string type = args.Type;
-    //     double amount = args.Amount;
-    //     print("HandleRewardedAdRewarded event received for " + amount.ToString() + " " + type);
-
-    //     onUserEarnedReward?.Invoke();
-    // }
-
-    // #endregion
 }

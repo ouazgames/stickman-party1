@@ -8,7 +8,7 @@ using FunGames.Sdk.RemoteConfig;
 using System.Collections.Generic;
 using System.Collections;
 // using Facebook.Unity;
-#if UNITY_EDITOR
+#if UNITY_EDITOR && UNITY_IOS
 using UnityEditor.Callbacks;
 using UnityEditor;
 using UnityEditor.iOS.Xcode;
