@@ -240,7 +240,7 @@ public class TankDeathmatchController : MonoBehaviour
 
 	private void Update()
 	{
-		ApplovineAdsManager.Instance.hideBanner();
+		AdsManager.Instance.HideBanner();
 		if (time <= 2f && time > 0f && !IsGameOver && CountDownSoundTimer >= 2f)
 		{
 			Source.PlayOneShot(TimerSound);

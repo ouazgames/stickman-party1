@@ -207,7 +207,8 @@ public class GhostGameController : MonoBehaviour
 
 	private void Update()
 	{
-		ApplovineAdsManager.Instance.hideBanner();
+		//AdsManager.Instance.HideBanner();
+		AdsManager.Instance.HideBanner();
 		if (IsStart)
 		{
 			Players.RemoveAll((GameObject item) => item == null);
@@ -216,7 +217,7 @@ public class GhostGameController : MonoBehaviour
 		if (IsStart && ListNumber <= 1 && !IsGameOver)
 		{
 			IGameOver();
-			ApplovineAdsManager.Instance.showinter();
+			
 			IsStart = false;
 			IsGameOver = true;
 		}
@@ -224,7 +225,7 @@ public class GhostGameController : MonoBehaviour
 	
 	public void IGameOver()
 	{
-		
+		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
 		GameOverPanel.SetActive(value: true);
 		BGMusic.SetActive(value: false);
 		GameAnalytic.AddProgression(new LevelProgression()

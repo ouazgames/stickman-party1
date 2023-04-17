@@ -243,7 +243,7 @@ public class BumperCarGameController : MonoBehaviour
 
 	private void Update()
 	{
-		ApplovineAdsManager.Instance.hideBanner();
+		AdsManager.Instance.HideBanner();
 		CountText[0].text = string.Concat(RedCount);
 		CountText[1].text = string.Concat(BlueCount);
 		CountText[2].text = string.Concat(GreenCount);
@@ -458,7 +458,7 @@ public class BumperCarGameController : MonoBehaviour
 
 		});
 		BGMusic.SetActive(value: false);
-		ApplovineAdsManager.Instance.showinter();
+		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
 		GameObject[] colliders = Colliders;
 		for (int i = 0; i < colliders.Length; i++)
 		{

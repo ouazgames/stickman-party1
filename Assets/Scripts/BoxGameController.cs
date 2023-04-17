@@ -214,7 +214,8 @@ public class BoxGameController : MonoBehaviour
 
 	private void Update()
 	{
-		ApplovineAdsManager.Instance.hideBanner();
+		//AdsManager.Instance.HideBanner();
+		AdsManager.Instance.HideBanner();
 		PressTimer += Time.deltaTime;
 		if (time <= 2f && time > 0f && !IsGameOver && CountDownSoundTimer >= 2f)
 		{
@@ -298,7 +299,7 @@ public class BoxGameController : MonoBehaviour
 			v_LevelName = "Level Box Game"
 
 		});
-		ApplovineAdsManager.Instance.showinter();
+		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
 		//GameOverPanel.SetActive(value: true);
 		BGMusic.SetActive(value: false);
 		int num = Mathf.Max(ColorCount);

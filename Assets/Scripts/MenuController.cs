@@ -87,7 +87,7 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		ApplovineAdsManager.Instance.showinter();
+		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
 	}
 
 	public void TankGameButton()
@@ -104,7 +104,7 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		ApplovineAdsManager.Instance.showinter();
+		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
 	}
 
 	public void RaceGameButton()
@@ -121,7 +121,7 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		ApplovineAdsManager.Instance.showinter();
+		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
 	}
 
 	public void SoccerGameButton()
@@ -139,7 +139,7 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		ApplovineAdsManager.Instance.showinter();
+		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
 	}
 
 	public void SumoGameButton()
@@ -156,7 +156,7 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		ApplovineAdsManager.Instance.showinter();
+		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
 	}
 
 	public void SeaBattleGameButton()
@@ -173,7 +173,7 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		ApplovineAdsManager.Instance.showinter();
+		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
 	}
 
 	public void GhostGameButton()
@@ -190,7 +190,7 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		ApplovineAdsManager.Instance.showinter();
+		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
 	}
 
 	public void BumperGameButton()
@@ -207,7 +207,7 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		ApplovineAdsManager.Instance.showinter();
+		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
 	}
 
 	public void ColorGameButton()
@@ -224,7 +224,7 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		ApplovineAdsManager.Instance.showinter();
+		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
 	}
 
 	public void BoxGameButton()
@@ -241,7 +241,7 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		ApplovineAdsManager.Instance.showinter();
+		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
 	}
 
 	public void BackToMainMenu()

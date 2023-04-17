@@ -178,7 +178,7 @@ public class SoccerGameController : MonoBehaviour
 
 	private void Update()
 	{
-		ApplovineAdsManager.Instance.hideBanner();
+		AdsManager.Instance.HideBanner();
 		if (time <= 2f && time > 0f && !IsGameOver && CountDownSoundTimer >= 2f)
 		{
 			Source.PlayOneShot(TimerSound);
@@ -257,7 +257,7 @@ public class SoccerGameController : MonoBehaviour
 		});
 		//GameOverPanel.SetActive(value: true);
 		BGMusic.SetActive(value: false);
-		ApplovineAdsManager.Instance.showinter();
+		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
 		if (PlayerPrefs.GetInt("IsCups") == 0)
 		{
 			Invoke("GetButtons", 2f);

@@ -5,19 +5,17 @@ using UnityEngine;
 public class banner : MonoBehaviour
 {
     // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
 
     // Update is called once per frame
     void Update()
     {
-       
-        
-            ApplovineAdsManager.Instance.InitializeBannerAds();
-            ApplovineAdsManager.Instance.showbanner();
-        
+
+
+        //ApplovineAdsManager.Instance.InitializeBannerAds();
+        //ApplovineAdsManager.Instance.showbanner();
+        AdsManager.Instance.ShowBanner();
+
+
 
     }
 }

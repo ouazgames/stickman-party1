@@ -148,7 +148,7 @@ public class SumoGameController : MonoBehaviour
 
 	private void Update()
 	{
-		ApplovineAdsManager.Instance.hideBanner();
+		AdsManager.Instance.HideBanner();
 		if (IsStart)
 		{
 			Players.RemoveAll((GameObject item) => item == null);
@@ -173,7 +173,7 @@ public class SumoGameController : MonoBehaviour
 			v_LevelName = "Level Sumo Game"
 
 		});
-		ApplovineAdsManager.Instance.showinter();
+		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
 		if (PlayerPrefs.GetInt("IsCups") == 0)
 		{
 			Invoke("GetButtons", 2f);

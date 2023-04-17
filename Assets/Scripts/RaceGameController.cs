@@ -309,7 +309,7 @@ public class RaceGameController : MonoBehaviour
 
 	private void Update()
 	{
-		ApplovineAdsManager.Instance.hideBanner();
+		AdsManager.Instance.HideBanner();
 		ActivePlayers.RemoveAll((GameObject item) => item == null);
 		Players.RemoveAll((GameObject item) => item == null);
 	}

@@ -190,7 +190,7 @@ public class RunGameController : MonoBehaviour
 
 	private void Update()
 	{
-		ApplovineAdsManager.Instance.hideBanner();
+		AdsManager.Instance.HideBanner();
 		if (IsStart)
 		{
 			Players.RemoveAll((GameObject item) => item == null);
@@ -235,7 +235,7 @@ public class RunGameController : MonoBehaviour
 		}
 		//GameOverPanel.SetActive(value: true);
 		BGMusic.SetActive(value: false);
-		ApplovineAdsManager.Instance.showinter();
+		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
 		Invoke("GetButtons", 2f);
 		if (ListNumber == 1)
 		{

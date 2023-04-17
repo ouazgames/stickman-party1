@@ -31,6 +31,7 @@ namespace GoogleMobileAds.Editor
 
             return instance;
         }
+        public bool enable;
 
         [SerializeField]
         private string adMobAndroidAppId = string.Empty;

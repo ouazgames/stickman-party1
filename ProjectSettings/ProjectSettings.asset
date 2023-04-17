@@ -667,8 +667,8 @@ PlayerSettings:
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
     1: EASY_MOBILE;EM_ADMOB
-    4: EASY_MOBILE;EM_ADMOB
-    7: EASY_MOBILE;EM_ADMOB
+    4: EASY_MOBILE;EM_ADMOB;gameanalytics_ironsource_enabled
+    7: EASY_MOBILE;EM_ADMOB;gameanalytics_ironsource_enabled
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:

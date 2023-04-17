@@ -13,10 +13,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
-using AppLovinMax.ThirdParty.MiniJson;
 using UnityEditor;
 using UnityEditor.Android;
-using UnityEngine;
 
 namespace AppLovinMax.Scripts.Editor
 {
@@ -73,7 +71,7 @@ namespace AppLovinMax.Scripts.Editor
             }
 
 #if UNITY_2019_3_OR_NEWER
-            // Enable AndroidX and Jetifier properties
+            // Enable AndroidX and Jetifier properties 
             gradlePropertiesUpdated.Add(PropertyAndroidX + EnableProperty);
             gradlePropertiesUpdated.Add(PropertyJetifier + EnableProperty);
 #endif
@@ -91,17 +89,6 @@ namespace AppLovinMax.Scripts.Editor
             }
 
             ProcessAndroidManifest(path);
-
-            var rawResourceDirectory = Path.Combine(path, "src/main/res/raw");
-            if (AppLovinSettings.Instance.ShowInternalSettingsInIntegrationManager)
-            {
-                // For Unity 2018.1 or older, the consent flow is enabled in AppLovinPreProcessAndroid.
-                AppLovinPreProcessAndroid.EnableConsentFlowIfNeeded(rawResourceDirectory);
-            }
-            else
-            {
-                AppLovinPreProcessAndroid.EnableTermsFlowIfNeeded(rawResourceDirectory);
-            }
         }
 
         public int callbackOrder

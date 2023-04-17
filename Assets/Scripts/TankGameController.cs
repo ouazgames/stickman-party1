@@ -236,7 +236,7 @@ public class TankGameController : MonoBehaviour
 			v_LevelName = "Level Tank Game"
 
 		});
-		ApplovineAdsManager.Instance.showinter();
+		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
 		if (PlayerPrefs.GetInt("IsCups") == 0)
 		{
 			Invoke("GetButtons", 2f);
