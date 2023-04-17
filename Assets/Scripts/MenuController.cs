@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using EasyMobile;
+
 public class MenuController : MonoBehaviour
 {
 	private bool IsSoccer;
@@ -66,11 +66,7 @@ public class MenuController : MonoBehaviour
 
 	private void Start()
 	{
-        bool isReady = AdManager.IsInterstitialAdReady();
-        if (isReady)
-        {
-           AdManager.ShowInterstitialAd();
-        }
+       
 		if (Cam.Length != 0)
 		{
 			Cam[0].SetActive(value: true);

@@ -16,6 +16,7 @@ MonoBehaviour:
   sdkKey: zEt4_M4PkG_cNWU_sR4p4RXZ6mE5AO4RAx8SQs1BVTZR5iMfLP54K_p1L4C6x88exH8F__Tr3QQ0TgrAyzCiPq
   setAttributionReportEndpoint: 0
   consentFlowEnabled: 0
+  consentFlowPlatform: 0
   consentFlowPrivacyPolicyUrl: 
   consentFlowTermsOfServiceUrl: 
   userTrackingUsageDescriptionEn: 
@@ -29,3 +30,4 @@ MonoBehaviour:
   userTrackingUsageDescriptionZhHant: 
   adMobAndroidAppId: 
   adMobIosAppId: 
+  showInternalSettingsInIntegrationManager: 0

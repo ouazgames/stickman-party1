@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using EasyMobile;
+
 public class BigTournament : MonoBehaviour
 {
 	public int GameCount;
@@ -58,7 +58,7 @@ public class BigTournament : MonoBehaviour
 
 	private void StartGame()
 	{
-        AdManager.DestroyBannerAd();
+        
 		SceneManager.LoadScene(Levelname[0]);
 	}
 }

@@ -1,5 +1,5 @@
 using UnityEngine;
-using EasyMobile;
+
 public class ShowAds : MonoBehaviour
 {
 	private static int advCount;
@@ -9,11 +9,11 @@ public class ShowAds : MonoBehaviour
 		advCount++;
 		if (advCount % 2 == 0)
 		{
-bool isReady = AdManager.IsInterstitialAdReady();
+			bool isReady = false;// AdManager.IsInterstitialAdReady();
 // Show it if it's ready
 if (isReady)
 {
-AdManager.ShowInterstitialAd();
+//AdManager.ShowInterstitialAd();
 }
 		}
 	}

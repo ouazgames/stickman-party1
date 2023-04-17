@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using EasyMobile;
+
 public class CaseScript : MonoBehaviour
 {
 	public bool IsTanks;
@@ -62,7 +62,7 @@ public class CaseScript : MonoBehaviour
 			Level3name = Level3.GetComponent<RandomLevel>().LevelName;
 			PlayerPrefs.SetString("Level2name", Level2name);
 			PlayerPrefs.SetString("Level3name", Level3name);
-            AdManager.DestroyBannerAd();
+            
 			SceneManager.LoadScene(Level1name);
 		}
 		else
@@ -72,7 +72,7 @@ public class CaseScript : MonoBehaviour
 			Level3name = Level3.GetComponent<RandomLevelTanks>().LevelName;
 			PlayerPrefs.SetString("Level2name", Level2name);
 			PlayerPrefs.SetString("Level3name", Level3name);
-            AdManager.DestroyBannerAd();
+            
 			SceneManager.LoadScene(Level1name);
 		}
 	}

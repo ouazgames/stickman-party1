@@ -309,6 +309,7 @@ public class RaceGameController : MonoBehaviour
 
 	private void Update()
 	{
+		ApplovineAdsManager.Instance.hideBanner();
 		ActivePlayers.RemoveAll((GameObject item) => item == null);
 		Players.RemoveAll((GameObject item) => item == null);
 	}
@@ -320,6 +321,13 @@ public class RaceGameController : MonoBehaviour
 
 	public void IGameOver()
 	{
+		GameAnalytic.AddProgression(new LevelProgression()
+		{
+
+			state = ProgressionStatus.Completed,
+			v_LevelName = "Level Race Game"
+
+		});
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
 			OptionsIntro.Instance.TriggerVibrate();
@@ -609,7 +617,7 @@ public class RaceGameController : MonoBehaviour
 						PlayerPrefs.SetInt("GreenNewCount", 0);
 					}
 				}
-				GameOverPanel.SetActive(value: true);
+				//GameOverPanel.SetActive(value: true);
 				BGMusic.SetActive(value: false);
 				Invoke("GetCount", 3f);
 			}
@@ -618,7 +626,7 @@ public class RaceGameController : MonoBehaviour
 		{
 			ActivateGameOver();
 		}
-		SA.ShowInter();
+		//SA.ShowInter();
 	}
 
 	private void GetCount()
