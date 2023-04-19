@@ -255,7 +255,7 @@ public class SoccerGameController : MonoBehaviour
             v_LevelName = "Level Soccer Game"
 
         });
-        //GameOverPanel.SetActive(value: true);
+        GameOverPanel.SetActive(value: true);
         BGMusic.SetActive(value: false);
         AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
         if (PlayerPrefs.GetInt("IsCups") == 0)

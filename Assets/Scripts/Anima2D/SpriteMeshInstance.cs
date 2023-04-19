@@ -275,7 +275,7 @@ namespace Anima2D
 		{
 			if ((bool)m_CurrentMesh)
 			{
-				UnityEngine.Object.Destroy(m_CurrentMesh);
+				UnityEngine.Object.DestroyImmediate(m_CurrentMesh);
 			}
 		}
 

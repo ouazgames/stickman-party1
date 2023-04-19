@@ -1,4 +1,6 @@
 using UnityEngine;
+using MoreMountains.NiceVibrations;
+
 
 public class OptionsIntro : MonoBehaviour
 {
@@ -63,7 +65,8 @@ public class OptionsIntro : MonoBehaviour
     {
         if (VibrationCheck == 0)
         {
-            // MMVibrationManager.Vibrate();
+            MMVibrationManager.Vibrate();
+            Debug.Log("vibration nice");
         }
     }
 
@@ -71,7 +74,8 @@ public class OptionsIntro : MonoBehaviour
     {
         if (VibrationCheck == 0)
         {
-            // MMVibrationManager.Haptic(HapticTypes.Selection);
+            Debug.Log("vibration");
+             MMVibrationManager.Haptic((MoreMountains.NiceVibrations.HapticTypes)HapticTypes.Selection,false,true, this);
         }
     }
 }

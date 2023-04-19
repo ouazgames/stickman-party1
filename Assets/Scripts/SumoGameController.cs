@@ -164,7 +164,7 @@ public class SumoGameController : MonoBehaviour
 
     public void IGameOver()
     {
-        //GameOverPanel.SetActive(value: true);
+        GameOverPanel.SetActive(value: true);
         BGMusic.SetActive(value: false);
         GameAnalytic.AddProgression(new LevelProgression()
         {

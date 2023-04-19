@@ -301,7 +301,7 @@ public class ColorGameController : MonoBehaviour
 
         });
         AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
-        //GameOverPanel.SetActive(value: true);
+        GameOverPanel.SetActive(value: true);
         BGMusic.SetActive(value: false);
         int num = Mathf.Max(ColorCount);
         for (int i = 0; i < ColorCount.Length; i++)

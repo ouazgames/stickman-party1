@@ -233,7 +233,7 @@ public class RunGameController : MonoBehaviour
         {
             return;
         }
-        //GameOverPanel.SetActive(value: true);
+        GameOverPanel.SetActive(value: true);
         BGMusic.SetActive(value: false);
         AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
         Invoke("GetButtons", 2f);

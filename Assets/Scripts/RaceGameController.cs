@@ -618,7 +618,7 @@ public class RaceGameController : MonoBehaviour
                         PlayerPrefs.SetInt("GreenNewCount", 0);
                     }
                 }
-                //GameOverPanel.SetActive(value: true);
+                GameOverPanel.SetActive(value: true);
                 BGMusic.SetActive(value: false);
                 Invoke("GetCount", 3f);
             }
