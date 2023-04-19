@@ -404,7 +404,7 @@ public class AdsManager : MonoBehaviour
         } */
         return false;
     }
-    public const float MaxTime = 50;
+    public const float MaxTime = 30;
     public static float timer = MaxTime;
     public void ShowInterstitialTimer(Action action)
     {

@@ -7,7 +7,7 @@
     <package>com.applovin.mediation:google-ad-manager-adapter:[22.0.0.1]</package>
     <package>com.applovin.mediation:unityads-adapter:4.6.1.0</package>
     <package>com.applovin:applovin-sdk:11.6.1</package>
-    <package>com.applovin:applovin-sdk:11.8.1</package>
+    <package>com.applovin:applovin-sdk:11.9.0</package>
     <package>com.google.android.gms:play-services-ads:21.0.0</package>
     <package>com.google.android.gms:play-services-ads:21.4.0</package>
     <package>com.google.android.gms:play-services-ads-identifier:18.0.1</package>

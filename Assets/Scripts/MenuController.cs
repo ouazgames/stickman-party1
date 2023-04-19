@@ -75,7 +75,8 @@ public class MenuController : MonoBehaviour
 
 	public void StickmanRun()
 	{
-		needMap = true;
+		AdsManager.Instance.ShowInterstitialTimer(() => {
+			needMap = true;
 		GameNum = 2;
 		Source.PlayOneShot(ButtonSound);
 		if (Cam.Length != 0)
@@ -87,12 +88,13 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
+		});
 	}
 
 	public void TankGameButton()
 	{
-		needMap = true;
+		AdsManager.Instance.ShowInterstitialTimer(() => {
+			needMap = true;
 		GameNum = 3;
 		Source.PlayOneShot(ButtonSound);
 		if (Cam.Length != 0)
@@ -104,12 +106,13 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
+		});
 	}
 
 	public void RaceGameButton()
 	{
-		needMap = true;
+		AdsManager.Instance.ShowInterstitialTimer(() => {
+			needMap = true;
 		GameNum = 4;
 		Source.PlayOneShot(ButtonSound);
 		if (Cam.Length != 0)
@@ -121,12 +124,13 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
+		});
 	}
 
 	public void SoccerGameButton()
 	{
-		IsSoccer = true;
+		AdsManager.Instance.ShowInterstitialTimer(() => {
+			IsSoccer = true;
 		needMap = false;
 		Source.PlayOneShot(ButtonSound);
 		LevelName = "Soccer";
@@ -139,12 +143,13 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
+		});
 	}
 
 	public void SumoGameButton()
 	{
-		needMap = false;
+		AdsManager.Instance.ShowInterstitialTimer(() => {
+			needMap = false;
 		Source.PlayOneShot(ButtonSound);
 		LevelName = "Sumo";
 		if (Cam.Length != 0)
@@ -156,12 +161,13 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
+		});
 	}
 
 	public void SeaBattleGameButton()
 	{
-		needMap = false;
+		AdsManager.Instance.ShowInterstitialTimer(() => {
+			needMap = false;
 		Source.PlayOneShot(ButtonSound);
 		LevelName = "SeaBattle";
 		if (Cam.Length != 0)
@@ -173,12 +179,13 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
+		});
 	}
 
 	public void GhostGameButton()
 	{
-		needMap = false;
+		AdsManager.Instance.ShowInterstitialTimer(() => {
+			needMap = false;
 		Source.PlayOneShot(ButtonSound);
 		LevelName = "Ghost";
 		if (Cam.Length != 0)
@@ -190,12 +197,13 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
+		});
 	}
 
 	public void BumperGameButton()
 	{
-		needMap = false;
+		AdsManager.Instance.ShowInterstitialTimer(() => {
+			needMap = false;
 		Source.PlayOneShot(ButtonSound);
 		LevelName = "Bumpercar";
 		if (Cam.Length != 0)
@@ -207,11 +215,13 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
+		});
 	}
 
 	public void ColorGameButton()
 	{
+		AdsManager.Instance.ShowInterstitialTimer(() => { 
+	
 		needMap = false;
 		Source.PlayOneShot(ButtonSound);
 		LevelName = "ColorDash";
@@ -224,11 +234,12 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
+		});
 	}
 
 	public void BoxGameButton()
 	{
+        AdsManager.Instance.ShowInterstitialTimer(() => { 
 		needMap = false;
 		Source.PlayOneShot(ButtonSound);
 		LevelName = "BoxGame";
@@ -241,12 +252,14 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
+		  });
 	}
 
 	public void BackToMainMenu()
 	{
-		Source.PlayOneShot(ButtonBack);
+		AdsManager.Instance.ShowInterstitialTimer(() => {
+
+			Source.PlayOneShot(ButtonBack);
 		if (Cam.Length != 0)
 		{
 			Cam[0].SetActive(value: true);
@@ -259,6 +272,7 @@ public class MenuController : MonoBehaviour
 		PlayerPrefs.SetInt("Tournament", 0);
 		PlayerPrefs.SetInt("NeedBot", 0);
 		IsSoccer = false;
+		});
 	}
 
 	public void BackToPlayers()
