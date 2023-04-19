@@ -5,7 +5,7 @@
 
 #import "MAUnityAdManager.h"
 
-#define VERSION @"5.8.1"
+#define VERSION @"5.9.0"
 
 #define KEY_WINDOW [UIApplication sharedApplication].keyWindow
 #define DEVICE_SPECIFIC_ADVIEW_AD_FORMAT ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) ? MAAdFormat.leader : MAAdFormat.banner
@@ -199,7 +199,8 @@ static ALUnityBackgroundCallback backgroundCallback;
                                                        @"consentDialogState" : consentDialogStateStr,
                                                        @"countryCode" : configuration.countryCode,
                                                        @"appTrackingStatus" : appTrackingStatus,
-                                                       @"isSuccessfullyInitialized" : ([self.sdk isInitialized] ? @"true" : @"false")}];
+                                                       @"isSuccessfullyInitialized" : @([self.sdk isInitialized]),
+                                                       @"isTestModeEnabled" : @([configuration isTestModeEnabled])}];
     }];
     
     return self.sdk;
@@ -622,6 +623,7 @@ static ALUnityBackgroundCallback backgroundCallback;
     }
     
     networkResponseDict[@"credentials"] = response.credentials;
+    networkResponseDict[@"isBidding"] = @([response isBidding]);
     
     MAError *error = response.error;
     if ( error )
@@ -2011,6 +2013,25 @@ static ALUnityBackgroundCallback backgroundCallback;
 - (void)didDismissUserConsentDialog
 {
     [MAUnityAdManager forwardUnityEventWithArgs: @{@"name" : @"OnSdkConsentDialogDismissedEvent"}];
+}
+
+#pragma mark - Consent Flow
+
+- (void)startConsentFlow
+{
+    [self.sdk.cfService scfWithCompletionHander:^(ALCFError * _Nullable error) {
+        
+        NSMutableDictionary<NSString *, id> *args = [NSMutableDictionary dictionaryWithCapacity: 3];
+        args[@"name"] = @"OnSdkConsentFlowCompletedEvent";
+        
+        if ( error )
+        {
+            args[@"code"] = @(error.code);
+            args[@"message"] = error.message;
+        }
+        
+        [MAUnityAdManager forwardUnityEventWithArgs: args];
+    }];
 }
 
 #pragma mark - Variable Service (Deprecated)

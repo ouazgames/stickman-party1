@@ -31,17 +31,17 @@ MonoBehaviour:
   androidThumbnailAdUnitId: 
   useGdpr: 0
   Use_Appopen_AdmobOnly: 0
-  IOSAppopenAdmobAdUnitId: ca-app-pub-3940256099942544/3419835294
+  IOSAppopenAdmobAdUnitId: ca-app-pub-7024820506501610/3644726140
   androidAppopenAdmobAdUnitId: ca-app-pub-3940256099942544/3419835294
   Use_Banner_AdmobOnly: 1
-  IOSBannerAdmobAdUnitId: ca-app-pub-3940256099942544/6300978111
+  IOSBannerAdmobAdUnitId: ca-app-pub-7024820506501610/3158858069
   androidBannerAdmobAdUnitId: ca-app-pub-3940256099942544/6300978111
   useMax: 1
   maxSdkKey: zEt4_M4PkG_cNWU_sR4p4RXZ6mE5AO4RAx8SQs1BVTZR5iMfLP54K_p1L4C6x88exH8F__Tr3QQ0TgrAyzCiPq
-  iOSInterstitialAdUnitId: c55e832a09224b51
-  iOSRewardedAdUnitId: 5aa54a08f721df35
-  iOSBannerAdUnitId: f8839e6f5e368403
-  IOSAppopenAdUnitId: 0e78c9e72a534a34
+  iOSInterstitialAdUnitId: 42c23256fbcd97c9
+  iOSRewardedAdUnitId: fad99109b75139de
+  iOSBannerAdUnitId: a3125edb5842efc3
+  IOSAppopenAdUnitId: 6303a8438a11dedc
   androidInterstitialAdUnitId: 6312eef946f792f2
   androidRewardedAdUnitId: a1ca5d7c989c0664
   androidBannerAdUnitId: 898da242efe287dc
