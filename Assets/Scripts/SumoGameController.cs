@@ -173,7 +173,7 @@ public class SumoGameController : MonoBehaviour
             v_LevelName = "Level Sumo Game"
 
         });
-        AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
+        //AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
         if (PlayerPrefs.GetInt("IsCups") == 0)
         {
             Invoke("GetButtons", 2f);

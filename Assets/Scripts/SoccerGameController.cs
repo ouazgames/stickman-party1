@@ -257,7 +257,7 @@ public class SoccerGameController : MonoBehaviour
         });
         GameOverPanel.SetActive(value: true);
         BGMusic.SetActive(value: false);
-        AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
+        //AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
         if (PlayerPrefs.GetInt("IsCups") == 0)
         {
             Invoke("GetButtons", 2f);

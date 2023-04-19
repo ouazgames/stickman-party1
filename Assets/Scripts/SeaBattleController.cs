@@ -240,7 +240,7 @@ public class SeaBattleController : MonoBehaviour
             v_LevelName = "Level SeaBattle Game"
 
         });
-        AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
+       // AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
         GameOverPanel.SetActive(value: true);
 
         BGMusic.SetActive(value: false);

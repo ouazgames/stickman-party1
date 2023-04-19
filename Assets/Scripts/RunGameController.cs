@@ -235,7 +235,7 @@ public class RunGameController : MonoBehaviour
         }
         GameOverPanel.SetActive(value: true);
         BGMusic.SetActive(value: false);
-        AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
+      //  AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
         Invoke("GetButtons", 2f);
         if (ListNumber == 1)
         {

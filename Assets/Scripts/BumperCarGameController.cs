@@ -458,7 +458,7 @@ public class BumperCarGameController : MonoBehaviour
 
         });
         BGMusic.SetActive(value: false);
-        AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
+       // AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
         GameObject[] colliders = Colliders;
         for (int i = 0; i < colliders.Length; i++)
         {

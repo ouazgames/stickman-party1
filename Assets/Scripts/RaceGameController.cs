@@ -321,7 +321,7 @@ public class RaceGameController : MonoBehaviour
 
     public void IGameOver()
     {
-        AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
+       // AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
         GameAnalytic.AddProgression(new LevelProgression()
         {
 

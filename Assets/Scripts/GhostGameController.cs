@@ -225,7 +225,7 @@ public class GhostGameController : MonoBehaviour
 
     public void IGameOver()
     {
-        AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
+       // AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
         GameOverPanel.SetActive(value: true);
         BGMusic.SetActive(value: false);
         GameAnalytic.AddProgression(new LevelProgression()

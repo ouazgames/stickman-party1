@@ -300,7 +300,7 @@ public class ColorGameController : MonoBehaviour
             v_LevelName = "Color Game"
 
         });
-        AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
+       // AdsManager.Instance.ShowIntersitial(() => { Debug.Log("intersitial worked"); });
         GameOverPanel.SetActive(value: true);
         BGMusic.SetActive(value: false);
         int num = Mathf.Max(ColorCount);
