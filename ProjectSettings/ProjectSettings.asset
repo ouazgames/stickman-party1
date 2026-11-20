@@ -248,7 +248,7 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: /Users/daovanbao/Downloads/game androi/Dunk Ball/keystore_123456.keystore
+  AndroidKeystoreName: /Users/ouazgames/Downloads/game androi/Dunk Ball/keystore_123456.keystore
   AndroidKeyaliasName: gamenew
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
@@ -890,7 +890,7 @@ PlayerSettings:
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Stickman Party 1 2 3 4 Player Games
-  organizationId: daovanbao
+  organizationId: ouazgames
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 1
   virtualTexturingSupportEnabled: 0
