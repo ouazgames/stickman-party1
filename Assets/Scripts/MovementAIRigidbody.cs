@@ -308,9 +308,9 @@ public class MovementAIRigidbody : MonoBehaviour
 			if (IsWall(hitInfo.normal))
 			{
 				Vector3 normalized = Vector3.Cross(Vector3.Cross(hitInfo.normal, Vector3.down), hitInfo.normal).normalized;
-				float num2 = groundFollowDistance - hitInfo.distance;
+				float value2 = groundFollowDistance - hitInfo.distance;
 				RaycastHit hitInfo2 = default(RaycastHit);
-				if (num2 > 0f && SphereCast(normalized, out hitInfo2, num2, groundCheckMask.value) && !IsWall(hitInfo2.normal))
+				if (value2 > 0f && SphereCast(normalized, out hitInfo2, value2, groundCheckMask.value) && !IsWall(hitInfo2.normal))
 				{
 					Vector3 newPos = rb3D.position + normalized * hitInfo2.distance;
 					FoundGround(hitInfo2.normal, newPos);

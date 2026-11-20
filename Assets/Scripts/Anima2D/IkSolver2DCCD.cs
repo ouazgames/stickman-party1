@@ -31,9 +31,9 @@ namespace Anima2D
 			float num = 1f - Mathf.Lerp(0f, 0.99f, damping);
 			for (int j = 0; j < iterations; j++)
 			{
-				for (int num2 = base.solverPoses.Count - 1; num2 >= 0; num2--)
+				for (int value2 = base.solverPoses.Count - 1; value2 >= 0; value2--)
 				{
-					SolverPose solverPose2 = base.solverPoses[num2];
+					SolverPose solverPose2 = base.solverPoses[value2];
 					Vector3 b = a - solverPose2.solverPosition;
 					Vector3 a2 = vector - solverPose2.solverPosition;
 					b.z = 0f;
@@ -42,9 +42,9 @@ namespace Anima2D
 					solverPose2.solverRotation *= quaternion;
 					Vector3 solverPosition = solverPose2.solverPosition;
 					vector = RotatePositionFrom(vector, solverPosition, quaternion);
-					for (int num3 = base.solverPoses.Count - 1; num3 > num2; num3--)
+					for (int value3 = base.solverPoses.Count - 1; value3 > value2; value3--)
 					{
-						SolverPose solverPose3 = base.solverPoses[num3];
+						SolverPose solverPose3 = base.solverPoses[value3];
 						solverPose3.solverPosition = RotatePositionFrom(solverPose3.solverPosition, solverPosition, quaternion);
 					}
 				}

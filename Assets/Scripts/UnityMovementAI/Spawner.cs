@@ -53,18 +53,18 @@ namespace UnityMovementAI
 		private bool TryToCreateObject()
 		{
 			float num = UnityEngine.Random.Range(objectSizeRange.x, objectSizeRange.y);
-			float num2 = num / 2f;
+			float value2 = num / 2f;
 			Vector3 vector = default(Vector3);
-			vector.x = bottomLeft.x + UnityEngine.Random.Range(boundaryPadding + num2, widthHeight.x - boundaryPadding - num2);
+			vector.x = bottomLeft.x + UnityEngine.Random.Range(boundaryPadding + value2, widthHeight.x - boundaryPadding - value2);
 			if (isObj3D)
 			{
-				vector.z = bottomLeft.z + UnityEngine.Random.Range(boundaryPadding + num2, widthHeight.z - boundaryPadding - num2);
+				vector.z = bottomLeft.z + UnityEngine.Random.Range(boundaryPadding + value2, widthHeight.z - boundaryPadding - value2);
 			}
 			else
 			{
-				vector.y = bottomLeft.y + UnityEngine.Random.Range(boundaryPadding + num2, widthHeight.y - boundaryPadding - num2);
+				vector.y = bottomLeft.y + UnityEngine.Random.Range(boundaryPadding + value2, widthHeight.y - boundaryPadding - value2);
 			}
-			if (CanPlaceObject(num2, vector))
+			if (CanPlaceObject(value2, vector))
 			{
 				Transform transform = UnityEngine.Object.Instantiate(obj, vector, Quaternion.identity);
 				if (isObj3D)

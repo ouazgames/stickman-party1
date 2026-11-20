@@ -37,7 +37,7 @@ public class CFX_SpawnSystem : MonoBehaviour
 		GameObject gameObject = null;
 		if (instance.onlyGetInactiveObjects)
 		{
-			int num2 = num;
+			int value2 = num;
 			while (true)
 			{
 				gameObject = instance.instantiatedObjects[instanceID][num];
@@ -47,7 +47,7 @@ public class CFX_SpawnSystem : MonoBehaviour
 				{
 					break;
 				}
-				if (num == num2)
+				if (num == value2)
 				{
 					if (instance.instantiateIfNeeded)
 					{

@@ -338,7 +338,7 @@ public class BumperCarGameController : MonoBehaviour
                 {
                     continue;
                 }
-                for (int num2 = 0; num2 < PlayerNames.Length; num2++)
+                for (int value2 = 0; value2 < PlayerNames.Length; value2++)
                 {
                     if (PlayerNames[2] == Players[k].name)
                     {
@@ -373,7 +373,7 @@ public class BumperCarGameController : MonoBehaviour
                 {
                     continue;
                 }
-                for (int num3 = 0; num3 < PlayerNames.Length; num3++)
+                for (int value3 = 0; value3 < PlayerNames.Length; value3++)
                 {
                     if (PlayerNames[3] == Players[l].name)
                     {

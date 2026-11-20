@@ -68,7 +68,7 @@ public class SkinnedMeshCombiner : MonoBehaviour
 			}
 		}
 		int[] array = new int[num];
-		int num2 = 0;
+		int value2 = 0;
 		for (int j = 0; j < m_SpriteMeshInstances.Length; j++)
 		{
 			SpriteMeshInstance spriteMeshInstance2 = spriteMeshInstances[j];
@@ -79,13 +79,13 @@ public class SkinnedMeshCombiner : MonoBehaviour
 				for (int k = 0; k < boneWeights.Length; k++)
 				{
 					BoneWeight item = boneWeights[k];
-					item.boneIndex0 += num2;
-					item.boneIndex1 += num2;
-					item.boneIndex2 += num2;
-					item.boneIndex3 += num2;
+					item.boneIndex0 += value2;
+					item.boneIndex1 += value2;
+					item.boneIndex2 += value2;
+					item.boneIndex3 += value2;
 					list2.Add(item);
 				}
-				num2 += spriteMeshInstance2.bones.Count;
+				value2 += spriteMeshInstance2.bones.Count;
 				Transform[] bones = cachedSkinnedRenderer.bones;
 				foreach (Transform item2 in bones)
 				{

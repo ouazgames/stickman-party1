@@ -78,7 +78,7 @@ namespace CnControls
 			VerticalAxis = (VerticalAxis ?? new VirtualAxis(VerticalAxisName));
 			CnInputManager.RegisterVirtualAxis(HorizintalAxis);
 			CnInputManager.RegisterVirtualAxis(VerticalAxis);
-			float num3 = HorizintalAxis.Value = (VerticalAxis.Value = 0f);
+			float val3 = HorizintalAxis.Value = (VerticalAxis.Value = 0f);
 			_baseTransform.anchoredPosition = _initialBasePosition;
 			_stickTransform.anchoredPosition = _initialStickPosition;
 			_intermediateStickPosition = _initialStickPosition;
@@ -135,7 +135,7 @@ namespace CnControls
 			_baseTransform.anchoredPosition = _initialBasePosition;
 			_stickTransform.anchoredPosition = _initialStickPosition;
 			_intermediateStickPosition = _initialStickPosition;
-			float num3 = HorizintalAxis.Value = (VerticalAxis.Value = 0f);
+			float val3 = HorizintalAxis.Value = (VerticalAxis.Value = 0f);
 			if (HideOnRelease)
 			{
 				Hide(isHidden: true);

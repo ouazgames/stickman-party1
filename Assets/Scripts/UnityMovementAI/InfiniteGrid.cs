@@ -73,9 +73,9 @@ namespace UnityMovementAI
 					GL.Vertex3(vector.x, vector.y, vector.z);
 					GL.Vertex3(vector2.x, vector2.y, vector2.z);
 				}
-				for (float num2 = 0f; num2 <= widthHeight.x; num2 += 1f)
+				for (float value2 = 0f; value2 <= widthHeight.x; value2 += 1f)
 				{
-					Vector3 vector3 = bottomLeft + rightDir * num2;
+					Vector3 vector3 = bottomLeft + rightDir * value2;
 					Vector3 vector4 = vector3 + upDir * widthHeight.y;
 					GL.Vertex3(vector3.x, vector3.y, vector3.z);
 					GL.Vertex3(vector4.x, vector4.y, vector4.z);

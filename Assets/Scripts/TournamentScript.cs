@@ -363,11 +363,11 @@ public class TournamentScript : MonoBehaviour
             {
                 return;
             }
-            int num2 = Mathf.Max(ColorCount);
+            int value2 = Mathf.Max(ColorCount);
             Source.PlayOneShot(WinnerSound);
             for (int j = 0; j < ColorCount.Length; j++)
             {
-                if (ColorCount[j] == num2)
+                if (ColorCount[j] == value2)
                 {
                     switch (j)
                     {

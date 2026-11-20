@@ -22,29 +22,29 @@ namespace UnityMovementAI
 		public void GenerateHeights(Terrain terrain, float perlinScale)
 		{
 			float num = terrain.terrainData.heightmapResolution / 2;
-			float num2 = num - circleCutoff;
+			float value2 = num - circleCutoff;
 			Vector2 b = new Vector2(num, num);
-			float num3 = minHeight / terrain.terrainData.heightmapScale.y;
-			float num4 = maxHeight / terrain.terrainData.heightmapScale.y;
+			float value3 = minHeight / terrain.terrainData.heightmapScale.y;
+			float value4 = maxHeight / terrain.terrainData.heightmapScale.y;
 			PerlinHelper perlinHelper = new PerlinHelper(terrain.terrainData.heightmapResolution, terrain.terrainData.heightmapResolution, perlinScale);
 			float[,] array = new float[terrain.terrainData.heightmapResolution, terrain.terrainData.heightmapResolution];
 			for (int i = 0; i < terrain.terrainData.heightmapResolution; i++)
 			{
 				for (int j = 0; j < terrain.terrainData.heightmapResolution; j++)
 				{
-					float num5 = Vector2.Distance(new Vector2(i, j), b);
-					float num6 = 0f;
-					if (num5 < num2)
+					float value5 = Vector2.Distance(new Vector2(i, j), b);
+					float value6 = 0f;
+					if (value5 < value2)
 					{
-						num6 = 1f;
+						value6 = 1f;
 					}
-					else if (num5 >= num2 && num5 < num)
+					else if (value5 >= value2 && value5 < num)
 					{
-						num6 = (num5 - num2) / (num - num2);
-						num6 = 1f - num6;
+						value6 = (value5 - value2) / (num - value2);
+						value6 = 1f - value6;
 					}
-					array[i, j] = num3 + perlinHelper[i, j] * (num4 - num3);
-					array[i, j] *= num6;
+					array[i, j] = value3 + perlinHelper[i, j] * (value4 - value3);
+					array[i, j] *= value6;
 				}
 			}
 			for (int k = 0; k < numSmoothings; k++)
@@ -68,7 +68,7 @@ namespace UnityMovementAI
 		private float GetHeightAverage(float[,] heights, int x, int y)
 		{
 			float num = 0f;
-			float num2 = 0f;
+			float value2 = 0f;
 			for (int i = x - 1; i <= x + 1; i++)
 			{
 				for (int j = y - 1; j <= y + 1; j++)
@@ -76,11 +76,11 @@ namespace UnityMovementAI
 					if (i >= 0 && i < heights.GetLength(0) && j >= 0 && j < heights.GetLength(1))
 					{
 						num += 1f;
-						num2 += heights[i, j];
+						value2 += heights[i, j];
 					}
 				}
 			}
-			return num2 / num;
+			return value2 / num;
 		}
 	}
 }
