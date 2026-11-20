@@ -17,9 +17,6 @@ Shader "Hidden/Internal-MotionVectors"
       ZWrite Off
       GpuProgramID 57106
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -614,9 +611,6 @@ Shader "Hidden/Internal-MotionVectors"
       Cull Off
       GpuProgramID 71716
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -1234,9 +1228,6 @@ Shader "Hidden/Internal-MotionVectors"
       Cull Off
       GpuProgramID 194660
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"

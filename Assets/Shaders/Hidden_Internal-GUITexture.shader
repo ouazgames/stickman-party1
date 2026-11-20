@@ -24,9 +24,6 @@ Shader "Hidden/Internal-GUITexture"
       Blend SrcAlpha OneMinusSrcAlpha, One One
       GpuProgramID 21121
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -455,9 +452,6 @@ Shader "Hidden/Internal-GUITexture"
       Blend SrcAlpha OneMinusSrcAlpha
       GpuProgramID 93076
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"

@@ -19,9 +19,6 @@ Shader "Hidden/VideoDecodeAndroid"
       Cull Off
       GpuProgramID 282
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -3825,9 +3822,6 @@ Shader "Hidden/VideoDecodeAndroid"
       Cull Off
       GpuProgramID 69002
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"

@@ -29,9 +29,6 @@ Shader "Legacy Shaders/VertexLit"
       } 
       GpuProgramID 176849
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -6257,9 +6254,6 @@ Shader "Legacy Shaders/VertexLit"
       LOD 100
       GpuProgramID 21925
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -6739,9 +6733,6 @@ Shader "Legacy Shaders/VertexLit"
       LOD 100
       GpuProgramID 94398
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"

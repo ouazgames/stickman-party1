@@ -19,9 +19,6 @@ Shader "Hidden/InternalClear"
       ColorMask 0
       GpuProgramID 40659
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -1483,9 +1480,6 @@ Shader "Hidden/InternalClear"
       Cull Off
       GpuProgramID 113352
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -2947,9 +2941,6 @@ Shader "Hidden/InternalClear"
       ColorMask 0
       GpuProgramID 185454
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -4410,9 +4401,6 @@ Shader "Hidden/InternalClear"
       Cull Off
       GpuProgramID 202167
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -5890,9 +5878,6 @@ Shader "Hidden/InternalClear"
       ColorMask 0
       GpuProgramID 272253
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -7369,9 +7354,6 @@ Shader "Hidden/InternalClear"
       } 
       GpuProgramID 346237
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -8848,9 +8830,6 @@ Shader "Hidden/InternalClear"
       ColorMask 0
       GpuProgramID 446987
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -10326,9 +10305,6 @@ Shader "Hidden/InternalClear"
       } 
       GpuProgramID 517744
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"

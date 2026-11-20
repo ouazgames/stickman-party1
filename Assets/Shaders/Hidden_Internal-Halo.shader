@@ -21,9 +21,6 @@ Shader "Hidden/Internal-Halo"
       ColorMask RGB
       GpuProgramID 55344
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
