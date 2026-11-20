@@ -21,9 +21,6 @@ Shader "Hidden/FrameDebuggerRenderTargetDisplay"
       Cull Off
       GpuProgramID 555
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -607,9 +604,6 @@ Shader "Hidden/FrameDebuggerRenderTargetDisplay"
       Cull Off
       GpuProgramID 97613
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -1198,9 +1192,6 @@ Shader "Hidden/FrameDebuggerRenderTargetDisplay"
       Cull Off
       GpuProgramID 154055
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles3 hw_tier00"

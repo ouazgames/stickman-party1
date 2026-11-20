@@ -27,9 +27,6 @@ Shader "Water2D/Simple Water"
       Blend SrcAlpha OneMinusSrcAlpha
       GpuProgramID 59321
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"

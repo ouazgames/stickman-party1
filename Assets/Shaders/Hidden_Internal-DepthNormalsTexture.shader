@@ -20,9 +20,6 @@ Shader "Hidden/Internal-DepthNormalsTexture"
       }
       GpuProgramID 25696
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -610,9 +607,6 @@ Shader "Hidden/Internal-DepthNormalsTexture"
       }
       GpuProgramID 115287
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -1302,9 +1296,6 @@ Shader "Hidden/Internal-DepthNormalsTexture"
       }
       GpuProgramID 189644
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -2162,9 +2153,6 @@ Shader "Hidden/Internal-DepthNormalsTexture"
       }
       GpuProgramID 221783
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -3180,9 +3168,6 @@ Shader "Hidden/Internal-DepthNormalsTexture"
       }
       GpuProgramID 290987
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -3868,9 +3853,6 @@ Shader "Hidden/Internal-DepthNormalsTexture"
       }
       GpuProgramID 346673
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -4639,9 +4621,6 @@ Shader "Hidden/Internal-DepthNormalsTexture"
       Cull Front
       GpuProgramID 411418
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -5422,9 +5401,6 @@ Shader "Hidden/Internal-DepthNormalsTexture"
       Cull Off
       GpuProgramID 475393
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -6133,9 +6109,6 @@ Shader "Hidden/Internal-DepthNormalsTexture"
       Cull Off
       GpuProgramID 573702
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -7138,9 +7111,6 @@ Shader "Hidden/Internal-DepthNormalsTexture"
       Cull Off
       GpuProgramID 638220
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"

@@ -22,9 +22,6 @@ Shader "Hidden/Internal-ScreenSpaceShadows"
       Cull Off
       GpuProgramID 62865
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -3291,9 +3288,6 @@ Shader "Hidden/Internal-ScreenSpaceShadows"
       Cull Off
       GpuProgramID 106743
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -6368,9 +6362,6 @@ Shader "Hidden/Internal-ScreenSpaceShadows"
       Cull Off
       GpuProgramID 180047
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -11266,9 +11257,6 @@ Shader "Hidden/Internal-ScreenSpaceShadows"
       Cull Off
       GpuProgramID 202046
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"

@@ -22,9 +22,6 @@ Shader "Hidden/VideoDecode"
       Cull Off
       GpuProgramID 55344
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -524,9 +521,6 @@ Shader "Hidden/VideoDecode"
       Cull Off
       GpuProgramID 110439
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -1050,9 +1044,6 @@ Shader "Hidden/VideoDecode"
       Cull Off
       GpuProgramID 161684
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -1581,9 +1572,6 @@ Shader "Hidden/VideoDecode"
       Blend SrcAlpha OneMinusSrcAlpha
       GpuProgramID 236514
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -2005,9 +1993,6 @@ Shader "Hidden/VideoDecode"
       Cull Off
       GpuProgramID 266940
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -2405,9 +2390,6 @@ Shader "Hidden/VideoDecode"
       Cull Off
       GpuProgramID 361679
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -2817,9 +2799,6 @@ Shader "Hidden/VideoDecode"
       Cull Off
       GpuProgramID 455507
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -3481,9 +3460,6 @@ Shader "Hidden/VideoDecode"
       Cull Off
       GpuProgramID 498785
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -4175,9 +4151,6 @@ Shader "Hidden/VideoDecode"
       Cull Off
       GpuProgramID 543828
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -4629,9 +4602,6 @@ Shader "Hidden/VideoDecode"
       Cull Off
       GpuProgramID 652483
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"

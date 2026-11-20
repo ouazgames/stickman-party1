@@ -31,9 +31,6 @@ Shader "Mobile/Particles/Multiply"
       Blend Zero SrcColor
       GpuProgramID 9742
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"

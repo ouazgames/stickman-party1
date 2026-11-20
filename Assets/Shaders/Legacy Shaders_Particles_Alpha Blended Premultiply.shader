@@ -29,9 +29,6 @@ Shader "Legacy Shaders/Particles/Alpha Blended Premultiply"
       ColorMask RGB
       GpuProgramID 3345
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"

@@ -20,9 +20,6 @@ Shader "Hidden/Internal-ODSWorldTexture"
       }
       GpuProgramID 62904
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -376,9 +373,6 @@ Shader "Hidden/Internal-ODSWorldTexture"
       }
       GpuProgramID 66522
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -834,9 +828,6 @@ Shader "Hidden/Internal-ODSWorldTexture"
       }
       GpuProgramID 157769
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -1442,9 +1433,6 @@ Shader "Hidden/Internal-ODSWorldTexture"
       }
       GpuProgramID 211170
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -2274,9 +2262,6 @@ Shader "Hidden/Internal-ODSWorldTexture"
       }
       GpuProgramID 303200
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -2734,9 +2719,6 @@ Shader "Hidden/Internal-ODSWorldTexture"
       }
       GpuProgramID 330159
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -3277,9 +3259,6 @@ Shader "Hidden/Internal-ODSWorldTexture"
       Cull Front
       GpuProgramID 457754
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -3826,9 +3805,6 @@ Shader "Hidden/Internal-ODSWorldTexture"
       Cull Off
       GpuProgramID 490650
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -4429,9 +4405,6 @@ Shader "Hidden/Internal-ODSWorldTexture"
       Cull Off
       GpuProgramID 553361
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -5212,9 +5185,6 @@ Shader "Hidden/Internal-ODSWorldTexture"
       Cull Off
       GpuProgramID 649013
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"

@@ -67,9 +67,6 @@ Shader "Particles/Standard Unlit"
       } 
       GpuProgramID -1
       // m_ProgramMask = 0
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       
     } // end phase
     Pass // ind: 2, name: ShadowCaster
@@ -88,9 +85,6 @@ Shader "Particles/Standard Unlit"
       ColorMask RGB
       GpuProgramID 18939
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
@@ -3988,9 +3982,6 @@ Shader "Particles/Standard Unlit"
       ColorMask RGB
       GpuProgramID 247908
       // m_ProgramMask = 6
-      !!! *******************************************************************************************
-      !!! Allow restore shader as UnityLab format - only available for DevX GameRecovery license type
-      !!! *******************************************************************************************
       Program "vp"
       {
         SubProgram "gles hw_tier00"
