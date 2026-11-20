@@ -23,9 +23,9 @@ namespace UnityMovementAI
 			Vector3 zero = Vector3.zero;
 			float num = float.PositiveInfinity;
 			MovementAIRigidbody movementAIRigidbody = null;
-			float num2 = 0f;
-			float num3 = 0f;
-			float num4 = 0f;
+			float value2 = 0f;
+			float value3 = 0f;
+			float value4 = 0f;
 			Vector3 a = Vector3.zero;
 			Vector3 a2 = Vector3.zero;
 			foreach (MovementAIRigidbody target in targets)
@@ -36,17 +36,17 @@ namespace UnityMovementAI
 				float magnitude2 = vector2.magnitude;
 				if (magnitude2 != 0f)
 				{
-					float num5 = -1f * Vector3.Dot(vector, vector2) / (magnitude2 * magnitude2);
-					float magnitude3 = (vector + vector2 * num5).magnitude;
-					if (!(magnitude3 > rb.Radius + target.Radius + distanceBetween) && num5 > 0f && num5 < num)
+					float value5 = -1f * Vector3.Dot(vector, vector2) / (magnitude2 * magnitude2);
+					float magnitude3 = (vector + vector2 * value5).magnitude;
+					if (!(magnitude3 > rb.Radius + target.Radius + distanceBetween) && value5 > 0f && value5 < num)
 					{
-						num = num5;
+						num = value5;
 						movementAIRigidbody = target;
-						num2 = magnitude3;
-						num3 = magnitude;
+						value2 = magnitude3;
+						value3 = magnitude;
 						a = vector;
 						a2 = vector2;
-						num4 = target.Radius;
+						value4 = target.Radius;
 					}
 				}
 			}
@@ -54,7 +54,7 @@ namespace UnityMovementAI
 			{
 				return zero;
 			}
-			zero = ((!(num2 <= 0f) && !(num3 < rb.Radius + num4 + distanceBetween)) ? (a + a2 * num) : (rb.ColliderPosition - movementAIRigidbody.ColliderPosition));
+			zero = ((!(value2 <= 0f) && !(value3 < rb.Radius + value4 + distanceBetween)) ? (a + a2 * num) : (rb.ColliderPosition - movementAIRigidbody.ColliderPosition));
 			zero = rb.ConvertVector(zero);
 			zero.Normalize();
 			return zero * maxAcceleration;

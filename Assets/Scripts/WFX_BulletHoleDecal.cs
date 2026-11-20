@@ -39,13 +39,13 @@ public class WFX_BulletHoleDecal : MonoBehaviour
 	private void OnEnable()
 	{
 		int num = UnityEngine.Random.Range(0, (int)(frames.x * frames.y));
-		int num2 = (int)((float)num % frames.x);
-		int num3 = (int)((float)num / frames.y);
+		int value2 = (int)((float)num % frames.x);
+		int value3 = (int)((float)num / frames.y);
 		Vector2[] array = new Vector2[4];
 		for (int i = 0; i < 4; i++)
 		{
-			array[i].x = (quadUVs[i].x + (float)num2) * (1f / frames.x);
-			array[i].y = (quadUVs[i].y + (float)num3) * (1f / frames.y);
+			array[i].x = (quadUVs[i].x + (float)value2) * (1f / frames.x);
+			array[i].y = (quadUVs[i].y + (float)value3) * (1f / frames.y);
 		}
 		GetComponent<MeshFilter>().mesh.uv = array;
 		if (randomRotation)

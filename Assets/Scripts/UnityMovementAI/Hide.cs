@@ -32,10 +32,10 @@ namespace UnityMovementAI
 			foreach (MovementAIRigidbody obstacle in obstacles)
 			{
 				Vector3 hidingPosition = GetHidingPosition(obstacle, target);
-				float num2 = Vector3.Distance(hidingPosition, base.transform.position);
-				if (num2 < num)
+				float value2 = Vector3.Distance(hidingPosition, base.transform.position);
+				if (value2 < num)
 				{
-					num = num2;
+					num = value2;
 					bestHidingSpot = hidingPosition;
 				}
 			}

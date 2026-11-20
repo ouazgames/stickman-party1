@@ -67,10 +67,10 @@ namespace UnityMovementAI
 			int result = 0;
 			for (int i = 1; i < nodes.Length - 1; i++)
 			{
-				float num2 = DistToSegment(position, nodes[i], nodes[i + 1]);
-				if (num2 <= num)
+				float value2 = DistToSegment(position, nodes[i], nodes[i + 1]);
+				if (value2 <= num)
 				{
-					num = num2;
+					num = value2;
 					result = i;
 				}
 			}
@@ -104,16 +104,16 @@ namespace UnityMovementAI
 			{
 				return Vector3.Distance(p, v);
 			}
-			float num2 = Vector3.Dot(p - v, vector) / num;
-			if (num2 < 0f)
+			float value2 = Vector3.Dot(p - v, vector) / num;
+			if (value2 < 0f)
 			{
 				return Vector3.Distance(p, v);
 			}
-			if (num2 > 1f)
+			if (value2 > 1f)
 			{
 				return Vector3.Distance(p, w);
 			}
-			Vector3 b = Vector3.Lerp(v, w, num2);
+			Vector3 b = Vector3.Lerp(v, w, value2);
 			return Vector3.Distance(p, b);
 		}
 
@@ -126,16 +126,16 @@ namespace UnityMovementAI
 			{
 				return 0f;
 			}
-			float num2 = Vector3.Dot(p - v, v2) / num;
-			if (num2 < 0f)
+			float value2 = Vector3.Dot(p - v, v2) / num;
+			if (value2 < 0f)
 			{
-				num2 = 0f;
+				value2 = 0f;
 			}
-			else if (num2 > 1f)
+			else if (value2 > 1f)
 			{
-				num2 = 1f;
+				value2 = 1f;
 			}
-			return num2 * (v - w).magnitude;
+			return value2 * (v - w).magnitude;
 		}
 
 		public void RemoveNode(int i)

@@ -64,15 +64,15 @@ namespace UnityStandardAssets.Cameras
 				if (m_SpinTurnLimit > 0f)
 				{
 					float value = Mathf.Abs(Mathf.DeltaAngle(m_LastFlatAngle, num)) / deltaTime;
-					float num2 = Mathf.InverseLerp(m_SpinTurnLimit, m_SpinTurnLimit * 0.75f, value);
-					float smoothTime = (m_CurrentTurnAmount > num2) ? 0.1f : 1f;
+					float value2 = Mathf.InverseLerp(m_SpinTurnLimit, m_SpinTurnLimit * 0.75f, value);
+					float smoothTime = (m_CurrentTurnAmount > value2) ? 0.1f : 1f;
 					if (Application.isPlaying)
 					{
-						m_CurrentTurnAmount = Mathf.SmoothDamp(m_CurrentTurnAmount, num2, ref m_TurnSpeedVelocityChange, smoothTime);
+						m_CurrentTurnAmount = Mathf.SmoothDamp(m_CurrentTurnAmount, value2, ref m_TurnSpeedVelocityChange, smoothTime);
 					}
 					else
 					{
-						m_CurrentTurnAmount = num2;
+						m_CurrentTurnAmount = value2;
 					}
 				}
 				else

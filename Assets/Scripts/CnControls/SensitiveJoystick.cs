@@ -13,9 +13,9 @@ namespace CnControls
 			float value = HorizintalAxis.Value;
 			float value2 = VerticalAxis.Value;
 			float num = Mathf.Sign(value);
-			float num2 = Mathf.Sign(value2);
+			float val2 = Mathf.Sign(value2);
 			HorizintalAxis.Value = num * SensitivityCurve.Evaluate(num * value);
-			VerticalAxis.Value = num2 * SensitivityCurve.Evaluate(num2 * value2);
+			VerticalAxis.Value = val2 * SensitivityCurve.Evaluate(val2 * value2);
 		}
 
 		public void Update()
@@ -25,9 +25,9 @@ namespace CnControls
 				float value = HorizintalAxis.Value;
 				float value2 = VerticalAxis.Value;
 				float num = Mathf.Sign(value);
-				float num2 = Mathf.Sign(value2);
+				float val2 = Mathf.Sign(value2);
 				HorizintalAxis.Value = num * SensitivityCurve.Evaluate(num * value);
-				VerticalAxis.Value = num2 * SensitivityCurve.Evaluate(num2 * value2);
+				VerticalAxis.Value = val2 * SensitivityCurve.Evaluate(val2 * value2);
 			}
 		}
 	}

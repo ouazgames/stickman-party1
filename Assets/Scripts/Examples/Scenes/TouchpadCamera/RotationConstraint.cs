@@ -33,11 +33,11 @@ namespace Examples.Scenes.TouchpadCamera
 			Quaternion localRotation = _transformCache.localRotation;
 			Quaternion a = Quaternion.AngleAxis(localRotation.eulerAngles[0], _rotateAround);
 			float num = Quaternion.Angle(a, _minQuaternion);
-			float num2 = Quaternion.Angle(a, _maxQuaternion);
-			if (!(num <= _range) || !(num2 <= _range))
+			float value2 = Quaternion.Angle(a, _maxQuaternion);
+			if (!(num <= _range) || !(value2 <= _range))
 			{
 				Vector3 eulerAngles = localRotation.eulerAngles;
-				if (num > num2)
+				if (num > value2)
 				{
 					eulerAngles[0] = _maxQuaternion.eulerAngles[0];
 				}

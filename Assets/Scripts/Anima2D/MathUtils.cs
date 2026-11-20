@@ -8,8 +8,8 @@ namespace Anima2D
 		public static float SignedAngle(Vector3 a, Vector3 b, Vector3 forward)
 		{
 			float num = Vector3.Angle(a, b);
-			float num2 = Mathf.Sign(Vector3.Dot(forward, Vector3.Cross(a, b)));
-			return num * num2;
+			float value2 = Mathf.Sign(Vector3.Dot(forward, Vector3.Cross(a, b)));
+			return num * value2;
 		}
 
 		public static float Fmod(float value, float mod)
@@ -77,10 +77,10 @@ namespace Anima2D
 		public static Quaternion GetRotation(this Matrix4x4 matrix)
 		{
 			float num = Mathf.Sqrt(1f + matrix.m00 + matrix.m11 + matrix.m22) / 2f;
-			float num2 = 4f * num;
-			float x = (matrix.m21 - matrix.m12) / num2;
-			float y = (matrix.m02 - matrix.m20) / num2;
-			float z = (matrix.m10 - matrix.m01) / num2;
+			float value2 = 4f * num;
+			float x = (matrix.m21 - matrix.m12) / value2;
+			float y = (matrix.m02 - matrix.m20) / value2;
+			float z = (matrix.m10 - matrix.m01) / value2;
 			return new Quaternion(x, y, z, num);
 		}
 

@@ -131,7 +131,7 @@ public class Water2D : MonoBehaviour
 	public void CreateWaterPlane()
 	{
 		int num = waterSubdivisions;
-		int num2 = 1;
+		int value2 = 1;
 		MeshFilter component = GetComponent<MeshFilter>();
 		if (Application.isEditor)
 		{
@@ -147,38 +147,38 @@ public class Water2D : MonoBehaviour
 		}
 		proceduralMesh = new Mesh();
 		proceduralMesh.name = "Water plane";
-		int num3 = num + 1;
-		int num4 = num2 + 1;
-		int num5 = num * num2 * 6;
-		int num6 = num3 * num4;
-		Vector3[] array = new Vector3[num6];
-		Vector2[] array2 = new Vector2[num6];
-		int[] array3 = new int[num5];
-		int num7 = 0;
-		float num8 = 1f / (float)num;
-		float num9 = 1f / (float)num2;
-		float num10 = width / (float)num;
-		float num11 = height / (float)num2;
-		for (float num12 = 0f; num12 < (float)num4; num12 += 1f)
+		int value3 = num + 1;
+		int value4 = value2 + 1;
+		int value5 = num * value2 * 6;
+		int value6 = value3 * value4;
+		Vector3[] array = new Vector3[value6];
+		Vector2[] array2 = new Vector2[value6];
+		int[] array3 = new int[value5];
+		int value7 = 0;
+		float value8 = 1f / (float)num;
+		float value9 = 1f / (float)value2;
+		float value10 = width / (float)num;
+		float value11 = height / (float)value2;
+		for (float value12 = 0f; value12 < (float)value4; value12 += 1f)
 		{
-			for (float num13 = 0f; num13 < (float)num3; num13 += 1f)
+			for (float value13 = 0f; value13 < (float)value3; value13 += 1f)
 			{
-				array[num7] = new Vector3(num13 * num10 - width / 2f, num12 * num11 - height / 2f, 0f);
-				array2[num7++] = new Vector2(num13 * num8, num12 * num9);
+				array[value7] = new Vector3(value13 * value10 - width / 2f, value12 * value11 - height / 2f, 0f);
+				array2[value7++] = new Vector2(value13 * value8, value12 * value9);
 			}
 		}
-		num7 = 0;
-		for (int i = 0; i < num2; i++)
+		value7 = 0;
+		for (int i = 0; i < value2; i++)
 		{
 			for (int j = 0; j < num; j++)
 			{
-				array3[num7] = i * num3 + j;
-				array3[num7 + 1] = (i + 1) * num3 + j;
-				array3[num7 + 2] = i * num3 + j + 1;
-				array3[num7 + 3] = (i + 1) * num3 + j;
-				array3[num7 + 4] = (i + 1) * num3 + j + 1;
-				array3[num7 + 5] = i * num3 + j + 1;
-				num7 += 6;
+				array3[value7] = i * value3 + j;
+				array3[value7 + 1] = (i + 1) * value3 + j;
+				array3[value7 + 2] = i * value3 + j + 1;
+				array3[value7 + 3] = (i + 1) * value3 + j;
+				array3[value7 + 4] = (i + 1) * value3 + j + 1;
+				array3[value7 + 5] = i * value3 + j + 1;
+				value7 += 6;
 			}
 		}
 		Color[] array4 = new Color[array.Length];
@@ -309,36 +309,36 @@ public class Water2D : MonoBehaviour
 	public void ObjectEnteredWater(Vector3 _position, float _speed, float _size, bool _emitParticles)
 	{
 		float num = float.MaxValue;
-		int num2 = 0;
-		int num3 = 0;
+		int value2 = 0;
+		int value3 = 0;
 		for (int i = firstUpVertex; i < meshVertices.Length; i++)
 		{
 			float sqrMagnitude = (myTransform.TransformPoint(meshVertices[i]) - _position).sqrMagnitude;
 			if (sqrMagnitude < num)
 			{
 				num = sqrMagnitude;
-				num2 = i;
-				num3 = i - firstUpVertex;
+				value2 = i;
+				value3 = i - firstUpVertex;
 			}
 		}
-		columns[num3].Speed += _speed;
-		columns[num3].enableSplash = true;
-		float num4 = width / (float)waterSubdivisions;
-		int num5 = Mathf.Clamp(Mathf.FloorToInt(_size / num4), 0, columns.Length - 1);
-		for (int j = 1; j < num5; j++)
+		columns[value3].Speed += _speed;
+		columns[value3].enableSplash = true;
+		float value4 = width / (float)waterSubdivisions;
+		int value5 = Mathf.Clamp(Mathf.FloorToInt(_size / value4), 0, columns.Length - 1);
+		for (int j = 1; j < value5; j++)
 		{
-			if (num3 + j < columns.Length)
+			if (value3 + j < columns.Length)
 			{
-				columns[num3 + j].Speed = _speed / (objectSizeDampening * (float)(j + 1));
+				columns[value3 + j].Speed = _speed / (objectSizeDampening * (float)(j + 1));
 			}
-			if (num3 - j >= 0)
+			if (value3 - j >= 0)
 			{
-				columns[num3 - j].Speed = _speed / (objectSizeDampening * (float)(j + 1));
+				columns[value3 - j].Speed = _speed / (objectSizeDampening * (float)(j + 1));
 			}
 		}
 		if (_emitParticles)
 		{
-			instantiatedWaterSplash.transform.position = myTransform.TransformPoint(meshVertices[num2]);
+			instantiatedWaterSplash.transform.position = myTransform.TransformPoint(meshVertices[value2]);
 			instantiatedWaterSplash.Emit(UnityEngine.Random.Range(10, 20));
 		}
 		GetComponent<AudioSource>().PlayOneShot(splashSounds[Random.Range(0, splashSounds.Length)]);

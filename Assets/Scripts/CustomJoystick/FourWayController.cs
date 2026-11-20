@@ -31,11 +31,11 @@ namespace CustomJoystick
 			float num = Vector3.Dot(lhs, vector);
 			for (int i = 1; i < directionalVectors.Length; i++)
 			{
-				float num2 = Vector3.Dot(lhs, directionalVectors[i]);
-				if (num2 < num)
+				float value2 = Vector3.Dot(lhs, directionalVectors[i]);
+				if (value2 < num)
 				{
 					vector = directionalVectors[i];
-					num = num2;
+					num = value2;
 				}
 			}
 			Vector3 a = _mainCameraTransform.InverseTransformDirection(vector);
