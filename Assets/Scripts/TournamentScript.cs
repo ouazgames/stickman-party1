@@ -74,12 +74,12 @@ public class TournamentScript : MonoBehaviour
 
 	private void RedOn()
 	{
-		BlackLight[0].SetActive(value: false);
+		BlackLight[0].SetActive(false);
 		if (PlayerPrefs.GetInt("RedNewCount") > 0)
 		{
 			Source.PlayOneShot(CountPlusSound);
-			Stars[0].SetActive(value: true);
-			PlusObj[0].SetActive(value: true);
+			Stars[0].SetActive(true);
+			PlusObj[0].SetActive(true);
 			ColorCount[0] += PlayerPrefs.GetInt("RedNewCount");
 			Object.Instantiate(TextPrefab, CountText[0].transform.position, CountText[0].transform.rotation).GetComponentInChildren<Text>().text = "+" + PlayerPrefs.GetInt("RedNewCount");
 			CountText[0].text = string.Concat(ColorCount[0]);
@@ -123,12 +123,12 @@ public class TournamentScript : MonoBehaviour
 
 	private void BlueOn()
 	{
-		BlackLight[1].SetActive(value: false);
+		BlackLight[1].SetActive(false);
 		if (PlayerPrefs.GetInt("BlueNewCount") > 0)
 		{
 			Source.PlayOneShot(CountPlusSound);
-			Stars[1].SetActive(value: true);
-			PlusObj[1].SetActive(value: true);
+			Stars[1].SetActive(true);
+			PlusObj[1].SetActive(true);
 			ColorCount[1] += PlayerPrefs.GetInt("BlueNewCount");
 			CountText[1].text = string.Concat(ColorCount[1]);
 			Object.Instantiate(TextPrefab, CountText[1].transform.position, CountText[1].transform.rotation).GetComponentInChildren<Text>().text = "+" + PlayerPrefs.GetInt("BlueNewCount");
@@ -186,12 +186,12 @@ public class TournamentScript : MonoBehaviour
 
 	private void GreenOn()
 	{
-		BlackLight[2].SetActive(value: false);
+		BlackLight[2].SetActive(false);
 		if (PlayerPrefs.GetInt("GreenNewCount") > 0)
 		{
 			Source.PlayOneShot(CountPlusSound);
-			Stars[2].SetActive(value: true);
-			PlusObj[2].SetActive(value: true);
+			Stars[2].SetActive(true);
+			PlusObj[2].SetActive(true);
 			ColorCount[2] += PlayerPrefs.GetInt("GreenNewCount");
 			CountText[2].text = string.Concat(ColorCount[2]);
 			Object.Instantiate(TextPrefab, CountText[2].transform.position, CountText[2].transform.rotation).GetComponentInChildren<Text>().text = "+" + PlayerPrefs.GetInt("GreenNewCount");
@@ -253,12 +253,12 @@ public class TournamentScript : MonoBehaviour
 
 	private void YellowOn()
 	{
-		BlackLight[3].SetActive(value: false);
+		BlackLight[3].SetActive(false);
 		if (PlayerPrefs.GetInt("YellowNewCount") > 0)
 		{
 			Source.PlayOneShot(CountPlusSound);
-			Stars[3].SetActive(value: true);
-			PlusObj[3].SetActive(value: true);
+			Stars[3].SetActive(true);
+			PlusObj[3].SetActive(true);
 			ColorCount[3] += PlayerPrefs.GetInt("YellowNewCount");
 			CountText[3].text = string.Concat(ColorCount[3]);
 			Object.Instantiate(TextPrefab, CountText[3].transform.position, CountText[3].transform.rotation).GetComponentInChildren<Text>().text = "+" + PlayerPrefs.GetInt("YellowNewCount");
@@ -328,19 +328,19 @@ public class TournamentScript : MonoBehaviour
 					{
 					case 0:
 						Anim[0].Play("Winner");
-						Confetti[0].SetActive(value: true);
+						Confetti[0].SetActive(true);
 						break;
 					case 1:
 						Anim[1].Play("Winner");
-						Confetti[1].SetActive(value: true);
+						Confetti[1].SetActive(true);
 						break;
 					case 2:
 						Anim[2].Play("Winner");
-						Confetti[2].SetActive(value: true);
+						Confetti[2].SetActive(true);
 						break;
 					case 3:
 						Anim[3].Play("Winner");
-						Confetti[3].SetActive(value: true);
+						Confetti[3].SetActive(true);
 						break;
 					}
 					Invoke("GetButtons", 2f);
@@ -373,19 +373,19 @@ public class TournamentScript : MonoBehaviour
 					{
 					case 0:
 						Anim[0].Play("Winner");
-						Confetti[0].SetActive(value: true);
+						Confetti[0].SetActive(true);
 						break;
 					case 1:
 						Anim[1].Play("Winner");
-						Confetti[1].SetActive(value: true);
+						Confetti[1].SetActive(true);
 						break;
 					case 2:
 						Anim[2].Play("Winner");
-						Confetti[2].SetActive(value: true);
+						Confetti[2].SetActive(true);
 						break;
 					case 3:
 						Anim[3].Play("Winner");
-						Confetti[3].SetActive(value: true);
+						Confetti[3].SetActive(true);
 						break;
 					}
 				}
@@ -396,7 +396,7 @@ public class TournamentScript : MonoBehaviour
 
 	private void GetButtons()
 	{
-		ButtonMenu.SetActive(value: true);
+		ButtonMenu.SetActive(true);
 	}
 
 	public void MainMenuButton()

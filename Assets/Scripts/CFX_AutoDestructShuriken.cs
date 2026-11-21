@@ -20,7 +20,7 @@ public class CFX_AutoDestructShuriken : MonoBehaviour
 		while (GetComponent<ParticleSystem>().IsAlive(withChildren: true));
 		if (OnlyDeactivate)
 		{
-			base.gameObject.SetActive(value: false);
+			base.gameObject.SetActive(false);
 		}
 		else
 		{

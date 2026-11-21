@@ -78,7 +78,7 @@ public class SeaBattlePlayer : MonoBehaviour
 		LeftLine.sortingOrder = 15;
 		RightLine.sortingLayerName = "sd";
 		RightLine.sortingOrder = 15;
-		FakeBall.SetActive(value: true);
+		FakeBall.SetActive(true);
 		if (!IsAIPlayer)
 		{
 			IsReady = true;
@@ -147,7 +147,7 @@ public class SeaBattlePlayer : MonoBehaviour
 				Source.PlayOneShot(ShootSound2);
 				break;
 			}
-			FakeBall.SetActive(value: false);
+			FakeBall.SetActive(false);
 			Object.Instantiate(CannonBall, Balltransform.position, Balltransform.rotation).name = BolletName;
 			Anim.Play("SeaBattleAiPlayerShootAnim");
 		}
@@ -162,7 +162,7 @@ public class SeaBattlePlayer : MonoBehaviour
 		if (ReloadTimer >= 2f)
 		{
 			ReloadTimer = 0f;
-			FakeBall.SetActive(value: true);
+			FakeBall.SetActive(true);
 			Source.PlayOneShot(ReloadSound);
 			IsReady = true;
 			isFire = false;
@@ -187,7 +187,7 @@ public class SeaBattlePlayer : MonoBehaviour
 					Source.PlayOneShot(ShootSound2);
 					break;
 				}
-				FakeBall.SetActive(value: false);
+				FakeBall.SetActive(false);
 				Object.Instantiate(CannonBall, Balltransform.position, Balltransform.rotation).name = BolletName;
 				Anim.Play("SeaBattlePlayerShootAnim");
 			}

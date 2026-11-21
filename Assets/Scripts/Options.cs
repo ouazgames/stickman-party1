@@ -25,30 +25,30 @@ public class Options : MonoBehaviour
 		Source = GetComponent<AudioSource>();
 		if (OptionsIntro.Instance.AudioCheck == 0)
 		{
-			SoundButtonOn.SetActive(value: true);
-			SoundButtonOff.SetActive(value: false);
+			SoundButtonOn.SetActive(true);
+			SoundButtonOff.SetActive(false);
 		}
 		else if (OptionsIntro.Instance.AudioCheck == 1)
 		{
-			SoundButtonOn.SetActive(value: false);
-			SoundButtonOff.SetActive(value: true);
+			SoundButtonOn.SetActive(false);
+			SoundButtonOff.SetActive(true);
 		}
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
-			VButtonOn.SetActive(value: true);
-			VButtonOff.SetActive(value: false);
+			VButtonOn.SetActive(true);
+			VButtonOff.SetActive(false);
 		}
 		else if (OptionsIntro.Instance.VibrationCheck == 1)
 		{
-			VButtonOn.SetActive(value: false);
-			VButtonOff.SetActive(value: true);
+			VButtonOn.SetActive(false);
+			VButtonOff.SetActive(true);
 		}
 	}
 
 	public void OffAllSound()
 	{
-		SoundButtonOn.SetActive(value: false);
-		SoundButtonOff.SetActive(value: true);
+		SoundButtonOn.SetActive(false);
+		SoundButtonOff.SetActive(true);
 		OptionsIntro.Instance.OffAllSound();
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
@@ -58,8 +58,8 @@ public class Options : MonoBehaviour
 
 	public void OnAllSound()
 	{
-		SoundButtonOn.SetActive(value: true);
-		SoundButtonOff.SetActive(value: false);
+		SoundButtonOn.SetActive(true);
+		SoundButtonOff.SetActive(false);
 		OptionsIntro.Instance.OnAllSound();
 		Source.PlayOneShot(ButtonSound);
 		if (OptionsIntro.Instance.VibrationCheck == 0)
@@ -70,23 +70,23 @@ public class Options : MonoBehaviour
 
 	public void OffVibration()
 	{
-		VButtonOn.SetActive(value: false);
-		VButtonOff.SetActive(value: true);
+		VButtonOn.SetActive(false);
+		VButtonOff.SetActive(true);
 		Source.PlayOneShot(ButtonSound);
 		OptionsIntro.Instance.OffVibration();
 	}
 
 	public void OnVibration()
 	{
-		VButtonOn.SetActive(value: true);
-		VButtonOff.SetActive(value: false);
+		VButtonOn.SetActive(true);
+		VButtonOff.SetActive(false);
 		Source.PlayOneShot(ButtonSound);
 		OptionsIntro.Instance.OnVibration();
 	}
 
 	public void OpenOption()
 	{
-		OptionsPanel.SetActive(value: true);
+		OptionsPanel.SetActive(true);
 		Source.PlayOneShot(ButtonSound);
 		Source.PlayOneShot(OpenOptionsSound);
 		if (OptionsIntro.Instance.VibrationCheck == 0)
@@ -97,7 +97,7 @@ public class Options : MonoBehaviour
 
 	public void CloseOptionsPanel()
 	{
-		OptionsPanel.SetActive(value: false);
+		OptionsPanel.SetActive(false);
 		Source.PlayOneShot(ButtonBackSound);
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{

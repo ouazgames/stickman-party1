@@ -87,42 +87,42 @@ public class TankDeathmatchController : MonoBehaviour
 		RandomTimer = UnityEngine.Random.Range(4f, 7f);
 		if (PlayerNumers == 1)
 		{
-			Player[0].SetActive(value: true);
+			Player[0].SetActive(true);
 			GameObject[] aIPlayer = AIPlayer;
 			for (int i = 0; i < aIPlayer.Length; i++)
 			{
-				aIPlayer[i].SetActive(value: true);
+				aIPlayer[i].SetActive(true);
 			}
 		}
 		if (PlayerNumers == 2)
 		{
 			if (NeedBot == 1)
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				AIPlayer[1].SetActive(value: true);
-				AIPlayer[2].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				AIPlayer[1].SetActive(true);
+				AIPlayer[2].SetActive(true);
 			}
 			else
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
 			}
 		}
 		else if (PlayerNumers == 3)
 		{
 			if (NeedBot == 1)
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				Player[2].SetActive(value: true);
-				AIPlayer[2].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				Player[2].SetActive(true);
+				AIPlayer[2].SetActive(true);
 			}
 			else
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				Player[2].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				Player[2].SetActive(true);
 			}
 		}
 		else if (PlayerNumers == 4)
@@ -130,7 +130,7 @@ public class TankDeathmatchController : MonoBehaviour
 			GameObject[] aIPlayer = Player;
 			for (int i = 0; i < aIPlayer.Length; i++)
 			{
-				aIPlayer[i].SetActive(value: true);
+				aIPlayer[i].SetActive(true);
 			}
 		}
 		Source = GetComponent<AudioSource>();
@@ -143,7 +143,7 @@ public class TankDeathmatchController : MonoBehaviour
 
 	private void StartAnimation()
 	{
-		TimerAnimation.SetActive(value: true);
+		TimerAnimation.SetActive(true);
 		Source.PlayOneShot(SoundGo);
 	}
 
@@ -287,54 +287,54 @@ public class TankDeathmatchController : MonoBehaviour
 
 	private void Active1()
 	{
-		LightAnimation[3].SetActive(value: true);
-		ActivePlayers[0].SetActive(value: true);
+		LightAnimation[3].SetActive(true);
+		ActivePlayers[0].SetActive(true);
 		IsActive1 = false;
 		Invoke("AnimOff1", 1f);
 	}
 
 	private void AnimOff1()
 	{
-		LightAnimation[3].SetActive(value: false);
+		LightAnimation[3].SetActive(false);
 	}
 
 	private void Active2()
 	{
-		LightAnimation[1].SetActive(value: true);
-		ActivePlayers[1].SetActive(value: true);
+		LightAnimation[1].SetActive(true);
+		ActivePlayers[1].SetActive(true);
 		IsActive2 = false;
 		Invoke("AnimOff2", 1f);
 	}
 
 	private void AnimOff2()
 	{
-		LightAnimation[1].SetActive(value: false);
+		LightAnimation[1].SetActive(false);
 	}
 
 	private void Active3()
 	{
-		LightAnimation[2].SetActive(value: true);
-		ActivePlayers[2].SetActive(value: true);
+		LightAnimation[2].SetActive(true);
+		ActivePlayers[2].SetActive(true);
 		IsActive3 = false;
 		Invoke("AnimOff3", 1f);
 	}
 
 	private void AnimOff3()
 	{
-		LightAnimation[2].SetActive(value: false);
+		LightAnimation[2].SetActive(false);
 	}
 
 	private void Active4()
 	{
-		LightAnimation[0].SetActive(value: true);
-		ActivePlayers[3].SetActive(value: true);
+		LightAnimation[0].SetActive(true);
+		ActivePlayers[3].SetActive(true);
 		IsActive4 = false;
 		Invoke("AnimOff4", 1f);
 	}
 
 	private void AnimOff4()
 	{
-		LightAnimation[0].SetActive(value: false);
+		LightAnimation[0].SetActive(false);
 	}
 
 	public void GameOver()
@@ -348,8 +348,8 @@ public class TankDeathmatchController : MonoBehaviour
 			v_LevelName = "Level Tank Death match Game"
 
 		});
-		//GameOverPanel.SetActive(value: true);
-		BGMusic.SetActive(value: false);
+		//GameOverPanel.SetActive(true);
+		BGMusic.SetActive(false);
 		Invoke("GetButtons", 2f);
 		int num = Mathf.Max(ColorCount);
 		for (int i = 0; i < ColorCount.Length; i++)
@@ -361,23 +361,23 @@ public class TankDeathmatchController : MonoBehaviour
 					switch (i)
 					{
 					case 0:
-						WinObject[0].SetActive(value: true);
+						WinObject[0].SetActive(true);
 						break;
 					case 1:
-						WinObject[1].SetActive(value: true);
+						WinObject[1].SetActive(true);
 						break;
 					case 2:
-						WinObject[2].SetActive(value: true);
+						WinObject[2].SetActive(true);
 						break;
 					case 3:
-						WinObject[3].SetActive(value: true);
+						WinObject[3].SetActive(true);
 						break;
 					}
 				}
 			}
 			else
 			{
-				GameOverTie.SetActive(value: true);
+				GameOverTie.SetActive(true);
 			}
 		}
 		if (PlayerNumers == 1)
@@ -436,7 +436,7 @@ public class TankDeathmatchController : MonoBehaviour
 
 	private void GetButtons()
 	{
-		GameOverButtons.SetActive(value: true);
+		GameOverButtons.SetActive(true);
 	}
 
 	public void MainMenuButton()

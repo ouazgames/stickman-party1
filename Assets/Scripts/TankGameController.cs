@@ -78,42 +78,42 @@ public class TankGameController : MonoBehaviour
 		RandomTimer = UnityEngine.Random.Range(4f, 7f);
 		if (PlayerNumers == 1)
 		{
-			Player[0].SetActive(value: true);
+			Player[0].SetActive(true);
 			GameObject[] aIPlayer = AIPlayer;
 			for (int i = 0; i < aIPlayer.Length; i++)
 			{
-				aIPlayer[i].SetActive(value: true);
+				aIPlayer[i].SetActive(true);
 			}
 		}
 		if (PlayerNumers == 2)
 		{
 			if (NeedBot == 1)
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				AIPlayer[1].SetActive(value: true);
-				AIPlayer[2].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				AIPlayer[1].SetActive(true);
+				AIPlayer[2].SetActive(true);
 			}
 			else
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
 			}
 		}
 		else if (PlayerNumers == 3)
 		{
 			if (NeedBot == 1)
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				Player[2].SetActive(value: true);
-				AIPlayer[2].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				Player[2].SetActive(true);
+				AIPlayer[2].SetActive(true);
 			}
 			else
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				Player[2].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				Player[2].SetActive(true);
 			}
 		}
 		else if (PlayerNumers == 4)
@@ -121,7 +121,7 @@ public class TankGameController : MonoBehaviour
 			GameObject[] aIPlayer = Player;
 			for (int i = 0; i < aIPlayer.Length; i++)
 			{
-				aIPlayer[i].SetActive(value: true);
+				aIPlayer[i].SetActive(true);
 			}
 		}
 		Source = GetComponent<AudioSource>();
@@ -134,7 +134,7 @@ public class TankGameController : MonoBehaviour
 
 	private void StartAnimation()
 	{
-		TimerAnimation.SetActive(value: true);
+		TimerAnimation.SetActive(true);
 		Source.PlayOneShot(SoundGo);
 	}
 
@@ -227,8 +227,8 @@ public class TankGameController : MonoBehaviour
 
 	public void IGameOver()
 	{
-		GameOverPanel.SetActive(value: true);
-		BGMusic.SetActive(value: false);
+		GameOverPanel.SetActive(true);
+		BGMusic.SetActive(false);
 		GameAnalytic.AddProgression(new LevelProgression()
 		{
 
@@ -250,7 +250,7 @@ public class TankGameController : MonoBehaviour
 			string name = Players[0].name;
 			if (name == "PlayerRed")
 			{
-				WinObject[0].SetActive(value: true);
+				WinObject[0].SetActive(true);
 				if (PlayerPrefs.GetInt("IsCups") == 1)
 				{
 					PlayerPrefs.SetInt("RedNewCount", 3);
@@ -259,7 +259,7 @@ public class TankGameController : MonoBehaviour
 			}
 			else if (name == "PlayerBlue")
 			{
-				WinObject[1].SetActive(value: true);
+				WinObject[1].SetActive(true);
 				if (PlayerPrefs.GetInt("IsCups") == 1)
 				{
 					PlayerPrefs.SetInt("BlueNewCount", 3);
@@ -268,7 +268,7 @@ public class TankGameController : MonoBehaviour
 			}
 			else if (name == "PlayerGreen")
 			{
-				WinObject[2].SetActive(value: true);
+				WinObject[2].SetActive(true);
 				if (PlayerPrefs.GetInt("IsCups") == 1)
 				{
 					PlayerPrefs.SetInt("GreenNewCount", 3);
@@ -277,7 +277,7 @@ public class TankGameController : MonoBehaviour
 			}
 			else if (name == "PlayerYellow")
 			{
-				WinObject[3].SetActive(value: true);
+				WinObject[3].SetActive(true);
 				if (PlayerPrefs.GetInt("IsCups") == 1)
 				{
 					PlayerPrefs.SetInt("YellowNewCount", 3);
@@ -295,7 +295,7 @@ public class TankGameController : MonoBehaviour
 		}
 		else if (ListNumber == 0)
 		{
-			GameOverTie.SetActive(value: true);
+			GameOverTie.SetActive(true);
 			PlayerPrefs.SetInt("RedNewCount", 0);
 			PlayerPrefs.SetInt("BlueNewCount", 0);
 			PlayerPrefs.SetInt("GreenNewCount", 0);
@@ -447,7 +447,7 @@ public class TankGameController : MonoBehaviour
 
 	private void GetButtons()
 	{
-		GameOverButtons.SetActive(value: true);
+		GameOverButtons.SetActive(true);
 	}
 
 	public void MainMenuButton()

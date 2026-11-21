@@ -119,12 +119,12 @@ public class BumperCarGameController : MonoBehaviour
 			GameObject[] player = Player;
 			for (int i = 0; i < player.Length; i++)
 			{
-				player[i].SetActive(value: true);
+				player[i].SetActive(true);
 			}
 			player = PlayerLines;
 			for (int i = 0; i < player.Length; i++)
 			{
-				player[i].SetActive(value: true);
+				player[i].SetActive(true);
 			}
 			CountText[0].enabled = true;
 			CountText[1].enabled = true;
@@ -135,14 +135,14 @@ public class BumperCarGameController : MonoBehaviour
 		{
 			if (NeedBot == 0)
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
 				CountText[0].enabled = true;
 				CountText[1].enabled = true;
-				PlayerLines[0].SetActive(value: true);
-				PlayerLines[1].SetActive(value: true);
-				WallLines[2].SetActive(value: true);
-				WallLines[3].SetActive(value: true);
+				PlayerLines[0].SetActive(true);
+				PlayerLines[1].SetActive(true);
+				WallLines[2].SetActive(true);
+				WallLines[3].SetActive(true);
 			}
 			else
 			{
@@ -151,7 +151,7 @@ public class BumperCarGameController : MonoBehaviour
 				GameObject[] player = Player;
 				for (int i = 0; i < player.Length; i++)
 				{
-					player[i].SetActive(value: true);
+					player[i].SetActive(true);
 				}
 				CountText[0].enabled = true;
 				CountText[1].enabled = true;
@@ -160,7 +160,7 @@ public class BumperCarGameController : MonoBehaviour
 				player = PlayerLines;
 				for (int i = 0; i < player.Length; i++)
 				{
-					player[i].SetActive(value: true);
+					player[i].SetActive(true);
 				}
 			}
 		}
@@ -168,16 +168,16 @@ public class BumperCarGameController : MonoBehaviour
 		{
 			if (NeedBot == 0)
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				Player[2].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				Player[2].SetActive(true);
 				CountText[0].enabled = true;
 				CountText[1].enabled = true;
 				CountText[2].enabled = true;
-				PlayerLines[0].SetActive(value: true);
-				PlayerLines[1].SetActive(value: true);
-				PlayerLines[3].SetActive(value: true);
-				WallLines[3].SetActive(value: true);
+				PlayerLines[0].SetActive(true);
+				PlayerLines[1].SetActive(true);
+				PlayerLines[3].SetActive(true);
+				WallLines[3].SetActive(true);
 			}
 			else
 			{
@@ -185,7 +185,7 @@ public class BumperCarGameController : MonoBehaviour
 				GameObject[] player = Player;
 				for (int i = 0; i < player.Length; i++)
 				{
-					player[i].SetActive(value: true);
+					player[i].SetActive(true);
 				}
 				CountText[0].enabled = true;
 				CountText[1].enabled = true;
@@ -194,7 +194,7 @@ public class BumperCarGameController : MonoBehaviour
 				player = PlayerLines;
 				for (int i = 0; i < player.Length; i++)
 				{
-					player[i].SetActive(value: true);
+					player[i].SetActive(true);
 				}
 			}
 		}
@@ -203,12 +203,12 @@ public class BumperCarGameController : MonoBehaviour
 			GameObject[] player = Player;
 			for (int i = 0; i < player.Length; i++)
 			{
-				player[i].SetActive(value: true);
+				player[i].SetActive(true);
 			}
 			player = PlayerLines;
 			for (int i = 0; i < player.Length; i++)
 			{
-				player[i].SetActive(value: true);
+				player[i].SetActive(true);
 			}
 			CountText[0].enabled = true;
 			CountText[1].enabled = true;
@@ -227,7 +227,7 @@ public class BumperCarGameController : MonoBehaviour
 
 	private void StartAnimation()
 	{
-		TimerAnimation.SetActive(value: true);
+		TimerAnimation.SetActive(true);
 		Source.PlayOneShot(SoundGo);
 	}
 
@@ -294,8 +294,8 @@ public class BumperCarGameController : MonoBehaviour
 					}
 				}
 			}
-			PlayerLines[0].SetActive(value: false);
-			WallLines[0].SetActive(value: true);
+			PlayerLines[0].SetActive(false);
+			WallLines[0].SetActive(true);
 			IsRed = true;
 		}
 		else if (BlueCount <= 0 && !IsBlue)
@@ -325,8 +325,8 @@ public class BumperCarGameController : MonoBehaviour
 					}
 				}
 			}
-			PlayerLines[1].SetActive(value: false);
-			WallLines[1].SetActive(value: true);
+			PlayerLines[1].SetActive(false);
+			WallLines[1].SetActive(true);
 			IsBlue = true;
 		}
 		else if (GreenCount <= 0 && !IsGreen)
@@ -356,8 +356,8 @@ public class BumperCarGameController : MonoBehaviour
 					}
 				}
 			}
-			PlayerLines[3].SetActive(value: false);
-			WallLines[2].SetActive(value: true);
+			PlayerLines[3].SetActive(false);
+			WallLines[2].SetActive(true);
 			IsGreen = true;
 		}
 		else
@@ -391,8 +391,8 @@ public class BumperCarGameController : MonoBehaviour
 					}
 				}
 			}
-			PlayerLines[2].SetActive(value: false);
-			WallLines[3].SetActive(value: true);
+			PlayerLines[2].SetActive(false);
+			WallLines[3].SetActive(true);
 			IsYellow = true;
 		}
 	}
@@ -447,9 +447,9 @@ public class BumperCarGameController : MonoBehaviour
 
 	public void IGameOver()
 	{
-		//GameOverPanel.SetActive(value: true);
-		GameOverPanel.SetActive(value: true);
-		BGMusic.SetActive(value: false);
+		//GameOverPanel.SetActive(true);
+		GameOverPanel.SetActive(true);
+		BGMusic.SetActive(false);
 		GameAnalytic.AddProgression(new LevelProgression()
 		{
 
@@ -457,19 +457,19 @@ public class BumperCarGameController : MonoBehaviour
 			v_LevelName = "Level Bumper Car Game"
 
 		});
-		BGMusic.SetActive(value: false);
+		BGMusic.SetActive(false);
 		ApplovineAdsManager.Instance.showinter();
 		GameObject[] colliders = Colliders;
 		for (int i = 0; i < colliders.Length; i++)
 		{
-			colliders[i].SetActive(value: false);
+			colliders[i].SetActive(false);
 		}
 		if (ListNumber == 1)
 		{
 			string name = Players[0].name;
 			if (name == "PlayerRed")
 			{
-				WinObject[0].SetActive(value: true);
+				WinObject[0].SetActive(true);
 				if (PlayerPrefs.GetInt("IsCups") == 1)
 				{
 					PlayerPrefs.SetInt("RedNewCount", 3);
@@ -477,7 +477,7 @@ public class BumperCarGameController : MonoBehaviour
 			}
 			else if (name == "PlayerBlue")
 			{
-				WinObject[1].SetActive(value: true);
+				WinObject[1].SetActive(true);
 				if (PlayerPrefs.GetInt("IsCups") == 1)
 				{
 					PlayerPrefs.SetInt("BlueNewCount", 3);
@@ -485,7 +485,7 @@ public class BumperCarGameController : MonoBehaviour
 			}
 			else if (name == "PlayerGreen")
 			{
-				WinObject[2].SetActive(value: true);
+				WinObject[2].SetActive(true);
 				if (PlayerPrefs.GetInt("IsCups") == 1)
 				{
 					PlayerPrefs.SetInt("GreenNewCount", 3);
@@ -493,7 +493,7 @@ public class BumperCarGameController : MonoBehaviour
 			}
 			else if (name == "PlayerYellow")
 			{
-				WinObject[3].SetActive(value: true);
+				WinObject[3].SetActive(true);
 				if (PlayerPrefs.GetInt("IsCups") == 1)
 				{
 					PlayerPrefs.SetInt("YellowNewCount", 3);
@@ -595,7 +595,7 @@ public class BumperCarGameController : MonoBehaviour
 		}
 		else if (ListNumber == 0)
 		{
-			GameOverTie.SetActive(value: true);
+			GameOverTie.SetActive(true);
 			PlayerPrefs.SetInt("RedNewCount", 0);
 			PlayerPrefs.SetInt("BlueNewCount", 0);
 			PlayerPrefs.SetInt("GreenNewCount", 0);
@@ -619,7 +619,7 @@ public class BumperCarGameController : MonoBehaviour
 
 	private void GetButtons()
 	{
-		GameOverButtons.SetActive(value: true);
+		GameOverButtons.SetActive(true);
 	}
 
 	public void MainMenuButton()

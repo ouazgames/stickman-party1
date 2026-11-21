@@ -42,22 +42,22 @@ public class RateScript : MonoBehaviour
 			GameObject[] text = Text1;
 			for (int i = 0; i < text.Length; i++)
 			{
-				text[i].SetActive(value: true);
+				text[i].SetActive(true);
 			}
 			PlayerPrefs.SetInt("RandomCount", 1);
-			LaterButton.SetActive(value: true);
+			LaterButton.SetActive(true);
 		}
 		else if (RandomCount == 1)
 		{
 			GameObject[] text = Text2;
 			for (int i = 0; i < text.Length; i++)
 			{
-				text[i].SetActive(value: true);
+				text[i].SetActive(true);
 			}
-			NoButton.SetActive(value: true);
+			NoButton.SetActive(true);
 		}
 		Source.PlayOneShot(OpenPanelSound);
-		RatePanel.SetActive(value: true);
+		RatePanel.SetActive(true);
 	}
 
 	public void Later()
@@ -65,7 +65,7 @@ public class RateScript : MonoBehaviour
 		PlayerPrefs.SetInt("RateCount", 1);
 		PlayerPrefs.Save();
 		Source.PlayOneShot(ButtonBack);
-		RatePanel.SetActive(value: false);
+		RatePanel.SetActive(false);
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
 			OptionsIntro.Instance.TriggerSelection();
@@ -76,7 +76,7 @@ public class RateScript : MonoBehaviour
 	{
 		PlayerPrefs.SetInt("RateCount", 3);
 		Source.PlayOneShot(ButtonSound);
-		RatePanel.SetActive(value: false);
+		RatePanel.SetActive(false);
 		Application.OpenURL("market://details?id=com.PlayMax.playergames");
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
@@ -88,7 +88,7 @@ public class RateScript : MonoBehaviour
 	{
 		Source.PlayOneShot(ButtonBack);
 		PlayerPrefs.SetInt("RateCount", 3);
-		RatePanel.SetActive(value: false);
+		RatePanel.SetActive(false);
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
 			OptionsIntro.Instance.TriggerSelection();

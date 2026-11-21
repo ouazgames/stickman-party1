@@ -47,7 +47,7 @@ public class BooletScript : MonoBehaviour
 			if (IsDeathMatch)
 			{
 				TankDeathmatchController component = Camera.main.GetComponent<TankDeathmatchController>();
-				collision.gameObject.SetActive(value: false);
+				collision.gameObject.SetActive(false);
 				Object.Instantiate(BigExplosion, base.transform.position, base.transform.rotation);
 				if (base.gameObject.name == "PlayerRed")
 				{
@@ -112,7 +112,7 @@ public class BooletScript : MonoBehaviour
 						Camera.main.GetComponent<FlagGameController>().ActiveRedFlag();
 					}
 				}
-				collision.gameObject.SetActive(value: false);
+				collision.gameObject.SetActive(false);
 				if (OptionsIntro.Instance.VibrationCheck == 0)
 				{
 					OptionsIntro.Instance.TriggerVibrate();

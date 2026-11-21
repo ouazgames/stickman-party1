@@ -73,7 +73,7 @@ public class MenuController : MonoBehaviour
         }
 		if (Cam.Length != 0)
 		{
-			Cam[0].SetActive(value: true);
+			Cam[0].SetActive(true);
 		}
 	}
 
@@ -84,8 +84,8 @@ public class MenuController : MonoBehaviour
 		Source.PlayOneShot(ButtonSound);
 		if (Cam.Length != 0)
 		{
-			Cam[0].SetActive(value: false);
-			Cam[1].SetActive(value: true);
+			Cam[0].SetActive(false);
+			Cam[1].SetActive(true);
 		}
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
@@ -101,8 +101,8 @@ public class MenuController : MonoBehaviour
 		Source.PlayOneShot(ButtonSound);
 		if (Cam.Length != 0)
 		{
-			Cam[0].SetActive(value: false);
-			Cam[1].SetActive(value: true);
+			Cam[0].SetActive(false);
+			Cam[1].SetActive(true);
 		}
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
@@ -118,8 +118,8 @@ public class MenuController : MonoBehaviour
 		Source.PlayOneShot(ButtonSound);
 		if (Cam.Length != 0)
 		{
-			Cam[0].SetActive(value: false);
-			Cam[1].SetActive(value: true);
+			Cam[0].SetActive(false);
+			Cam[1].SetActive(true);
 		}
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
@@ -136,8 +136,8 @@ public class MenuController : MonoBehaviour
 		LevelName = "Soccer";
 		if (Cam.Length != 0)
 		{
-			Cam[0].SetActive(value: false);
-			Cam[1].SetActive(value: true);
+			Cam[0].SetActive(false);
+			Cam[1].SetActive(true);
 		}
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
@@ -153,8 +153,8 @@ public class MenuController : MonoBehaviour
 		LevelName = "Sumo";
 		if (Cam.Length != 0)
 		{
-			Cam[0].SetActive(value: false);
-			Cam[1].SetActive(value: true);
+			Cam[0].SetActive(false);
+			Cam[1].SetActive(true);
 		}
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
@@ -170,8 +170,8 @@ public class MenuController : MonoBehaviour
 		LevelName = "SeaBattle";
 		if (Cam.Length != 0)
 		{
-			Cam[0].SetActive(value: false);
-			Cam[1].SetActive(value: true);
+			Cam[0].SetActive(false);
+			Cam[1].SetActive(true);
 		}
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
@@ -187,8 +187,8 @@ public class MenuController : MonoBehaviour
 		LevelName = "Ghost";
 		if (Cam.Length != 0)
 		{
-			Cam[0].SetActive(value: false);
-			Cam[1].SetActive(value: true);
+			Cam[0].SetActive(false);
+			Cam[1].SetActive(true);
 		}
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
@@ -204,8 +204,8 @@ public class MenuController : MonoBehaviour
 		LevelName = "Bumpercar";
 		if (Cam.Length != 0)
 		{
-			Cam[0].SetActive(value: false);
-			Cam[1].SetActive(value: true);
+			Cam[0].SetActive(false);
+			Cam[1].SetActive(true);
 		}
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
@@ -221,8 +221,8 @@ public class MenuController : MonoBehaviour
 		LevelName = "ColorDash";
 		if (Cam.Length != 0)
 		{
-			Cam[0].SetActive(value: false);
-			Cam[1].SetActive(value: true);
+			Cam[0].SetActive(false);
+			Cam[1].SetActive(true);
 		}
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
@@ -238,8 +238,8 @@ public class MenuController : MonoBehaviour
 		LevelName = "BoxGame";
 		if (Cam.Length != 0)
 		{
-			Cam[0].SetActive(value: false);
-			Cam[1].SetActive(value: true);
+			Cam[0].SetActive(false);
+			Cam[1].SetActive(true);
 		}
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
@@ -253,8 +253,8 @@ public class MenuController : MonoBehaviour
 		Source.PlayOneShot(ButtonBack);
 		if (Cam.Length != 0)
 		{
-			Cam[0].SetActive(value: true);
-			Cam[1].SetActive(value: false);
+			Cam[0].SetActive(true);
+			Cam[1].SetActive(false);
 		}
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
@@ -268,15 +268,15 @@ public class MenuController : MonoBehaviour
 	public void BackToPlayers()
 	{
 		Source.PlayOneShot(ButtonSound);
-		GameModeRaceNo[0].SetActive(value: false);
-		GameModeRaceYes[0].SetActive(value: true);
-		GameModeRaceNo[1].SetActive(value: true);
-		GameModeRaceYes[1].SetActive(value: false);
+		GameModeRaceNo[0].SetActive(false);
+		GameModeRaceYes[0].SetActive(true);
+		GameModeRaceNo[1].SetActive(true);
+		GameModeRaceYes[1].SetActive(false);
 		PlayerPrefs.SetInt("GameMode", 0);
 		IsSoccer = false;
 		Source.PlayOneShot(ButtonBack);
-		Cam[1].SetActive(value: true);
-		Cam[GameNum].SetActive(value: false);
+		Cam[1].SetActive(true);
+		Cam[GameNum].SetActive(false);
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
 			OptionsIntro.Instance.TriggerSelection();
@@ -287,63 +287,63 @@ public class MenuController : MonoBehaviour
 	public void GameMode1Race()
 	{
 		Source.PlayOneShot(ButtonSound);
-		GameModeRaceNo[0].SetActive(value: false);
-		GameModeRaceYes[0].SetActive(value: true);
-		GameModeRaceNo[1].SetActive(value: true);
-		GameModeRaceYes[1].SetActive(value: false);
+		GameModeRaceNo[0].SetActive(false);
+		GameModeRaceYes[0].SetActive(true);
+		GameModeRaceNo[1].SetActive(true);
+		GameModeRaceYes[1].SetActive(false);
 		PlayerPrefs.SetInt("GameMode", 0);
 	}
 
 	public void GameMode2Race()
 	{
 		Source.PlayOneShot(ButtonSound);
-		GameModeRaceNo[0].SetActive(value: true);
-		GameModeRaceYes[0].SetActive(value: false);
-		GameModeRaceNo[1].SetActive(value: false);
-		GameModeRaceYes[1].SetActive(value: true);
+		GameModeRaceNo[0].SetActive(true);
+		GameModeRaceYes[0].SetActive(false);
+		GameModeRaceNo[1].SetActive(false);
+		GameModeRaceYes[1].SetActive(true);
 		PlayerPrefs.SetInt("GameMode", 1);
 	}
 
 	public void GameMode1Tank()
 	{
 		Source.PlayOneShot(ButtonSound);
-		GameModeTankNo[0].SetActive(value: false);
-		GameModeTankYes[0].SetActive(value: true);
-		GameModeTankNo[1].SetActive(value: true);
-		GameModeTankYes[1].SetActive(value: false);
-		GameModeTankNo[2].SetActive(value: true);
-		GameModeTankYes[2].SetActive(value: false);
-		TankMaps[0].SetActive(value: true);
-		TankMaps[1].SetActive(value: false);
-		TankMaps[2].SetActive(value: false);
+		GameModeTankNo[0].SetActive(false);
+		GameModeTankYes[0].SetActive(true);
+		GameModeTankNo[1].SetActive(true);
+		GameModeTankYes[1].SetActive(false);
+		GameModeTankNo[2].SetActive(true);
+		GameModeTankYes[2].SetActive(false);
+		TankMaps[0].SetActive(true);
+		TankMaps[1].SetActive(false);
+		TankMaps[2].SetActive(false);
 	}
 
 	public void GameMode2Tank()
 	{
 		Source.PlayOneShot(ButtonSound);
-		GameModeTankNo[0].SetActive(value: true);
-		GameModeTankYes[0].SetActive(value: false);
-		GameModeTankNo[1].SetActive(value: false);
-		GameModeTankYes[1].SetActive(value: true);
-		GameModeTankNo[2].SetActive(value: true);
-		GameModeTankYes[2].SetActive(value: false);
-		TankMaps[2].SetActive(value: true);
-		TankMaps[0].SetActive(value: false);
-		TankMaps[1].SetActive(value: false);
+		GameModeTankNo[0].SetActive(true);
+		GameModeTankYes[0].SetActive(false);
+		GameModeTankNo[1].SetActive(false);
+		GameModeTankYes[1].SetActive(true);
+		GameModeTankNo[2].SetActive(true);
+		GameModeTankYes[2].SetActive(false);
+		TankMaps[2].SetActive(true);
+		TankMaps[0].SetActive(false);
+		TankMaps[1].SetActive(false);
 	}
 
 	public void GameMode3Tank()
 	{
 		Source.PlayOneShot(ButtonSound);
-		GameModeTankNo[0].SetActive(value: true);
-		GameModeTankYes[0].SetActive(value: false);
-		GameModeTankNo[1].SetActive(value: true);
-		GameModeTankYes[1].SetActive(value: false);
-		GameModeTankNo[2].SetActive(value: false);
-		GameModeTankYes[2].SetActive(value: true);
-		TankMaps[1].SetActive(value: true);
-		TankMaps[0].SetActive(value: false);
-		TankMaps[2].SetActive(value: false);
+		GameModeTankNo[0].SetActive(true);
+		GameModeTankYes[0].SetActive(false);
+		GameModeTankNo[1].SetActive(true);
+		GameModeTankYes[1].SetActive(false);
+		GameModeTankNo[2].SetActive(false);
+		GameModeTankYes[2].SetActive(true);
+		TankMaps[1].SetActive(true);
+		TankMaps[0].SetActive(false);
+		TankMaps[2].SetActive(false);
 	}
 
 	public void Player1()
@@ -352,8 +352,8 @@ public class MenuController : MonoBehaviour
 		PlayerPrefs.SetInt("PlayerNumers", 1);
 		if (needMap)
 		{
-			Cam[1].SetActive(value: false);
-			Cam[GameNum].SetActive(value: true);
+			Cam[1].SetActive(false);
+			Cam[GameNum].SetActive(true);
 		}
 		else if (!needMap)
 		{
@@ -363,11 +363,11 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		VSblackButton.SetActive(value: true);
+		VSblackButton.SetActive(true);
 		GameObject[] vSButton = VSButton;
 		for (int i = 0; i < vSButton.Length; i++)
 		{
-			vSButton[i].SetActive(value: false);
+			vSButton[i].SetActive(false);
 		}
 	}
 
@@ -377,8 +377,8 @@ public class MenuController : MonoBehaviour
 		PlayerPrefs.SetInt("PlayerNumers", 2);
 		if (!IsSoccer)
 		{
-			Cam[1].SetActive(value: false);
-			BotsCam.SetActive(value: true);
+			Cam[1].SetActive(false);
+			BotsCam.SetActive(true);
 		}
 		else
 		{
@@ -388,11 +388,11 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		VSblackButton.SetActive(value: true);
+		VSblackButton.SetActive(true);
 		GameObject[] vSButton = VSButton;
 		for (int i = 0; i < vSButton.Length; i++)
 		{
-			vSButton[i].SetActive(value: false);
+			vSButton[i].SetActive(false);
 		}
 	}
 
@@ -402,8 +402,8 @@ public class MenuController : MonoBehaviour
 		PlayerPrefs.SetInt("PlayerNumers", 3);
 		if (!IsSoccer)
 		{
-			Cam[1].SetActive(value: false);
-			BotsCam.SetActive(value: true);
+			Cam[1].SetActive(false);
+			BotsCam.SetActive(true);
 		}
 		else
 		{
@@ -413,11 +413,11 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		VSblackButton.SetActive(value: true);
+		VSblackButton.SetActive(true);
 		GameObject[] vSButton = VSButton;
 		for (int i = 0; i < vSButton.Length; i++)
 		{
-			vSButton[i].SetActive(value: false);
+			vSButton[i].SetActive(false);
 		}
 	}
 
@@ -427,8 +427,8 @@ public class MenuController : MonoBehaviour
 		PlayerPrefs.SetInt("PlayerNumers", 4);
 		if (needMap)
 		{
-			Cam[1].SetActive(value: false);
-			Cam[GameNum].SetActive(value: true);
+			Cam[1].SetActive(false);
+			Cam[GameNum].SetActive(true);
 		}
 		else if (!needMap)
 		{
@@ -438,11 +438,11 @@ public class MenuController : MonoBehaviour
 		{
 			OptionsIntro.Instance.TriggerSelection();
 		}
-		VSblackButton.SetActive(value: false);
+		VSblackButton.SetActive(false);
 		GameObject[] vSButton = VSButton;
 		for (int i = 0; i < vSButton.Length; i++)
 		{
-			vSButton[i].SetActive(value: true);
+			vSButton[i].SetActive(true);
 		}
 	}
 
@@ -452,8 +452,8 @@ public class MenuController : MonoBehaviour
 		PlayerPrefs.SetInt("NeedBot", 1);
 		if (needMap)
 		{
-			BotsCam.SetActive(value: false);
-			Cam[GameNum].SetActive(value: true);
+			BotsCam.SetActive(false);
+			Cam[GameNum].SetActive(true);
 		}
 		else if (!needMap)
 		{
@@ -471,8 +471,8 @@ public class MenuController : MonoBehaviour
 		PlayerPrefs.SetInt("NeedBot", 0);
 		if (needMap)
 		{
-			BotsCam.SetActive(value: false);
-			Cam[GameNum].SetActive(value: true);
+			BotsCam.SetActive(false);
+			Cam[GameNum].SetActive(true);
 		}
 		else if (!needMap)
 		{
@@ -730,8 +730,8 @@ public class MenuController : MonoBehaviour
 		Source.PlayOneShot(ButtonSound);
 		if (Cam.Length != 0)
 		{
-			Cam[0].SetActive(value: false);
-			Cam[1].SetActive(value: true);
+			Cam[0].SetActive(false);
+			Cam[1].SetActive(true);
 		}
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
@@ -743,8 +743,8 @@ public class MenuController : MonoBehaviour
 	public void TournamentRandom()
 	{
 		Source.PlayOneShot(ButtonSound);
-		Cam[5].SetActive(value: false);
-		RandomCamera.SetActive(value: true);
+		Cam[5].SetActive(false);
+		RandomCamera.SetActive(true);
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
 			OptionsIntro.Instance.TriggerSelection();
@@ -754,8 +754,8 @@ public class MenuController : MonoBehaviour
 	public void TournamentTanksRandom()
 	{
 		Source.PlayOneShot(ButtonSound);
-		Cam[5].SetActive(value: false);
-		RandomTanksCamera.SetActive(value: true);
+		Cam[5].SetActive(false);
+		RandomTanksCamera.SetActive(true);
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
 			OptionsIntro.Instance.TriggerSelection();
@@ -765,8 +765,8 @@ public class MenuController : MonoBehaviour
 	public void TournamentBigButton()
 	{
 		Source.PlayOneShot(ButtonSound);
-		Cam[5].SetActive(value: false);
-		BigTournamentCamera.SetActive(value: true);
+		Cam[5].SetActive(false);
+		BigTournamentCamera.SetActive(true);
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
 			OptionsIntro.Instance.TriggerSelection();
@@ -778,8 +778,8 @@ public class MenuController : MonoBehaviour
 		Source.PlayOneShot(ButtonBack);
 		if (Cam.Length != 0)
 		{
-			Cam[5].SetActive(value: true);
-			BigTournamentCamera.SetActive(value: false);
+			Cam[5].SetActive(true);
+			BigTournamentCamera.SetActive(false);
 		}
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
@@ -790,8 +790,8 @@ public class MenuController : MonoBehaviour
 	public void TournamentVSButton()
 	{
 		Source.PlayOneShot(ButtonSound);
-		Cam[5].SetActive(value: false);
-		VSTournamentCamera.SetActive(value: true);
+		Cam[5].SetActive(false);
+		VSTournamentCamera.SetActive(true);
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{
 			OptionsIntro.Instance.TriggerSelection();
@@ -803,8 +803,8 @@ public class MenuController : MonoBehaviour
 		Source.PlayOneShot(ButtonBack);
 		if (Cam.Length != 0)
 		{
-			Cam[5].SetActive(value: true);
-			VSTournamentCamera.SetActive(value: false);
+			Cam[5].SetActive(true);
+			VSTournamentCamera.SetActive(false);
 		}
 		if (OptionsIntro.Instance.VibrationCheck == 0)
 		{

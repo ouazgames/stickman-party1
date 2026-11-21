@@ -69,7 +69,7 @@ public class CFX_SpawnSystem : MonoBehaviour
 		}
 		if (activateObject && gameObject != null)
 		{
-			gameObject.SetActive(value: true);
+			gameObject.SetActive(true);
 		}
 		return gameObject;
 	}
@@ -95,7 +95,7 @@ public class CFX_SpawnSystem : MonoBehaviour
 		for (int i = 0; i < number; i++)
 		{
 			GameObject gameObject = UnityEngine.Object.Instantiate(sourceObject);
-			gameObject.SetActive(value: false);
+			gameObject.SetActive(false);
 			CFX_AutoDestructShuriken[] componentsInChildren = gameObject.GetComponentsInChildren<CFX_AutoDestructShuriken>(includeInactive: true);
 			for (int j = 0; j < componentsInChildren.Length; j++)
 			{

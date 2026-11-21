@@ -111,10 +111,10 @@ public class BoxGameController : MonoBehaviour
 		PressButton = true;
 		if (PlayerNumers == 1)
 		{
-			Player[0].SetActive(value: true);
-			Player[1].SetActive(value: true);
-			Player[2].SetActive(value: true);
-			Player[3].SetActive(value: true);
+			Player[0].SetActive(true);
+			Player[1].SetActive(true);
+			Player[2].SetActive(true);
+			Player[3].SetActive(true);
 			Player[1].GetComponent<Boxplayer>().IsAIPlayer = true;
 			Player[2].GetComponent<Boxplayer>().IsAIPlayer = true;
 			Player[3].GetComponent<Boxplayer>().IsAIPlayer = true;
@@ -123,34 +123,34 @@ public class BoxGameController : MonoBehaviour
 		{
 			if (NeedBot == 1)
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				Player[2].SetActive(value: true);
-				Player[3].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				Player[2].SetActive(true);
+				Player[3].SetActive(true);
 				Player[2].GetComponent<Boxplayer>().IsAIPlayer = true;
 				Player[3].GetComponent<Boxplayer>().IsAIPlayer = true;
 			}
 			else
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
 			}
 		}
 		else if (PlayerNumers == 3)
 		{
 			if (NeedBot == 1)
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				Player[2].SetActive(value: true);
-				Player[3].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				Player[2].SetActive(true);
+				Player[3].SetActive(true);
 				Player[3].GetComponent<Boxplayer>().IsAIPlayer = true;
 			}
 			else
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				Player[2].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				Player[2].SetActive(true);
 			}
 		}
 		else if (PlayerNumers == 4)
@@ -158,7 +158,7 @@ public class BoxGameController : MonoBehaviour
 			GameObject[] player = Player;
 			for (int i = 0; i < player.Length; i++)
 			{
-				player[i].SetActive(value: true);
+				player[i].SetActive(true);
 			}
 		}
 		Source = GetComponent<AudioSource>();
@@ -170,7 +170,7 @@ public class BoxGameController : MonoBehaviour
 
 	private void StartAnimation()
 	{
-		TimerAnimation.SetActive(value: true);
+		TimerAnimation.SetActive(true);
 		Source.PlayOneShot(SoundGo);
 	}
 
@@ -232,47 +232,47 @@ public class BoxGameController : MonoBehaviour
 			switch (UnityEngine.Random.Range(1, 6))
 			{
 			case 1:
-				Img[0].SetActive(value: true);
-				Img[1].SetActive(value: false);
-				Img[2].SetActive(value: false);
-				Img[3].SetActive(value: false);
-				Img[4].SetActive(value: false);
+				Img[0].SetActive(true);
+				Img[1].SetActive(false);
+				Img[2].SetActive(false);
+				Img[3].SetActive(false);
+				Img[4].SetActive(false);
 				BlockCount = 1;
 				IsBomb = false;
 				break;
 			case 2:
-				Img[0].SetActive(value: false);
-				Img[1].SetActive(value: true);
-				Img[2].SetActive(value: false);
-				Img[3].SetActive(value: false);
-				Img[4].SetActive(value: false);
+				Img[0].SetActive(false);
+				Img[1].SetActive(true);
+				Img[2].SetActive(false);
+				Img[3].SetActive(false);
+				Img[4].SetActive(false);
 				BlockCount = 2;
 				IsBomb = false;
 				break;
 			case 3:
-				Img[0].SetActive(value: false);
-				Img[1].SetActive(value: false);
-				Img[2].SetActive(value: true);
-				Img[3].SetActive(value: false);
-				Img[4].SetActive(value: false);
+				Img[0].SetActive(false);
+				Img[1].SetActive(false);
+				Img[2].SetActive(true);
+				Img[3].SetActive(false);
+				Img[4].SetActive(false);
 				BlockCount = 3;
 				IsBomb = false;
 				break;
 			case 4:
-				Img[0].SetActive(value: false);
-				Img[1].SetActive(value: false);
-				Img[2].SetActive(value: false);
-				Img[3].SetActive(value: true);
-				Img[4].SetActive(value: false);
+				Img[0].SetActive(false);
+				Img[1].SetActive(false);
+				Img[2].SetActive(false);
+				Img[3].SetActive(true);
+				Img[4].SetActive(false);
 				BlockCount = 5;
 				IsBomb = false;
 				break;
 			case 5:
-				Img[0].SetActive(value: false);
-				Img[1].SetActive(value: false);
-				Img[2].SetActive(value: false);
-				Img[3].SetActive(value: false);
-				Img[4].SetActive(value: true);
+				Img[0].SetActive(false);
+				Img[1].SetActive(false);
+				Img[2].SetActive(false);
+				Img[3].SetActive(false);
+				Img[4].SetActive(true);
 				BlockCount = -5;
 				IsBomb = true;
 				break;
@@ -289,8 +289,8 @@ public class BoxGameController : MonoBehaviour
 	{
 		IsGameOver = true;
 		IsStart = false;
-		GameOverPanel.SetActive(value: true);
-		BGMusic.SetActive(value: false);
+		GameOverPanel.SetActive(true);
+		BGMusic.SetActive(false);
 		GameAnalytic.AddProgression(new LevelProgression()
 		{
 
@@ -299,8 +299,8 @@ public class BoxGameController : MonoBehaviour
 
 		});
 		ApplovineAdsManager.Instance.showinter();
-		//GameOverPanel.SetActive(value: true);
-		BGMusic.SetActive(value: false);
+		//GameOverPanel.SetActive(true);
+		BGMusic.SetActive(false);
 		int num = Mathf.Max(ColorCount);
 		for (int i = 0; i < ColorCount.Length; i++)
 		{
@@ -313,7 +313,7 @@ public class BoxGameController : MonoBehaviour
 				switch (i)
 				{
 				case 0:
-					WinObject[0].SetActive(value: true);
+					WinObject[0].SetActive(true);
 					if (PlayerPrefs.GetInt("IsCups") == 1)
 					{
 						PlayerPrefs.SetInt("RedNewCount", 3);
@@ -321,7 +321,7 @@ public class BoxGameController : MonoBehaviour
 					}
 					break;
 				case 1:
-					WinObject[1].SetActive(value: true);
+					WinObject[1].SetActive(true);
 					if (PlayerPrefs.GetInt("IsCups") == 1)
 					{
 						PlayerPrefs.SetInt("BlueNewCount", 3);
@@ -329,7 +329,7 @@ public class BoxGameController : MonoBehaviour
 					}
 					break;
 				case 2:
-					WinObject[2].SetActive(value: true);
+					WinObject[2].SetActive(true);
 					if (PlayerPrefs.GetInt("IsCups") == 1)
 					{
 						PlayerPrefs.SetInt("GreenNewCount", 3);
@@ -337,7 +337,7 @@ public class BoxGameController : MonoBehaviour
 					}
 					break;
 				case 3:
-					WinObject[3].SetActive(value: true);
+					WinObject[3].SetActive(true);
 					if (PlayerPrefs.GetInt("IsCups") == 1)
 					{
 						PlayerPrefs.SetInt("YellowNewCount", 3);
@@ -545,7 +545,7 @@ public class BoxGameController : MonoBehaviour
 			}
 			else
 			{
-				GameOverTie.SetActive(value: true);
+				GameOverTie.SetActive(true);
 				if (PlayerPrefs.GetInt("IsCups") == 1)
 				{
 					PlayerPrefs.SetInt("RedNewCount", 0);
@@ -573,7 +573,7 @@ public class BoxGameController : MonoBehaviour
 
 	private void GetButtons()
 	{
-		GameOverButtons.SetActive(value: true);
+		GameOverButtons.SetActive(true);
 	}
 
 	private void GetCount()
@@ -617,22 +617,22 @@ public class BoxGameController : MonoBehaviour
 			}
 			if (PressCount == 0)
 			{
-				BoxLight[0].SetActive(value: true);
+				BoxLight[0].SetActive(true);
 				ColorCount[0] += BlockCount;
 			}
 			else if (PressCount == 1)
 			{
-				BoxLight[1].SetActive(value: true);
+				BoxLight[1].SetActive(true);
 				ColorCount[1] += BlockCount;
 			}
 			else if (PressCount == 2)
 			{
-				BoxLight[2].SetActive(value: true);
+				BoxLight[2].SetActive(true);
 				ColorCount[2] += BlockCount;
 			}
 			else if (PressCount == 3)
 			{
-				BoxLight[3].SetActive(value: true);
+				BoxLight[3].SetActive(true);
 				ColorCount[3] += BlockCount;
 			}
 			Invoke("BoxPlay", 0.8f);
@@ -645,7 +645,7 @@ public class BoxGameController : MonoBehaviour
 		GameObject[] boxLight = BoxLight;
 		for (int i = 0; i < boxLight.Length; i++)
 		{
-			boxLight[i].SetActive(value: false);
+			boxLight[i].SetActive(false);
 		}
 		PressButton = false;
 		PressTimer = 0.2f;

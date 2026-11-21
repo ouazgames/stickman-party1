@@ -90,51 +90,51 @@ public class SeaBattleController : MonoBehaviour
 		SA = Camera.main.GetComponent<ShowAds>();
 		if (PlayerNumers == 1)
 		{
-			Player[0].SetActive(value: true);
-			AiPlayer[0].SetActive(value: true);
-			AiPlayer[1].SetActive(value: true);
-			AiPlayer[2].SetActive(value: true);
-			JoystickObject[0].SetActive(value: true);
+			Player[0].SetActive(true);
+			AiPlayer[0].SetActive(true);
+			AiPlayer[1].SetActive(true);
+			AiPlayer[2].SetActive(true);
+			JoystickObject[0].SetActive(true);
 		}
 		if (PlayerNumers == 2)
 		{
 			if (NeedBot == 1)
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				JoystickObject[0].SetActive(value: true);
-				JoystickObject[1].SetActive(value: true);
-				AiPlayer[1].SetActive(value: true);
-				AiPlayer[2].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				JoystickObject[0].SetActive(true);
+				JoystickObject[1].SetActive(true);
+				AiPlayer[1].SetActive(true);
+				AiPlayer[2].SetActive(true);
 			}
 			else
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				JoystickObject[0].SetActive(value: true);
-				JoystickObject[1].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				JoystickObject[0].SetActive(true);
+				JoystickObject[1].SetActive(true);
 			}
 		}
 		else if (PlayerNumers == 3)
 		{
 			if (NeedBot == 1)
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				Player[2].SetActive(value: true);
-				JoystickObject[0].SetActive(value: true);
-				JoystickObject[1].SetActive(value: true);
-				JoystickObject[2].SetActive(value: true);
-				AiPlayer[2].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				Player[2].SetActive(true);
+				JoystickObject[0].SetActive(true);
+				JoystickObject[1].SetActive(true);
+				JoystickObject[2].SetActive(true);
+				AiPlayer[2].SetActive(true);
 			}
 			else
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				Player[2].SetActive(value: true);
-				JoystickObject[0].SetActive(value: true);
-				JoystickObject[1].SetActive(value: true);
-				JoystickObject[2].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				Player[2].SetActive(true);
+				JoystickObject[0].SetActive(true);
+				JoystickObject[1].SetActive(true);
+				JoystickObject[2].SetActive(true);
 			}
 		}
 		else if (PlayerNumers == 4)
@@ -142,12 +142,12 @@ public class SeaBattleController : MonoBehaviour
 			GameObject[] player = Player;
 			for (int i = 0; i < player.Length; i++)
 			{
-				player[i].SetActive(value: true);
+				player[i].SetActive(true);
 			}
 			player = JoystickObject;
 			for (int i = 0; i < player.Length; i++)
 			{
-				player[i].SetActive(value: true);
+				player[i].SetActive(true);
 			}
 		}
 		Source = GetComponent<AudioSource>();
@@ -159,7 +159,7 @@ public class SeaBattleController : MonoBehaviour
 
 	private void StartAnimation()
 	{
-		TimerAnimation.SetActive(value: true);
+		TimerAnimation.SetActive(true);
 		Source.PlayOneShot(SoundGo);
 	}
 
@@ -241,8 +241,8 @@ public class SeaBattleController : MonoBehaviour
 
 		});
 		ApplovineAdsManager.Instance.showinter();
-		//GameOverPanel.SetActive(value: true);
-		BGMusic.SetActive(value: false);
+		//GameOverPanel.SetActive(true);
+		BGMusic.SetActive(false);
 		int num = Mathf.Max(ColorCount);
 		for (int i = 0; i < ColorCount.Length; i++)
 		{
@@ -253,7 +253,7 @@ public class SeaBattleController : MonoBehaviour
 					switch (i)
 					{
 					case 0:
-						WinObject[0].SetActive(value: true);
+						WinObject[0].SetActive(true);
 						if (PlayerPrefs.GetInt("IsCups") == 1)
 						{
 							PlayerPrefs.SetInt("RedNewCount", 3);
@@ -261,7 +261,7 @@ public class SeaBattleController : MonoBehaviour
 						}
 						break;
 					case 1:
-						WinObject[1].SetActive(value: true);
+						WinObject[1].SetActive(true);
 						if (PlayerPrefs.GetInt("IsCups") == 1)
 						{
 							PlayerPrefs.SetInt("BlueNewCount", 3);
@@ -269,7 +269,7 @@ public class SeaBattleController : MonoBehaviour
 						}
 						break;
 					case 2:
-						WinObject[2].SetActive(value: true);
+						WinObject[2].SetActive(true);
 						if (PlayerPrefs.GetInt("IsCups") == 1)
 						{
 							PlayerPrefs.SetInt("GreenNewCount", 3);
@@ -277,7 +277,7 @@ public class SeaBattleController : MonoBehaviour
 						}
 						break;
 					case 3:
-						WinObject[3].SetActive(value: true);
+						WinObject[3].SetActive(true);
 						if (PlayerPrefs.GetInt("IsCups") == 1)
 						{
 							PlayerPrefs.SetInt("YellowNewCount", 3);
@@ -486,7 +486,7 @@ public class SeaBattleController : MonoBehaviour
 			}
 			else
 			{
-				GameOverTie.SetActive(value: true);
+				GameOverTie.SetActive(true);
 				PlayerPrefs.SetInt("RedNewCount", 0);
 				PlayerPrefs.SetInt("BlueNewCount", 0);
 				PlayerPrefs.SetInt("GreenNewCount", 0);
@@ -511,7 +511,7 @@ public class SeaBattleController : MonoBehaviour
 
 	private void GetButtons()
 	{
-		GameOverButtons.SetActive(value: true);
+		GameOverButtons.SetActive(true);
 	}
 
 	private void GetCount()

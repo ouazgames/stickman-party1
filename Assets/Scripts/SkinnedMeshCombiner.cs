@@ -99,7 +99,7 @@ public class SkinnedMeshCombiner : MonoBehaviour
 				array[j] = item3.mesh.vertexCount;
 				item3.transform = cachedSkinnedRenderer.localToWorldMatrix;
 				list3.Add(item3);
-				cachedSkinnedRenderer.gameObject.SetActive(value: false);
+				cachedSkinnedRenderer.gameObject.SetActive(false);
 			}
 		}
 		List<Matrix4x4> list4 = new List<Matrix4x4>();

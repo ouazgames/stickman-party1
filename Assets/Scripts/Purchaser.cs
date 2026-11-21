@@ -34,7 +34,7 @@ public class Purchaser : MonoBehaviour
 			GameObject[] adsButton = AdsButton;
 			for (int i = 0; i < adsButton.Length; i++)
 			{
-				adsButton[i].SetActive(value: false);
+				adsButton[i].SetActive(false);
 			}
 		}
 	}

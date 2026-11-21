@@ -177,7 +177,7 @@ public class TankAI : MonoBehaviour
 		IsGetFlag = false;
 		if (Flag != null)
 		{
-			Flag.SetActive(value: false);
+			Flag.SetActive(false);
 		}
 		if (IsReset)
 		{
@@ -189,7 +189,7 @@ public class TankAI : MonoBehaviour
 			{
 				RandomBonus = 3;
 				base.transform.localScale = StartScale;
-				Shield.SetActive(value: true);
+				Shield.SetActive(true);
 				base.gameObject.tag = "Untagged";
 				IsBonus = true;
 			}
@@ -284,43 +284,43 @@ public class TankAI : MonoBehaviour
 			{
 				if (BulletCount == 4)
 				{
-					Bullet[0].SetActive(value: true);
-					Bullet[1].SetActive(value: true);
-					Bullet[2].SetActive(value: true);
-					Bullet[3].SetActive(value: true);
-					Bullet[4].SetActive(value: false);
+					Bullet[0].SetActive(true);
+					Bullet[1].SetActive(true);
+					Bullet[2].SetActive(true);
+					Bullet[3].SetActive(true);
+					Bullet[4].SetActive(false);
 				}
 				else if (BulletCount == 3)
 				{
-					Bullet[0].SetActive(value: true);
-					Bullet[1].SetActive(value: true);
-					Bullet[2].SetActive(value: true);
-					Bullet[3].SetActive(value: false);
-					Bullet[4].SetActive(value: false);
+					Bullet[0].SetActive(true);
+					Bullet[1].SetActive(true);
+					Bullet[2].SetActive(true);
+					Bullet[3].SetActive(false);
+					Bullet[4].SetActive(false);
 				}
 				else if (BulletCount == 2)
 				{
-					Bullet[0].SetActive(value: true);
-					Bullet[1].SetActive(value: true);
-					Bullet[2].SetActive(value: false);
-					Bullet[3].SetActive(value: false);
-					Bullet[4].SetActive(value: false);
+					Bullet[0].SetActive(true);
+					Bullet[1].SetActive(true);
+					Bullet[2].SetActive(false);
+					Bullet[3].SetActive(false);
+					Bullet[4].SetActive(false);
 				}
 				else if (BulletCount == 1)
 				{
-					Bullet[0].SetActive(value: true);
-					Bullet[1].SetActive(value: false);
-					Bullet[2].SetActive(value: false);
-					Bullet[3].SetActive(value: false);
-					Bullet[4].SetActive(value: false);
+					Bullet[0].SetActive(true);
+					Bullet[1].SetActive(false);
+					Bullet[2].SetActive(false);
+					Bullet[3].SetActive(false);
+					Bullet[4].SetActive(false);
 				}
 				else if (BulletCount == 0)
 				{
-					Bullet[0].SetActive(value: false);
-					Bullet[1].SetActive(value: false);
-					Bullet[2].SetActive(value: false);
-					Bullet[3].SetActive(value: false);
-					Bullet[4].SetActive(value: false);
+					Bullet[0].SetActive(false);
+					Bullet[1].SetActive(false);
+					Bullet[2].SetActive(false);
+					Bullet[3].SetActive(false);
+					Bullet[4].SetActive(false);
 				}
 				BulletTimer += Time.deltaTime;
 				if (BulletTimer >= 1.5f)
@@ -336,7 +336,7 @@ public class TankAI : MonoBehaviour
 				GameObject[] bullet = Bullet;
 				for (int i = 0; i < bullet.Length; i++)
 				{
-					bullet[i].SetActive(value: true);
+					bullet[i].SetActive(true);
 				}
 			}
 		}
@@ -426,8 +426,8 @@ public class TankAI : MonoBehaviour
 			if (RandomBonus == 2)
 			{
 				Source.PlayOneShot(LaserBonusSound);
-				TankHead[1].SetActive(value: false);
-				TankHead[0].SetActive(value: true);
+				TankHead[1].SetActive(false);
+				TankHead[0].SetActive(true);
 				RandomBonus = 0;
 			}
 			else if (RandomBonus == 3)
@@ -436,7 +436,7 @@ public class TankAI : MonoBehaviour
 				{
 					Source.PlayOneShot(ShieldOnSound);
 				}
-				Shield.SetActive(value: false);
+				Shield.SetActive(false);
 				base.gameObject.tag = StartTag;
 				RandomBonus = 0;
 			}
@@ -518,14 +518,14 @@ public class TankAI : MonoBehaviour
 				{
 					Source.PlayOneShot(LaserBonusSound);
 					base.transform.localScale = StartScale;
-					TankHead[0].SetActive(value: false);
-					TankHead[1].SetActive(value: true);
+					TankHead[0].SetActive(false);
+					TankHead[1].SetActive(true);
 				}
 				if (RandomBonus == 3)
 				{
 					Source.PlayOneShot(ShieldOnSound);
 					base.transform.localScale = StartScale;
-					Shield.SetActive(value: true);
+					Shield.SetActive(true);
 					base.gameObject.tag = "Untagged";
 				}
 				IsBonus = true;
@@ -539,9 +539,9 @@ public class TankAI : MonoBehaviour
 		else if (other.tag == FlagTag)
 		{
 			Source.PlayOneShot(powerUp);
-			other.gameObject.SetActive(value: false);
+			other.gameObject.SetActive(false);
 			IsGetFlag = true;
-			Flag.SetActive(value: true);
+			Flag.SetActive(true);
 		}
 		else if (other.tag == MyBaseTag && IsGetFlag)
 		{

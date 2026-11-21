@@ -64,7 +64,7 @@ public class Boxplayer : MonoBehaviour
 		if (PunchCount >= 3)
 		{
 			IsMove = false;
-			Dizzy.SetActive(value: true);
+			Dizzy.SetActive(true);
 			Source.PlayOneShot(HurtSound);
 			Invoke("MoveOn", 3f);
 		}
@@ -83,7 +83,7 @@ public class Boxplayer : MonoBehaviour
 	{
 		IsMove = true;
 		PunchCount = 0;
-		Dizzy.SetActive(value: false);
+		Dizzy.SetActive(false);
 	}
 
 	public void PressButton()

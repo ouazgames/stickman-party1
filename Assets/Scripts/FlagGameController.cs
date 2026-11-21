@@ -99,11 +99,11 @@ public class FlagGameController : MonoBehaviour
 			{
 				anim[i].Play("DoorsSpawnAnimation");
 			}
-			Player[0].SetActive(value: true);
+			Player[0].SetActive(true);
 			GameObject[] aIPlayer = AIPlayer;
 			for (int i = 0; i < aIPlayer.Length; i++)
 			{
-				aIPlayer[i].SetActive(value: true);
+				aIPlayer[i].SetActive(true);
 			}
 		}
 		if (PlayerNumers == 2)
@@ -115,19 +115,19 @@ public class FlagGameController : MonoBehaviour
 				{
 					anim[i].Play("DoorsSpawnAnimation");
 				}
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				AIPlayer[0].SetActive(value: true);
-				AIPlayer[1].SetActive(value: true);
-				AIPlayer[3].SetActive(value: true);
-				AIPlayer[4].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				AIPlayer[0].SetActive(true);
+				AIPlayer[1].SetActive(true);
+				AIPlayer[3].SetActive(true);
+				AIPlayer[4].SetActive(true);
 			}
 			else
 			{
 				Anim[0].Play("DoorsSpawnAnimation");
 				Anim[3].Play("DoorsSpawnAnimation");
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
 			}
 		}
 		else if (PlayerNumers == 3)
@@ -139,21 +139,21 @@ public class FlagGameController : MonoBehaviour
 				{
 					anim[i].Play("DoorsSpawnAnimation");
 				}
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				Player[2].SetActive(value: true);
-				AIPlayer[0].SetActive(value: true);
-				AIPlayer[1].SetActive(value: true);
-				AIPlayer[3].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				Player[2].SetActive(true);
+				AIPlayer[0].SetActive(true);
+				AIPlayer[1].SetActive(true);
+				AIPlayer[3].SetActive(true);
 			}
 			else
 			{
 				Anim[0].Play("DoorsSpawnAnimation");
 				Anim[3].Play("DoorsSpawnAnimation");
 				Anim[5].Play("DoorsSpawnAnimation");
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				Player[2].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				Player[2].SetActive(true);
 			}
 		}
 		else if (PlayerNumers == 4)
@@ -168,10 +168,10 @@ public class FlagGameController : MonoBehaviour
 				GameObject[] aIPlayer = Player;
 				for (int i = 0; i < aIPlayer.Length; i++)
 				{
-					aIPlayer[i].SetActive(value: true);
+					aIPlayer[i].SetActive(true);
 				}
-				AIPlayer[0].SetActive(value: true);
-				AIPlayer[3].SetActive(value: true);
+				AIPlayer[0].SetActive(true);
+				AIPlayer[3].SetActive(true);
 			}
 			else
 			{
@@ -182,7 +182,7 @@ public class FlagGameController : MonoBehaviour
 				GameObject[] aIPlayer = Player;
 				for (int i = 0; i < aIPlayer.Length; i++)
 				{
-					aIPlayer[i].SetActive(value: true);
+					aIPlayer[i].SetActive(true);
 				}
 			}
 		}
@@ -196,7 +196,7 @@ public class FlagGameController : MonoBehaviour
 
 	private void StartAnimation()
 	{
-		TimerAnimation.SetActive(value: true);
+		TimerAnimation.SetActive(true);
 		Source.PlayOneShot(SoundGo);
 	}
 
@@ -315,7 +315,7 @@ public class FlagGameController : MonoBehaviour
 		}
 		if (!ActivePlayers[0].activeSelf && !IsActive1)
 		{
-			LightAnimation[0].SetActive(value: true);
+			LightAnimation[0].SetActive(true);
 			ActivePlayers[0].transform.position = SpawnTransform[0].position;
 			Invoke("Active1", 8f);
 			IsActive1 = true;
@@ -324,14 +324,14 @@ public class FlagGameController : MonoBehaviour
 		{
 			if (ActivePlayers[1].name == "PlayerBlue")
 			{
-				LightAnimation[3].SetActive(value: true);
+				LightAnimation[3].SetActive(true);
 				ActivePlayers[1].transform.position = SpawnTransform[3].position;
 				Invoke("Active2", 8f);
 				IsActive2 = true;
 			}
 			else if (ActivePlayers[1].name == "PlayerOrange")
 			{
-				LightAnimation[1].SetActive(value: true);
+				LightAnimation[1].SetActive(true);
 				ActivePlayers[1].transform.position = SpawnTransform[1].position;
 				Invoke("Active2", 8f);
 				IsActive2 = true;
@@ -345,21 +345,21 @@ public class FlagGameController : MonoBehaviour
 		{
 			if (ActivePlayers[2].name == "PlayerGreen")
 			{
-				LightAnimation[5].SetActive(value: true);
+				LightAnimation[5].SetActive(true);
 				ActivePlayers[2].transform.position = SpawnTransform[5].position;
 				Invoke("Active3", 8f);
 				IsActive3 = true;
 			}
 			else if (ActivePlayers[2].name == "PlayerYellow")
 			{
-				LightAnimation[2].SetActive(value: true);
+				LightAnimation[2].SetActive(true);
 				ActivePlayers[2].transform.position = SpawnTransform[2].position;
 				Invoke("Active3", 8f);
 				IsActive3 = true;
 			}
 			else if (ActivePlayers[2].name == "PlayerOrange")
 			{
-				LightAnimation[1].SetActive(value: true);
+				LightAnimation[1].SetActive(true);
 				ActivePlayers[2].transform.position = SpawnTransform[1].position;
 				Invoke("Active3", 8f);
 				IsActive3 = true;
@@ -373,28 +373,28 @@ public class FlagGameController : MonoBehaviour
 		{
 			if (ActivePlayers[3].name == "PlayerYellow")
 			{
-				LightAnimation[2].SetActive(value: true);
+				LightAnimation[2].SetActive(true);
 				ActivePlayers[3].transform.position = SpawnTransform[2].position;
 				Invoke("Active4", 8f);
 				IsActive4 = true;
 			}
 			else if (ActivePlayers[3].name == "PlayerViolet")
 			{
-				LightAnimation[4].SetActive(value: true);
+				LightAnimation[4].SetActive(true);
 				ActivePlayers[3].transform.position = SpawnTransform[4].position;
 				Invoke("Active4", 8f);
 				IsActive4 = true;
 			}
 			else if (ActivePlayers[3].name == "PlayerOrange")
 			{
-				LightAnimation[1].SetActive(value: true);
+				LightAnimation[1].SetActive(true);
 				ActivePlayers[3].transform.position = SpawnTransform[1].position;
 				Invoke("Active4", 8f);
 				IsActive4 = true;
 			}
 			else if (ActivePlayers[3].name == "PlayerBlue")
 			{
-				LightAnimation[3].SetActive(value: true);
+				LightAnimation[3].SetActive(true);
 				ActivePlayers[3].transform.position = SpawnTransform[3].position;
 				Invoke("Active4", 8f);
 				IsActive4 = true;
@@ -408,21 +408,21 @@ public class FlagGameController : MonoBehaviour
 		{
 			if (ActivePlayers[4].name == "PlayerViolet")
 			{
-				LightAnimation[4].SetActive(value: true);
+				LightAnimation[4].SetActive(true);
 				ActivePlayers[4].transform.position = SpawnTransform[4].position;
 				Invoke("Active5", 8f);
 				IsActive5 = true;
 			}
 			else if (ActivePlayers[4].name == "PlayerOrange")
 			{
-				LightAnimation[1].SetActive(value: true);
+				LightAnimation[1].SetActive(true);
 				ActivePlayers[4].transform.position = SpawnTransform[1].position;
 				Invoke("Active5", 8f);
 				IsActive5 = true;
 			}
 			if (ActivePlayers[4].name == "PlayerYellow")
 			{
-				LightAnimation[2].SetActive(value: true);
+				LightAnimation[2].SetActive(true);
 				ActivePlayers[4].transform.position = SpawnTransform[2].position;
 				Invoke("Active5", 8f);
 				IsActive5 = true;
@@ -432,14 +432,14 @@ public class FlagGameController : MonoBehaviour
 		{
 			if (ActivePlayers[5].name == "PlayerViolet")
 			{
-				LightAnimation[4].SetActive(value: true);
+				LightAnimation[4].SetActive(true);
 				ActivePlayers[5].transform.position = SpawnTransform[4].position;
 				Invoke("Active6", 8f);
 				IsActive6 = true;
 			}
 			else if (ActivePlayers[5].name == "PlayerGreen")
 			{
-				LightAnimation[5].SetActive(value: true);
+				LightAnimation[5].SetActive(true);
 				ActivePlayers[5].transform.position = SpawnTransform[5].position;
 				Invoke("Active6", 8f);
 				IsActive6 = true;
@@ -450,8 +450,8 @@ public class FlagGameController : MonoBehaviour
 	private void Active1()
 	{
 		Anim[0].Play("DoorsSpawnAnimation");
-		LightAnimation[0].SetActive(value: false);
-		ActivePlayers[0].SetActive(value: true);
+		LightAnimation[0].SetActive(false);
+		ActivePlayers[0].SetActive(true);
 		IsActive1 = false;
 	}
 
@@ -460,15 +460,15 @@ public class FlagGameController : MonoBehaviour
 		if (ActivePlayers[1].name == "PlayerBlue")
 		{
 			Anim[3].Play("DoorsSpawnAnimation");
-			LightAnimation[3].SetActive(value: false);
-			ActivePlayers[1].SetActive(value: true);
+			LightAnimation[3].SetActive(false);
+			ActivePlayers[1].SetActive(true);
 			IsActive2 = false;
 		}
 		else if (ActivePlayers[1].name == "PlayerOrange")
 		{
 			Anim[1].Play("DoorsSpawnAnimation");
-			LightAnimation[1].SetActive(value: false);
-			ActivePlayers[1].SetActive(value: true);
+			LightAnimation[1].SetActive(false);
+			ActivePlayers[1].SetActive(true);
 			IsActive2 = false;
 		}
 	}
@@ -478,22 +478,22 @@ public class FlagGameController : MonoBehaviour
 		if (ActivePlayers[2].name == "PlayerGreen")
 		{
 			Anim[5].Play("DoorsSpawnAnimation");
-			LightAnimation[5].SetActive(value: false);
-			ActivePlayers[2].SetActive(value: true);
+			LightAnimation[5].SetActive(false);
+			ActivePlayers[2].SetActive(true);
 			IsActive3 = false;
 		}
 		else if (ActivePlayers[2].name == "PlayerYellow")
 		{
 			Anim[2].Play("DoorsSpawnAnimation");
-			LightAnimation[2].SetActive(value: false);
-			ActivePlayers[2].SetActive(value: true);
+			LightAnimation[2].SetActive(false);
+			ActivePlayers[2].SetActive(true);
 			IsActive3 = false;
 		}
 		else if (ActivePlayers[2].name == "PlayerOrange")
 		{
 			Anim[1].Play("DoorsSpawnAnimation");
-			LightAnimation[1].SetActive(value: false);
-			ActivePlayers[2].SetActive(value: true);
+			LightAnimation[1].SetActive(false);
+			ActivePlayers[2].SetActive(true);
 			IsActive3 = false;
 		}
 	}
@@ -503,29 +503,29 @@ public class FlagGameController : MonoBehaviour
 		if (ActivePlayers[3].name == "PlayerYellow")
 		{
 			Anim[2].Play("DoorsSpawnAnimation");
-			LightAnimation[2].SetActive(value: false);
-			ActivePlayers[3].SetActive(value: true);
+			LightAnimation[2].SetActive(false);
+			ActivePlayers[3].SetActive(true);
 			IsActive4 = false;
 		}
 		else if (ActivePlayers[3].name == "PlayerViolet")
 		{
 			Anim[4].Play("DoorsSpawnAnimation");
-			LightAnimation[4].SetActive(value: false);
-			ActivePlayers[3].SetActive(value: true);
+			LightAnimation[4].SetActive(false);
+			ActivePlayers[3].SetActive(true);
 			IsActive4 = false;
 		}
 		else if (ActivePlayers[3].name == "PlayerOrange")
 		{
 			Anim[1].Play("DoorsSpawnAnimation");
-			LightAnimation[1].SetActive(value: false);
-			ActivePlayers[3].SetActive(value: true);
+			LightAnimation[1].SetActive(false);
+			ActivePlayers[3].SetActive(true);
 			IsActive4 = false;
 		}
 		else if (ActivePlayers[3].name == "PlayerBlue")
 		{
 			Anim[3].Play("DoorsSpawnAnimation");
-			LightAnimation[3].SetActive(value: false);
-			ActivePlayers[3].SetActive(value: true);
+			LightAnimation[3].SetActive(false);
+			ActivePlayers[3].SetActive(true);
 			IsActive4 = false;
 		}
 	}
@@ -535,22 +535,22 @@ public class FlagGameController : MonoBehaviour
 		if (ActivePlayers[4].name == "PlayerViolet")
 		{
 			Anim[4].Play("DoorsSpawnAnimation");
-			LightAnimation[4].SetActive(value: false);
-			ActivePlayers[4].SetActive(value: true);
+			LightAnimation[4].SetActive(false);
+			ActivePlayers[4].SetActive(true);
 			IsActive5 = false;
 		}
 		else if (ActivePlayers[4].name == "PlayerOrange")
 		{
 			Anim[1].Play("DoorsSpawnAnimation");
-			LightAnimation[1].SetActive(value: false);
-			ActivePlayers[4].SetActive(value: true);
+			LightAnimation[1].SetActive(false);
+			ActivePlayers[4].SetActive(true);
 			IsActive5 = false;
 		}
 		else if (ActivePlayers[4].name == "PlayerYellow")
 		{
 			Anim[2].Play("DoorsSpawnAnimation");
-			LightAnimation[2].SetActive(value: false);
-			ActivePlayers[4].SetActive(value: true);
+			LightAnimation[2].SetActive(false);
+			ActivePlayers[4].SetActive(true);
 			IsActive5 = false;
 		}
 	}
@@ -560,34 +560,34 @@ public class FlagGameController : MonoBehaviour
 		if (ActivePlayers[5].name == "PlayerViolet")
 		{
 			Anim[4].Play("DoorsSpawnAnimation");
-			LightAnimation[4].SetActive(value: false);
-			ActivePlayers[5].SetActive(value: true);
+			LightAnimation[4].SetActive(false);
+			ActivePlayers[5].SetActive(true);
 			IsActive6 = false;
 		}
 		else if (ActivePlayers[5].name == "PlayerGreen")
 		{
 			Anim[5].Play("DoorsSpawnAnimation");
-			LightAnimation[5].SetActive(value: false);
-			ActivePlayers[5].SetActive(value: true);
+			LightAnimation[5].SetActive(false);
+			ActivePlayers[5].SetActive(true);
 			IsActive6 = false;
 		}
 	}
 
 	public void ActiveRedFlag()
 	{
-		Flag[0].SetActive(value: true);
+		Flag[0].SetActive(true);
 	}
 
 	public void ActiveBlueFlag()
 	{
-		Flag[1].SetActive(value: true);
+		Flag[1].SetActive(true);
 	}
 
 	public void GameOver()
 	{
 		IsGameOver = true;
-		GameOverPanel.SetActive(value: true);
-		BGMusic.SetActive(value: false);
+		GameOverPanel.SetActive(true);
+		BGMusic.SetActive(false);
 		if (PlayerPrefs.GetInt("IsCups") == 0)
 		{
 			Invoke("GetButtons", 2f);
@@ -598,10 +598,10 @@ public class FlagGameController : MonoBehaviour
 		}
 		if (RedGoals > BlueGoals)
 		{
-			WinObject[0].SetActive(value: true);
+			WinObject[0].SetActive(true);
 			if (ActivePlayers.Length >= 4)
 			{
-				WinObject[3].SetActive(value: true);
+				WinObject[3].SetActive(true);
 				if (PlayerPrefs.GetInt("IsCups") == 1)
 				{
 					PlayerPrefs.SetInt("RedNewCount", 3);
@@ -611,10 +611,10 @@ public class FlagGameController : MonoBehaviour
 		}
 		else if (RedGoals < BlueGoals)
 		{
-			WinObject[1].SetActive(value: true);
+			WinObject[1].SetActive(true);
 			if (ActivePlayers.Length >= 3)
 			{
-				WinObject[2].SetActive(value: true);
+				WinObject[2].SetActive(true);
 				if (PlayerPrefs.GetInt("IsCups") == 1)
 				{
 					PlayerPrefs.SetInt("BlueNewCount", 3);
@@ -696,7 +696,7 @@ public class FlagGameController : MonoBehaviour
 
 	private void GetButtons()
 	{
-		GameOverButtons.SetActive(value: true);
+		GameOverButtons.SetActive(true);
 	}
 
 	private void GetCount()

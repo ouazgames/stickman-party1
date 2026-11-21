@@ -94,46 +94,46 @@ public class RunGameController : MonoBehaviour
 		SA = Camera.main.GetComponent<ShowAds>();
 		if (PlayerNumers == 1)
 		{
-			Player[0].SetActive(value: true);
-			Player[1].SetActive(value: true);
+			Player[0].SetActive(true);
+			Player[1].SetActive(true);
 			Player[1].GetComponent<PlayerScript>().IsAIPlayer = true;
-			Player[2].SetActive(value: true);
+			Player[2].SetActive(true);
 			Player[2].GetComponent<PlayerScript>().IsAIPlayer = true;
-			Player[3].SetActive(value: true);
+			Player[3].SetActive(true);
 			Player[3].GetComponent<PlayerScript>().IsAIPlayer = true;
 		}
 		else if (PlayerNumers == 2)
 		{
 			if (NeedBot == 1)
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				Player[2].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				Player[2].SetActive(true);
 				Player[2].GetComponent<PlayerScript>().IsAIPlayer = true;
-				Player[3].SetActive(value: true);
+				Player[3].SetActive(true);
 				Player[3].GetComponent<PlayerScript>().IsAIPlayer = true;
 			}
 			else
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
 			}
 		}
 		else if (PlayerNumers == 3)
 		{
 			if (NeedBot == 1)
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				Player[2].SetActive(value: true);
-				Player[3].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				Player[2].SetActive(true);
+				Player[3].SetActive(true);
 				Player[3].GetComponent<PlayerScript>().IsAIPlayer = true;
 			}
 			else
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				Player[2].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				Player[2].SetActive(true);
 			}
 		}
 		else if (PlayerNumers == 4)
@@ -141,7 +141,7 @@ public class RunGameController : MonoBehaviour
 			GameObject[] player = Player;
 			for (int i = 0; i < player.Length; i++)
 			{
-				player[i].SetActive(value: true);
+				player[i].SetActive(true);
 			}
 		}
 		base.transform.position = StartPos;
@@ -161,14 +161,14 @@ public class RunGameController : MonoBehaviour
 
 	private void StartAnimation()
 	{
-		TimerAnimation.SetActive(value: true);
+		TimerAnimation.SetActive(true);
 		Source.PlayOneShot(SoundGo);
 	}
 
 	private void StartGame()
 	{
 		IsSMove = true;
-		StartLaval.SetActive(value: false);
+		StartLaval.SetActive(false);
 		Animation[] anim = Anim;
 		for (int i = 0; i < anim.Length; i++)
 		{
@@ -233,8 +233,8 @@ public class RunGameController : MonoBehaviour
 		{
 			return;
 		}
-		//GameOverPanel.SetActive(value: true);
-		BGMusic.SetActive(value: false);
+		//GameOverPanel.SetActive(true);
+		BGMusic.SetActive(false);
 		ApplovineAdsManager.Instance.showinter();
 		Invoke("GetButtons", 2f);
 		if (ListNumber == 1)
@@ -242,19 +242,19 @@ public class RunGameController : MonoBehaviour
 			string name = Players[0].name;
 			if (name == "PlayerRed")
 			{
-				WinObject[0].SetActive(value: true);
+				WinObject[0].SetActive(true);
 			}
 			else if (name == "PlayerBlue")
 			{
-				WinObject[1].SetActive(value: true);
+				WinObject[1].SetActive(true);
 			}
 			else if (name == "PlayerGreen")
 			{
-				WinObject[2].SetActive(value: true);
+				WinObject[2].SetActive(true);
 			}
 			else if (name == "PlayerYellow")
 			{
-				WinObject[3].SetActive(value: true);
+				WinObject[3].SetActive(true);
 			}
 			AnimList.RemoveAll((Animation item) => item == null);
 			AnimList[0].Play("StayAnim");
@@ -262,7 +262,7 @@ public class RunGameController : MonoBehaviour
 		}
 		else if (ListNumber == 0)
 		{
-			GameOverTie.SetActive(value: true);
+			GameOverTie.SetActive(true);
 		}
 		//SA.ShowInter();
 	}
@@ -274,32 +274,32 @@ public class RunGameController : MonoBehaviour
 			return;
 		}
 		SA.ShowInter();
-		GameOverPanel.SetActive(value: true);
-		BGMusic.SetActive(value: false);
+		GameOverPanel.SetActive(true);
+		BGMusic.SetActive(false);
 		Invoke("GetCount", 3f);
 		string text = "";
 		text = ((NamesWinner.Count <= 0) ? Players[0].name : NamesWinner[0]);
 		if (text == "PlayerRed")
 		{
-			WinObject[0].SetActive(value: true);
+			WinObject[0].SetActive(true);
 			PlayerPrefs.SetInt("RedNewCount", 3);
 			IsRedWin = true;
 		}
 		else if (text == "PlayerBlue")
 		{
-			WinObject[1].SetActive(value: true);
+			WinObject[1].SetActive(true);
 			PlayerPrefs.SetInt("BlueNewCount", 3);
 			IsBlueWin = true;
 		}
 		else if (text == "PlayerGreen")
 		{
-			WinObject[2].SetActive(value: true);
+			WinObject[2].SetActive(true);
 			PlayerPrefs.SetInt("GreenNewCount", 3);
 			IsGreenWin = true;
 		}
 		else if (text == "PlayerYellow")
 		{
-			WinObject[3].SetActive(value: true);
+			WinObject[3].SetActive(true);
 			PlayerPrefs.SetInt("YellowNewCount", 3);
 			IsYellowWin = true;
 		}
@@ -845,8 +845,8 @@ public class RunGameController : MonoBehaviour
 		{
 			return;
 		}
-		GameOverPanel.SetActive(value: true);
-		BGMusic.SetActive(value: false);
+		GameOverPanel.SetActive(true);
+		BGMusic.SetActive(false);
 		Invoke("GetButtons", 2f);
 		Players.RemoveAll((GameObject item) => item == null);
 		AnimList.RemoveAll((Animation item) => item == null);
@@ -854,19 +854,19 @@ public class RunGameController : MonoBehaviour
 		{
 			if (FinishName == "PlayerRed")
 			{
-				WinObject[0].SetActive(value: true);
+				WinObject[0].SetActive(true);
 			}
 			else if (FinishName == "PlayerBlue")
 			{
-				WinObject[1].SetActive(value: true);
+				WinObject[1].SetActive(true);
 			}
 			else if (FinishName == "PlayerGreen")
 			{
-				WinObject[2].SetActive(value: true);
+				WinObject[2].SetActive(true);
 			}
 			else if (FinishName == "PlayerYellow")
 			{
-				WinObject[3].SetActive(value: true);
+				WinObject[3].SetActive(true);
 			}
 			foreach (Animation anim in AnimList)
 			{
@@ -879,7 +879,7 @@ public class RunGameController : MonoBehaviour
 		}
 		else if (names.Count > 1)
 		{
-			GameOverTie.SetActive(value: true);
+			GameOverTie.SetActive(true);
 			if (AnimList.Count > 0)
 			{
 				foreach (Animation anim2 in AnimList)
@@ -923,7 +923,7 @@ public class RunGameController : MonoBehaviour
 
 	private void GetButtons()
 	{
-		GameOverButtons.SetActive(value: true);
+		GameOverButtons.SetActive(true);
 	}
 
 	public void MainMenuButton()

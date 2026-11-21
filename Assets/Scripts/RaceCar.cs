@@ -288,24 +288,24 @@ public class RaceCar : MonoBehaviour
 
 	private void PlayWhiteAnim()
 	{
-		WhiteBody.SetActive(value: true);
+		WhiteBody.SetActive(true);
 		Invoke("PlayWhiteAnim2", 0.15f);
 	}
 
 	private void PlayWhiteAnim2()
 	{
-		WhiteBody.SetActive(value: false);
+		WhiteBody.SetActive(false);
 		Invoke("PlayWhiteAnim3", 0.15f);
 	}
 
 	private void PlayWhiteAnim3()
 	{
-		WhiteBody.SetActive(value: true);
+		WhiteBody.SetActive(true);
 		Invoke("PlayWhiteAnim4", 0.15f);
 	}
 
 	private void PlayWhiteAnim4()
 	{
-		WhiteBody.SetActive(value: false);
+		WhiteBody.SetActive(false);
 	}
 }

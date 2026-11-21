@@ -89,38 +89,38 @@ public class SoccerGameController : MonoBehaviour
 		BlueGoals = 0;
 		if (PlayerNumers == 1)
 		{
-			Player[0].SetActive(value: true);
+			Player[0].SetActive(true);
 			AiPlayer.GetComponent<SoccerPlayer>().IsAIPlayer = true;
-			AiPlayer.SetActive(value: true);
-			JoystickObject[0].SetActive(value: true);
+			AiPlayer.SetActive(true);
+			JoystickObject[0].SetActive(true);
 		}
 		else if (PlayerNumers == 2)
 		{
-			Player[0].SetActive(value: true);
-			Player[1].SetActive(value: true);
-			JoystickObject[0].SetActive(value: true);
-			JoystickObject[1].SetActive(value: true);
+			Player[0].SetActive(true);
+			Player[1].SetActive(true);
+			JoystickObject[0].SetActive(true);
+			JoystickObject[1].SetActive(true);
 		}
 		else if (PlayerNumers == 3)
 		{
-			Player[0].SetActive(value: true);
-			Player[1].SetActive(value: true);
-			Player[2].SetActive(value: true);
-			JoystickObject[0].SetActive(value: true);
-			JoystickObject[1].SetActive(value: true);
-			JoystickObject[2].SetActive(value: true);
+			Player[0].SetActive(true);
+			Player[1].SetActive(true);
+			Player[2].SetActive(true);
+			JoystickObject[0].SetActive(true);
+			JoystickObject[1].SetActive(true);
+			JoystickObject[2].SetActive(true);
 		}
 		else if (PlayerNumers == 4)
 		{
 			GameObject[] player = Player;
 			for (int i = 0; i < player.Length; i++)
 			{
-				player[i].SetActive(value: true);
+				player[i].SetActive(true);
 			}
 			player = JoystickObject;
 			for (int i = 0; i < player.Length; i++)
 			{
-				player[i].SetActive(value: true);
+				player[i].SetActive(true);
 			}
 		}
 		Source = GetComponent<AudioSource>();
@@ -134,7 +134,7 @@ public class SoccerGameController : MonoBehaviour
 
 	private void StartAnimation()
 	{
-		TimerAnimation.SetActive(value: true);
+		TimerAnimation.SetActive(true);
 		Source.PlayOneShot(SoundGo);
 	}
 
@@ -203,14 +203,14 @@ public class SoccerGameController : MonoBehaviour
 	{
 		Source.volume = 0.45f;
 		Source.PlayOneShot(GoalSound);
-		GoalAnimation[0].SetActive(value: true);
+		GoalAnimation[0].SetActive(true);
 		RedGoals++;
 		Text[] redGoalsText = RedGoalsText;
 		for (int i = 0; i < redGoalsText.Length; i++)
 		{
 			redGoalsText[i].text = string.Concat(RedGoals);
 		}
-		BallObject.SetActive(value: false);
+		BallObject.SetActive(false);
 		if (RedGoals < 3)
 		{
 			Invoke("SetTransform", 2.5f);
@@ -226,14 +226,14 @@ public class SoccerGameController : MonoBehaviour
 	{
 		Source.volume = 0.45f;
 		Source.PlayOneShot(GoalSound);
-		GoalAnimation[1].SetActive(value: true);
+		GoalAnimation[1].SetActive(true);
 		BlueGoals++;
 		Text[] blueGoalsText = BlueGoalsText;
 		for (int i = 0; i < blueGoalsText.Length; i++)
 		{
 			blueGoalsText[i].text = string.Concat(BlueGoals);
 		}
-		BallObject.SetActive(value: false);
+		BallObject.SetActive(false);
 		if (BlueGoals < 3)
 		{
 			Invoke("SetTransform", 2.5f);
@@ -255,8 +255,8 @@ public class SoccerGameController : MonoBehaviour
 			v_LevelName = "Level Soccer Game"
 
 		});
-		//GameOverPanel.SetActive(value: true);
-		BGMusic.SetActive(value: false);
+		//GameOverPanel.SetActive(true);
+		BGMusic.SetActive(false);
 		ApplovineAdsManager.Instance.showinter();
 		if (PlayerPrefs.GetInt("IsCups") == 0)
 		{
@@ -268,12 +268,12 @@ public class SoccerGameController : MonoBehaviour
 		}
 		if (RedGoals > BlueGoals)
 		{
-			WinObject[0].SetActive(value: true);
+			WinObject[0].SetActive(true);
 			if (ActivePlayers.Length != 4)
 			{
 				return;
 			}
-			WinObject[3].SetActive(value: true);
+			WinObject[3].SetActive(true);
 			if (PlayerPrefs.GetInt("IsCups") == 1)
 			{
 				PlayerPrefs.SetInt("RedNewCount", 3);
@@ -282,12 +282,12 @@ public class SoccerGameController : MonoBehaviour
 		}
 		else if (RedGoals < BlueGoals)
 		{
-			WinObject[1].SetActive(value: true);
+			WinObject[1].SetActive(true);
 			if (ActivePlayers.Length < 3)
 			{
 				return;
 			}
-			WinObject[2].SetActive(value: true);
+			WinObject[2].SetActive(true);
 			if (PlayerPrefs.GetInt("IsCups") == 1)
 			{
 				PlayerPrefs.SetInt("BlueNewCount", 3);
@@ -296,7 +296,7 @@ public class SoccerGameController : MonoBehaviour
 		}
 		else if (RedGoals == BlueGoals)
 		{
-			GameOverTie.SetActive(value: true);
+			GameOverTie.SetActive(true);
 		}
 		GameObject[] activePlayers = ActivePlayers;
 		for (int i = 0; i < activePlayers.Length; i++)
@@ -313,7 +313,7 @@ public class SoccerGameController : MonoBehaviour
 
 	private void GetButtons()
 	{
-		GameOverButtons.SetActive(value: true);
+		GameOverButtons.SetActive(true);
 	}
 
 	public void MainMenuButton()
@@ -336,8 +336,8 @@ public class SoccerGameController : MonoBehaviour
 		Player[2].transform.position = Gametransform[2].transform.position;
 		Player[3].transform.position = Gametransform[3].transform.position;
 		BallObject.transform.position = Gametransform[4].transform.position;
-		GoalAnimation[0].SetActive(value: false);
-		GoalAnimation[1].SetActive(value: false);
-		BallObject.SetActive(value: true);
+		GoalAnimation[0].SetActive(false);
+		GoalAnimation[1].SetActive(false);
+		BallObject.SetActive(true);
 	}
 }

@@ -81,53 +81,53 @@ public class RaceGameController : MonoBehaviour
 		SA = Camera.main.GetComponent<ShowAds>();
 		if (PlayerNumers == 1)
 		{
-			Player[0].SetActive(value: true);
-			PlayerJoystick[0].SetActive(value: true);
+			Player[0].SetActive(true);
+			PlayerJoystick[0].SetActive(true);
 			GameObject[] aIPlayer = AIPlayer;
 			for (int i = 0; i < aIPlayer.Length; i++)
 			{
-				aIPlayer[i].SetActive(value: true);
+				aIPlayer[i].SetActive(true);
 			}
 		}
 		if (PlayerNumers == 2)
 		{
 			if (NeedBot == 1)
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				PlayerJoystick[0].SetActive(value: true);
-				PlayerJoystick[1].SetActive(value: true);
-				AIPlayer[1].SetActive(value: true);
-				AIPlayer[2].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				PlayerJoystick[0].SetActive(true);
+				PlayerJoystick[1].SetActive(true);
+				AIPlayer[1].SetActive(true);
+				AIPlayer[2].SetActive(true);
 			}
 			else
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				PlayerJoystick[0].SetActive(value: true);
-				PlayerJoystick[1].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				PlayerJoystick[0].SetActive(true);
+				PlayerJoystick[1].SetActive(true);
 			}
 		}
 		else if (PlayerNumers == 3)
 		{
 			if (NeedBot == 1)
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				Player[2].SetActive(value: true);
-				PlayerJoystick[0].SetActive(value: true);
-				PlayerJoystick[1].SetActive(value: true);
-				PlayerJoystick[2].SetActive(value: true);
-				AIPlayer[2].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				Player[2].SetActive(true);
+				PlayerJoystick[0].SetActive(true);
+				PlayerJoystick[1].SetActive(true);
+				PlayerJoystick[2].SetActive(true);
+				AIPlayer[2].SetActive(true);
 			}
 			else
 			{
-				Player[0].SetActive(value: true);
-				Player[1].SetActive(value: true);
-				Player[2].SetActive(value: true);
-				PlayerJoystick[0].SetActive(value: true);
-				PlayerJoystick[1].SetActive(value: true);
-				PlayerJoystick[2].SetActive(value: true);
+				Player[0].SetActive(true);
+				Player[1].SetActive(true);
+				Player[2].SetActive(true);
+				PlayerJoystick[0].SetActive(true);
+				PlayerJoystick[1].SetActive(true);
+				PlayerJoystick[2].SetActive(true);
 			}
 		}
 		else if (PlayerNumers == 4)
@@ -135,12 +135,12 @@ public class RaceGameController : MonoBehaviour
 			GameObject[] aIPlayer = Player;
 			for (int i = 0; i < aIPlayer.Length; i++)
 			{
-				aIPlayer[i].SetActive(value: true);
+				aIPlayer[i].SetActive(true);
 			}
 			aIPlayer = PlayerJoystick;
 			for (int i = 0; i < aIPlayer.Length; i++)
 			{
-				aIPlayer[i].SetActive(value: true);
+				aIPlayer[i].SetActive(true);
 			}
 		}
 		Source = GetComponent<AudioSource>();
@@ -157,7 +157,7 @@ public class RaceGameController : MonoBehaviour
 
 	private void StartAnimation()
 	{
-		TimerAnimation.SetActive(value: true);
+		TimerAnimation.SetActive(true);
 		Source.PlayOneShot(SoundGo);
 	}
 
@@ -349,25 +349,25 @@ public class RaceGameController : MonoBehaviour
 			{
 				if (Names[0] == "PlayerRed")
 				{
-					WinObject[0].SetActive(value: true);
+					WinObject[0].SetActive(true);
 					PlayerPrefs.SetInt("RedNewCount", 3);
 					IsRedWin = true;
 				}
 				else if (Names[0] == "PlayerBlue")
 				{
-					WinObject[1].SetActive(value: true);
+					WinObject[1].SetActive(true);
 					PlayerPrefs.SetInt("BlueNewCount", 3);
 					IsBlueWin = true;
 				}
 				else if (Names[0] == "PlayerGreen")
 				{
-					WinObject[2].SetActive(value: true);
+					WinObject[2].SetActive(true);
 					PlayerPrefs.SetInt("GreenNewCount", 3);
 					IsGreenWin = true;
 				}
 				else if (Names[0] == "PlayerYellow")
 				{
-					WinObject[3].SetActive(value: true);
+					WinObject[3].SetActive(true);
 					PlayerPrefs.SetInt("YellowNewCount", 3);
 					IsYellowWin = true;
 				}
@@ -609,8 +609,8 @@ public class RaceGameController : MonoBehaviour
 						PlayerPrefs.SetInt("GreenNewCount", 0);
 					}
 				}
-				GameOverPanel.SetActive(value: true);
-				BGMusic.SetActive(value: false);
+				GameOverPanel.SetActive(true);
+				BGMusic.SetActive(false);
 				Invoke("GetCount", 3f);
 			}
 		}
@@ -639,26 +639,26 @@ public class RaceGameController : MonoBehaviour
 				}
 			}
 		}
-		GameOverPanel.SetActive(value: true);
-		BGMusic.SetActive(value: false);
+		GameOverPanel.SetActive(true);
+		BGMusic.SetActive(false);
 		Invoke("GetButtons", 2f);
 		if (ListNumber == 1)
 		{
 			if (PlayerName == "PlayerRed")
 			{
-				WinObject[0].SetActive(value: true);
+				WinObject[0].SetActive(true);
 			}
 			else if (PlayerName == "PlayerBlue")
 			{
-				WinObject[1].SetActive(value: true);
+				WinObject[1].SetActive(true);
 			}
 			else if (PlayerName == "PlayerGreen")
 			{
-				WinObject[2].SetActive(value: true);
+				WinObject[2].SetActive(true);
 			}
 			else if (PlayerName == "PlayerYellow")
 			{
-				WinObject[3].SetActive(value: true);
+				WinObject[3].SetActive(true);
 			}
 			if (Players.Count == 1)
 			{
@@ -785,7 +785,7 @@ public class RaceGameController : MonoBehaviour
 			{
 				return;
 			}
-			GameOverTie.SetActive(value: true);
+			GameOverTie.SetActive(true);
 			if (Players.Count == 1)
 			{
 				RaceCar component2 = Players[0].GetComponent<RaceCar>();
@@ -858,7 +858,7 @@ public class RaceGameController : MonoBehaviour
 
 	private void GetButtons()
 	{
-		GameOverButtons.SetActive(value: true);
+		GameOverButtons.SetActive(true);
 	}
 
 	public void MainMenuButton()
